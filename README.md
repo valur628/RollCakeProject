@@ -14,9 +14,9 @@
 | 3     | 개발사 명         | DB_DevName        | Text string   |     |
 | 4     | 갱신 시간         | DB_UpdateTime     | Date and time |     |
 | 5     | 통화              | DB_Currency       | Text string   |     |
-| 6     | 정식 가격         | DB_RegCost        | integer       |     |
-| 7     | 할인 가격         | DB_DisCost        | integer       |     |
-| 8     | 할인율            | DB_DisRate        | integer       |     |
+| 6     | 정식 가격         | DB_RegCost        | Double        |     |
+| 7     | 할인 가격         | DB_DisCost        | Double        |     |
+| 8     | 할인율            | DB_DisRate        | Double        |     |
 | 9     | 상품 주소         | DB_ProductAddress | Text string   |     |
 | 10    | 플랫폼            | DB_Platform       | Text string   |     |
 | 11    | 큰 사진           | DB_BigPicture     | Image         |     |
