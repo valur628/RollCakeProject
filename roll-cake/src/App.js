@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Navbar from "./components/Compo_navibar";
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    console.log("effect");
+  });
+
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(username, password);
@@ -12,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <form onSubmit={onSubmit}>
         <input
           placeholder="username"
