@@ -1,11 +1,12 @@
 import React from "react";
+import logo from "../logo.png";
 
 const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href>
-          <img src="../../../public/logo512.png"></img>
+          <img src={logo} width="64" height="64" alt="logo" />
         </a>
         <button
           class="navbar-toggler"
