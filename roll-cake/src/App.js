@@ -19,6 +19,158 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+
+      
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={onSubmit}>로그인</button>
+      </form>
       <form onSubmit={onSubmit}>
         <input
           placeholder="username"
