@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Compo_navibar";
+import HotdealPage from "./pages/HotdealPage";
+import MainPage from "./pages/MainPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    console.log("effect");
-  });
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log(username, password);
-  };
-
   // let text = "text 1";
 
   return (
@@ -22,57 +13,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/hotdeal">
-            <h1>hotdeal</h1>
-          </Route>
-          <Route path="/">
-            <h1>home</h1>
-            <form onSubmit={onSubmit}>
-              <input
-                placeholder="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <br />
-              <input
-                placeholder="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
-              <button onClick={onSubmit}>로그인</button>
-            </form>
-            <form onSubmit={onSubmit}>
-              <input
-                placeholder="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <br />
-              <input
-                placeholder="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
-              <button onClick={onSubmit}>로그인</button>
-            </form>
-            <form onSubmit={onSubmit}>
-              <input
-                placeholder="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <br />
-              <input
-                placeholder="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
-              <button onClick={onSubmit}>로그인</button>
-            </form>
-          </Route>
+          <Route path="/search" component={SearchPage}></Route>
+          <Route path="/hotdeal" component={HotdealPage}></Route>
+          <Route path="/" component={MainPage}></Route>
         </Switch>
       </div>
     </Router>

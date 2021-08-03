@@ -1,13 +1,19 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src={logo} width="64" height="64" alt="logo" />
+          <img
+            src={logo}
+            height="32"
+            alt="logo"
+            class="d-inline-block align-text-top"
+          />
+          롤케이크 프로젝트
         </Link>
         <button
           className="navbar-toggler"
@@ -33,16 +39,19 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" activeClassName="active">
-                Link
+              <Link
+                className="nav-link"
+                activeClassName="active"
+                aria-current="page"
+                to="/Search"
+              >
+                Search
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 className="nav-link"
                 activeClassName="active"
-                href
-                id
                 tabindex="-1"
                 aria-disabled="true"
               >
