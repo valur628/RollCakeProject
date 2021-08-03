@@ -5,9 +5,9 @@ import HotdealPage from "./pages/HotdealPage";
 import MainPage from "./pages/MainPage";
 import SearchPage from "./pages/SearchPage";
 
+
 function App() {
   // let text = "text 1";
-
   return (
     <Router>
       <div className="App">
