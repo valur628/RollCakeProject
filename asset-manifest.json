@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/RollCakeProject/static/css/main.ce8c4d23.chunk.css",
-    "main.js": "/RollCakeProject/static/js/main.dfa36a4c.chunk.js",
-    "main.js.map": "/RollCakeProject/static/js/main.dfa36a4c.chunk.js.map",
+    "main.js": "/RollCakeProject/static/js/main.c97ede8f.chunk.js",
+    "main.js.map": "/RollCakeProject/static/js/main.c97ede8f.chunk.js.map",
     "runtime-main.js": "/RollCakeProject/static/js/runtime-main.ccf6e51d.js",
     "runtime-main.js.map": "/RollCakeProject/static/js/runtime-main.ccf6e51d.js.map",
     "static/js/2.6f5e7e01.chunk.js": "/RollCakeProject/static/js/2.6f5e7e01.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.ccf6e51d.js",
     "static/js/2.6f5e7e01.chunk.js",
     "static/css/main.ce8c4d23.chunk.css",
-    "static/js/main.dfa36a4c.chunk.js"
+    "static/js/main.c97ede8f.chunk.js"
   ]
 }
