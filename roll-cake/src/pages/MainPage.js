@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LargeCardItem } from "../components/Compo_cards";
 import { MediumCardItem } from "../components/Compo_cards";
+import { SmallCardItem } from "../components/Compo_cards";
 
 function MainPage() {
   const [username, setUsername] = useState("");
@@ -36,6 +37,14 @@ function MainPage() {
         DisRate={abc}
         Platform="https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
       ></MediumCardItem>
+      <br></br>
+      <SmallCardItem
+        DevName="마이크로소프트"
+        SoftName="마인크래프트"
+        BeforeCost="30,000"
+        AfterCost="15,000"
+        Platform="https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+      ></SmallCardItem>
       <h1>home</h1>
       <form onSubmit={onSubmit}>
         <input
