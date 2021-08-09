@@ -1,0 +1,162 @@
+[
+    {
+        "id": "00000",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로소프트",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "30,000",
+        "AfterCost": "15,000",
+        "DisRate": "20%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00001",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로소프트",
+        "SoftName": "마인크래용",
+        "BeforeCost": "3,000",
+        "AfterCost": "1,000",
+        "DisRate": "33%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00002",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "9,000",
+        "AfterCost": "1,000",
+        "DisRate": "90%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00003",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅇㅇ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "100,000",
+        "AfterCost": "99,000",
+        "DisRate": "1%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00004",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로소프트",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "10,000",
+        "AfterCost": "9,000",
+        "DisRate": "10%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00005",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅇㅇ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "30,000",
+        "AfterCost": "90,000",
+        "DisRate": "300%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00006",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅅㅍㅌ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "30,000",
+        "AfterCost": "3,000",
+        "DisRate": "90%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00007",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅇㅇ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "30,000",
+        "AfterCost": "90,000",
+        "DisRate": "300%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00008",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크",
+        "SoftName": "마인크",
+        "BeforeCost": "900",
+        "AfterCost": "200",
+        "DisRate": "20%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00009",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이ㅇㅇ",
+        "SoftName": "마인트",
+        "BeforeCost": "30,000",
+        "AfterCost": "10,000",
+        "DisRate": "33%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00010",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅇㅇ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "10,000",
+        "AfterCost": "100",
+        "DisRate": "90%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00011",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마로ㅇㅇ",
+        "SoftName": "크래프트",
+        "BeforeCost": "3,000",
+        "AfterCost": "90,000",
+        "DisRate": "300%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00012",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅇㅇ",
+        "SoftName": "마크",
+        "BeforeCost": "1,000",
+        "AfterCost": "1,000",
+        "DisRate": "0%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00013",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크",
+        "SoftName": "래프트",
+        "BeforeCost": "20,000",
+        "AfterCost": "10,000",
+        "DisRate": "50%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00014",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이ㅇ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "300,000",
+        "AfterCost": "90,000",
+        "DisRate": "10%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00015",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "마이크로ㅇㅇ",
+        "SoftName": "마인크래프트",
+        "BeforeCost": "30,000",
+        "AfterCost": "90,000",
+        "DisRate": "300%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    }
+]

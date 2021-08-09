@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";
+import DealData from "../DataTemp.json";
+
+// const [filteredData, setFilteredData] = useState([]);
 
 const Navbar = () => {
   return (
@@ -69,6 +72,18 @@ const Navbar = () => {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
+            {/* <div className="dataResult">
+              {DealData.map((value, key) => {
+                return (
+                  <Link
+                    className="nav-link"
+                    activeClassName="active"
+                    aria-current="page"
+                    to="/Search"
+                  ></Link>
+                );
+              })}
+            </div> */}
           </form>
         </div>
       </div>
