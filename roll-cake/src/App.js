@@ -5,7 +5,6 @@ import HotdealPage from "./pages/HotdealPage";
 import MainPage from "./pages/MainPage";
 import SearchPage from "./pages/SearchPage";
 
-
 function App() {
   // let text = "text 1";
   return (
@@ -13,9 +12,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/search" component={SearchPage}></Route>
-          <Route path="/hotdeal" component={HotdealPage}></Route>
-          <Route path="/" component={MainPage}></Route>
+          <Route path="/search" component={SearchPage} exact></Route>
+          <Route path="/hotdeal" component={HotdealPage} exact></Route>
+          <Route path="/" component={MainPage} exact></Route>
         </Switch>
       </div>
     </Router>
