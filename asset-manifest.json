@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/RollCakeProject/static/css/main.ce8c4d23.chunk.css",
-    "main.js": "/RollCakeProject/static/js/main.c97ede8f.chunk.js",
-    "main.js.map": "/RollCakeProject/static/js/main.c97ede8f.chunk.js.map",
-    "runtime-main.js": "/RollCakeProject/static/js/runtime-main.ccf6e51d.js",
-    "runtime-main.js.map": "/RollCakeProject/static/js/runtime-main.ccf6e51d.js.map",
-    "static/js/2.6f5e7e01.chunk.js": "/RollCakeProject/static/js/2.6f5e7e01.chunk.js",
-    "static/js/2.6f5e7e01.chunk.js.map": "/RollCakeProject/static/js/2.6f5e7e01.chunk.js.map",
-    "static/js/3.e8a11673.chunk.js": "/RollCakeProject/static/js/3.e8a11673.chunk.js",
-    "static/js/3.e8a11673.chunk.js.map": "/RollCakeProject/static/js/3.e8a11673.chunk.js.map",
+    "main.css": "/RollCakeProject/static/css/main.9e7fc8ff.chunk.css",
+    "main.js": "/RollCakeProject/static/js/main.dcccdbb9.chunk.js",
+    "main.js.map": "/RollCakeProject/static/js/main.dcccdbb9.chunk.js.map",
+    "runtime-main.js": "/RollCakeProject/static/js/runtime-main.ebd52702.js",
+    "runtime-main.js.map": "/RollCakeProject/static/js/runtime-main.ebd52702.js.map",
+    "static/js/2.c8c3e079.chunk.js": "/RollCakeProject/static/js/2.c8c3e079.chunk.js",
+    "static/js/2.c8c3e079.chunk.js.map": "/RollCakeProject/static/js/2.c8c3e079.chunk.js.map",
+    "static/js/3.efba8bba.chunk.js": "/RollCakeProject/static/js/3.efba8bba.chunk.js",
+    "static/js/3.efba8bba.chunk.js.map": "/RollCakeProject/static/js/3.efba8bba.chunk.js.map",
     "index.html": "/RollCakeProject/index.html",
-    "static/css/main.ce8c4d23.chunk.css.map": "/RollCakeProject/static/css/main.ce8c4d23.chunk.css.map",
-    "static/js/2.6f5e7e01.chunk.js.LICENSE.txt": "/RollCakeProject/static/js/2.6f5e7e01.chunk.js.LICENSE.txt",
+    "static/css/main.9e7fc8ff.chunk.css.map": "/RollCakeProject/static/css/main.9e7fc8ff.chunk.css.map",
+    "static/js/2.c8c3e079.chunk.js.LICENSE.txt": "/RollCakeProject/static/js/2.c8c3e079.chunk.js.LICENSE.txt",
     "static/media/logo.e0e3f08e.png": "/RollCakeProject/static/media/logo.e0e3f08e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ccf6e51d.js",
-    "static/js/2.6f5e7e01.chunk.js",
-    "static/css/main.ce8c4d23.chunk.css",
-    "static/js/main.c97ede8f.chunk.js"
+    "static/js/runtime-main.ebd52702.js",
+    "static/js/2.c8c3e079.chunk.js",
+    "static/css/main.9e7fc8ff.chunk.css",
+    "static/js/main.dcccdbb9.chunk.js"
   ]
 }
