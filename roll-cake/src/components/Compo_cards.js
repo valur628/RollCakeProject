@@ -438,3 +438,94 @@ const SmaAfterCostString = styled.text`
 export { SmallCardItem };
 
 
+function SlideCardItem({ DevName, SoftName, AfterCost, DisRate }) {
+  return (
+    <SliWrapperDiv>
+      <SliWrapperTable>
+        <thead>
+          <tr>
+            <SliDevStringTd>
+              <SliDevString>{DevName}</SliDevString>
+            </SliDevStringTd>
+          </tr>
+          <tr>
+            <SliSoftStringTd>
+              <SliSoftString>{SoftName}</SliSoftString>
+            </SliSoftStringTd>
+          </tr>
+          <tr>
+            <SliCostStringTd>
+              <SliCostString>{AfterCost} KRW</SliCostString>
+            </SliCostStringTd>
+          </tr>
+          <tr>
+            <SliRateStringTd>
+              <SliRateString>{DisRate}% 할인</SliRateString>
+            </SliRateStringTd>
+          </tr>
+        </thead>
+      </SliWrapperTable>
+    </SliWrapperDiv>
+  );
+}
+
+const SliWrapperDiv = styled.article`
+  border: 0px solid black;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 190px;
+  object-fit: cover;
+  border-collapse: collapse;
+  background-color: rgba( 0, 0, 0, 0.5 );
+  border-radius: 12px;
+`;
+
+const SliWrapperTable = styled.table`
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 230px;
+  color: #ffffff;
+`;
+
+const SliDevStringTd = styled.td`
+text-align: center;
+padding-top: 8%;
+`;
+
+const SliDevString = styled.text`
+border: 0px solid black;
+font-size: 18px;
+`;
+
+const SliSoftStringTd = styled.td`
+text-align: center;
+padding-top: 1%;
+`;
+
+const SliSoftString = styled.text`
+font-weight: 900;
+font-size: 24px;
+`;
+
+const SliCostStringTd = styled.td`
+text-align: center;
+padding-top: 8%;
+`;
+
+const SliCostString = styled.text`
+font-weight: bold;
+font-size: 21px;
+`;
+
+const SliRateStringTd = styled.td`
+text-align: center;
+padding-bottom: 4%;
+`;
+
+const SliRateString = styled.text`
+font-size: 18px;
+`;
+
+export { SlideCardItem };
