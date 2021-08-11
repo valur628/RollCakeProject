@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import DealData from "../DataTemp.json";
+import tempData from "../TempData.json";
 
 function HotdealPage() {
   useEffect(() => {
-    DealData.map((value, key) => {
+    tempData.map((value, key) => {
       console.log(value, key);
     });
   });

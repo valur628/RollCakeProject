@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, graphql, StaticQuery } from "gatsby";
 import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
 import styles from "./Search.module.scss";
+import tempData from "../TempData.json";
+import axios from "axios";
 
 const Search = (props) => {
   const emptyQuery = "";
@@ -10,6 +12,19 @@ const Search = (props) => {
     filteredData: [],
     query: emptyQuery,
   });
+
+  const [hotdeals, setHotdeals] = useState([]);
+
+  useEffect(() => {
+    axios.get(tempData).then((response) => {
+      console.log(response);
+      setHotdeals(response.data);
+    });
+  });
+
+  useEffect(() => {
+    console.log(hotdeals);
+  }, [hotdeals]);
 
   const handleInputChange = (event) => {
     const query = event.target.value;
@@ -116,5 +131,5 @@ export default (props) => (
       }
     `}
     render={(data) => <Search data={data} {...props} />}
-  />
+  ></StaticQuery>
 );

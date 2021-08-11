@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";
-import DealData from "../DataTemp.json";
 
 // const [filteredData, setFilteredData] = useState([]);
 
