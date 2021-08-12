@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SearchBar from "./Nav_SearchBar";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";
-
-// const [filteredData, setFilteredData] = useState([]);
 
 const Navbar = () => {
   return (
@@ -61,17 +60,21 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex">
+          <SearchBar />
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              onChange={(event) => {
+                setSearchDeals(event.target.value);
+              }}
             />
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-            {/* <div className="dataResult">
+             <div className="dataResult">
               {DealData.map((value, key) => {
                 return (
                   <Link
@@ -82,8 +85,8 @@ const Navbar = () => {
                   ></Link>
                 );
               })}
-            </div> */}
-          </form>
+            </div>
+          </form> */}
         </div>
       </div>
     </nav>

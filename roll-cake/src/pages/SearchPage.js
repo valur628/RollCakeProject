@@ -22,7 +22,6 @@ const SearchPage = () => {
   return (
     <div>
       <h1>SearchPage</h1>
-
       <Hotdeals hotdeals={data} />
     </div>
   );
