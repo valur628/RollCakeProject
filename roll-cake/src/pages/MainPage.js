@@ -26,7 +26,7 @@ function MainPage() {
       </SlideCardItem></CarouselSlideCardItem>
       </CarouselDiv>
     </Carousel.Item>
-    <Carousel.Item>
+    {/*<Carousel.Item>
       <CarouselDiv>
       <CarouselImage
         className="d-block w-100"
@@ -55,7 +55,7 @@ function MainPage() {
         DisRate="100">
       </SlideCardItem></CarouselSlideCardItem>
       </CarouselDiv>
-    </Carousel.Item>
+    </Carousel.Item>*/}
   </Carousel>
   </>
   );
@@ -63,7 +63,7 @@ function MainPage() {
 const CarouselDiv = styled.div`
 display: inline-block;
 width: 100%;
-height: 100%;
+height: 40vh;
 max-width: 1919px;
 max-height: 500px;
 overflow: hidden;

@@ -473,59 +473,60 @@ const SliWrapperDiv = styled.article`
   border: 0px solid black;
   width: 100%;
   height: 100%;
-  max-width: 300px;
-  max-height: 190px;
+  max-width: 17.25vw; //300px
+  max-height: 10.8vw; //230px
   object-fit: cover;
   border-collapse: collapse;
-  background-color: rgba( 0, 0, 0, 0.5 );
-  border-radius: 12px;
 `;
 
 const SliWrapperTable = styled.table`
   width: 100%;
   height: 100%;
-  max-width: 300px;
-  max-height: 230px;
+  max-width: 17.25vw; //300px
+  max-height: 10.8vw; //230px
+  background-color: rgba( 0, 0, 0, 0.5 );
+  border-radius: 12px;
   color: #ffffff;
+  box-sizing: border-box;
 `;
 
 const SliDevStringTd = styled.td`
 text-align: center;
-padding-top: 8%;
+padding-top: 8%; //8%
 `;
 
 const SliDevString = styled.text`
 border: 0px solid black;
-font-size: 18px;
+font-size: 1.05vw; //18px
 `;
 
 const SliSoftStringTd = styled.td`
 text-align: center;
-padding-top: 1%;
+padding-top: 1%; //1%
 `;
 
 const SliSoftString = styled.text`
 font-weight: 900;
-font-size: 24px;
+font-size: 1.35vw; //24px
 `;
 
 const SliCostStringTd = styled.td`
 text-align: center;
-padding-top: 8%;
+padding-top: 8%; //8%
 `;
 
 const SliCostString = styled.text`
 font-weight: bold;
-font-size: 21px;
+font-size: 1.2vw; //21px
 `;
 
 const SliRateStringTd = styled.td`
 text-align: center;
-padding-bottom: 4%;
+padding-bottom: 4%; //4%
 `;
 
 const SliRateString = styled.text`
-font-size: 18px;
+font-size: 1.05vw; //18px
 `;
 
 export { SlideCardItem };
