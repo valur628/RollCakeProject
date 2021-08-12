@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
-import tempData from "../TempData.json";
-import axios from "axios";
+import React from "react";
 
-const Hotdeals = () => {
-  const [hotdeals, setHotdeals] = useState([]);
-
-  useEffect(() => {
-    axios.get(tempData).then((response) => {
-      console.log(response);
-      setHotdeals(response.data);
-    });
-  });
-
-  useEffect(() => {
-    console.log(hotdeals);
-  }, [hotdeals]);
+const Hotdeals = ({ hotdeals }) => {
+  return (
+    <div>
+      {hotdeals.map((deal) => {
+        return (
+          <div key={deal.id}>
+            {deal.SoftName}
+            {deal.BeforeCost}
+            {deal.AfterCost}
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Hotdeals;
