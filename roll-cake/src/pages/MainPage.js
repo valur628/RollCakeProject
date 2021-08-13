@@ -18,9 +18,11 @@ function MainPage() {
               src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_1.png?raw=true"
               alt="First slide"
             />
-            <CarouselLogoImage
-              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true" alt="Logo">
-            </CarouselLogoImage>
+            <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
+              <CarouselLogoImage
+                src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true" alt="Logo">
+              </CarouselLogoImage>
+            </a>
             <CarouselSlideCardItem><SlideCardItem
               DevName="CD 프로젝트 레드"
               SoftName="사이버펑크 2077"
@@ -30,41 +32,45 @@ function MainPage() {
           </CarouselDiv>
         </Carousel.Item>
         <Carousel.Item>
-      <CarouselDiv>
-      <CarouselImage
-        className="d-block w-100"
-        src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
-        alt="Second slide"
-      />
-      <CarouselLogoImageInvert
-        src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
-      </CarouselLogoImageInvert>
-      <CarouselSlideCardItem><SlideCardItem
-        DevName="EA DICE"
-        SoftName="배틀필드 2042"
-        AfterCost="100,000"
-        DisRate="50">
-      </SlideCardItem></CarouselSlideCardItem>
-      </CarouselDiv>
-    </Carousel.Item>
-    <Carousel.Item>
-      <CarouselDiv>
-      <CarouselImage
-        className="d-block w-100"
-        src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
-        alt="Third slide"
-      />
-      <CarouselLogoImage
-        src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
-      </CarouselLogoImage>
-      <CarouselSlideCardItem><SlideCardItem
-        DevName="락스타 게임즈"
-        SoftName="레드 데드 리뎀션"
-        AfterCost="150,000"
-        DisRate="100">
-      </SlideCardItem></CarouselSlideCardItem>
-      </CarouselDiv>
-    </Carousel.Item>
+          <CarouselDiv>
+            <CarouselImage
+              className="d-block w-100"
+              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
+              alt="Second slide"
+            />
+            <a href="https://store.steampowered.com/app/1517290/Battlefield_2042/">
+            <CarouselLogoImageInvert
+              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
+            </CarouselLogoImageInvert>
+            </a>
+            <CarouselSlideCardItem><SlideCardItem
+              DevName="EA DICE"
+              SoftName="배틀필드 2042"
+              AfterCost="100,000"
+              DisRate="50">
+            </SlideCardItem></CarouselSlideCardItem>
+          </CarouselDiv>
+        </Carousel.Item>
+        <Carousel.Item>
+          <CarouselDiv>
+            <CarouselImage
+              className="d-block w-100"
+              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
+              alt="Third slide"
+            />
+            <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
+            <CarouselLogoImage
+              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
+            </CarouselLogoImage>
+            </a>
+            <CarouselSlideCardItem><SlideCardItem
+              DevName="락스타 게임즈"
+              SoftName="레드 데드 리뎀션"
+              AfterCost="150,000"
+              DisRate="100">
+            </SlideCardItem></CarouselSlideCardItem>
+          </CarouselDiv>
+        </Carousel.Item>
       </Carousel>
     </>
   );
@@ -76,6 +82,7 @@ height: 40vh;
 max-width: 1919px;
 max-height: 500px;
 overflow: hidden;
+style="cursor: default"
 `;
 const CarouselImage = styled.img`
 display: inline-block;
