@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hotdeals from "../components/Hotdeals";
 import tempData from "../TempData.json";
-import axios from "axios";
+// import axios from "axios";
 
 const SearchPage = () => {
   const [data, setData] = useState([]);

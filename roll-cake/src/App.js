@@ -14,7 +14,8 @@ function App() {
         <Switch>
           <Route path="/search" component={SearchPage} exact></Route>
           <Route path="/hotdeal" component={HotdealPage} exact></Route>
-          <Route path="/" component={MainPage} exact></Route>
+          <Route path="/" component={MainPage}></Route>
+          {/* exact 삭제 */}
         </Switch>
       </div>
     </Router>

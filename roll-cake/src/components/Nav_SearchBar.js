@@ -1,36 +1,62 @@
 import React, { useEffect, useState } from "react";
 
 const SearchBar = () => {
-  const [searchDeals, setSearchDeals] = useState([]);
+  const emptyQuery = "";
+
+  const [searchDeals, setSearchDeals] = useState({
+    filteredDeal: [],
+    query: emptyQuery,
+  });
 
   return (
     <form className="d-flex">
       <input
         className="form-control me-2"
         type="search"
-        placeholder="Search"
+        placeholder="핫딜 검색"
         aria-label="Search"
-        onChange={(event) => {
-          setSearchDeals(event.target.value);
+        name="s"
+        onChange={(e) => {
+          setSearchDeals(e.target.value);
         }}
       />
       <button className="btn btn-outline-success" type="submit">
         Search
       </button>
-      {/* <div className="dataResult">
-        {DealData.map((value, key) => {
-          return (
-            <Link
-              className="nav-link"
-              activeClassName="active"
-              aria-current="page"
-              to="/Search"
-            ></Link>
-          );
-        })}
-      </div> */}
     </form>
   );
+
+  const handleInputChange = (event) => {
+    // const query = event.target.value;
+    // const { data } = props;
+    // const posts = data.allMarkdownRemark.edges || [];
+    // const filteredData = posts.filter((post) => {
+    //   const { description, title, tags } = post.node.frontmatter;
+    //   return (
+    //     (description &&
+    //       description.toLowerCase().includes(query.toLowerCase())) ||
+    //     (title && title.toLowerCase().includes(query.toLowerCase())) ||
+    //     (tags && tags.join("").toLowerCase().includes(query))
+    //   );
+    // });
+    // return (
+    //   <form className="d-flex">
+    //     <input
+    //       className="form-control me-2"
+    //       type="search"
+    //       placeholder="핫딜 검색"
+    //       aria-label="Search"
+    //       name="s"
+    //       onChange={(e) => {
+    //         setSearchDeals(e.target.value);
+    //       }}
+    //     />
+    //     <button className="btn btn-outline-success" type="submit">
+    //       Search
+    //     </button>
+    //   </form>
+    // );
+  };
 };
 
 export default SearchBar;

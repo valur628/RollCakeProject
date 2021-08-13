@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SearchBar from "./Nav_SearchBar";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";
@@ -61,32 +61,6 @@ const Navbar = () => {
             </li>
           </ul>
           <SearchBar />
-          {/* <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              onChange={(event) => {
-                setSearchDeals(event.target.value);
-              }}
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-             <div className="dataResult">
-              {DealData.map((value, key) => {
-                return (
-                  <Link
-                    className="nav-link"
-                    activeClassName="active"
-                    aria-current="page"
-                    to="/Search"
-                  ></Link>
-                );
-              })}
-            </div>
-          </form> */}
         </div>
       </div>
     </nav>
