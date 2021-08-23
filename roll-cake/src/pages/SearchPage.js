@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Hotdeals from "../components/Hotdeals";
 import tempData from "../TempData.json";
+import NavSearchBar from "../components/Nav_SearchBar";
+// import tempData from "../TempData.json";
 // import axios from "axios";
+
+const filterDeals = (data, searchDeals) => {
+  if (!searchDeals) {
+    return data;
+  }
+
+  console.log("filterDeals", data, searchDeals);
+
+  return data.filter((post) => {
+    const postName = post.SoftName.toLowerCase();
+    return postName.includes(searchDeals);
+  });
+};
 
 const SearchPage = () => {
   const [data, setData] = useState([]);
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
+  const filteredDeals = filterDeals(tempData, searchQuery);
+  console.log(filteredDeals);
 
   useEffect(() => {
     //   axios
@@ -22,7 +43,7 @@ const SearchPage = () => {
   return (
     <div>
       <h1>SearchPage</h1>
-      <Hotdeals hotdeals={data} />
+      <Hotdeals hotdeals={filteredDeals} />
     </div>
   );
 };
