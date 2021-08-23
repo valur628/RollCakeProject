@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./Nav_SearchBar";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";
 
 const Navbar = () => {
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
+
   return (
     <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
       <div className="container-fluid">
@@ -60,7 +64,10 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <SearchBar />
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </div>
       </div>
     </nav>
