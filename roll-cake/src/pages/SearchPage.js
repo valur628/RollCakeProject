@@ -24,7 +24,7 @@ const SearchPage = () => {
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
-  const filteredDeals = filterDeals(tempData, searchQuery);
+  const filteredDeals = filterDeals(data, searchQuery);
   console.log(filteredDeals);
 
   useEffect(() => {

@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
-import tempData from "../TempData.json";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
+  const history = useHistory();
+  const onSubmit = (e) => {
+    history.push(`?s=${searchQuery}`);
+    e.preventDefault();
+  };
+
   return (
     <form className="d-flex">
       <input
@@ -13,7 +19,11 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
         aria-label="Search"
         name="s"
       />
-      <button className="btn btn-outline-success" type="submit">
+      <button
+        className="btn btn-outline-success"
+        type="submit"
+        onClick={() => history.push("/Search")}
+      >
         Search
       </button>
     </form>
