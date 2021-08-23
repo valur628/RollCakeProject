@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Carousel from 'react-bootstrap/Carousel';
+import "../styles/Main/Main.css";
+import jsonData from "../TempData.json";
 
 import { LargeCardItem } from "../components/Compo_cards";
 import { MediumCardItem } from "../components/Compo_cards";
@@ -8,6 +10,12 @@ import { SmallCardItem } from "../components/Compo_cards";
 import { SlideCardItem } from "../components/Compo_cards";
 
 function MainPage() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(jsonData);
+  }, []);
+
   return (
     <>
       <Carousel>
@@ -39,9 +47,9 @@ function MainPage() {
               alt="Second slide"
             />
             <a href="https://store.steampowered.com/app/1517290/Battlefield_2042/">
-            <CarouselLogoImageInvert
-              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
-            </CarouselLogoImageInvert>
+              <CarouselLogoImageInvert
+                src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
+              </CarouselLogoImageInvert>
             </a>
             <CarouselSlideCardItem><SlideCardItem
               DevName="EA DICE"
@@ -59,9 +67,9 @@ function MainPage() {
               alt="Third slide"
             />
             <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
-            <CarouselLogoImage
-              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
-            </CarouselLogoImage>
+              <CarouselLogoImage
+                src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
+              </CarouselLogoImage>
             </a>
             <CarouselSlideCardItem><SlideCardItem
               DevName="락스타 게임즈"
@@ -72,6 +80,46 @@ function MainPage() {
           </CarouselDiv>
         </Carousel.Item>
       </Carousel>
+      <div>
+        <MediumCardMapTable>
+          <tr>
+            <MediumCardHeaderTd>인기 순 핫딜</MediumCardHeaderTd>
+            <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
+            <MediumCardHeaderTd>가격 순 핫딜</MediumCardHeaderTd>
+          </tr>
+          <tr>
+            <td>
+              {data.slice(0, 10).map((deal) => {
+                return (
+                  <MediumCardMapDiv>
+                    <MediumCardItem key={deal.id}
+                      Picture={deal.Picture}
+                      DevName={deal.DevName}
+                      SoftName={deal.SoftName}
+                      BeforeCost={deal.BeforeCost}
+                      AfterCost={deal.AfterCost}
+                      DisRate={deal.DisRate}
+                      Platform={deal.Platform}
+                    ></MediumCardItem></MediumCardMapDiv>
+                );
+              })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
+              {data.slice(0, 10).map((deal) => {
+                return (
+                  <MediumCardMapDiv>
+                    <MediumCardItem key={deal.id}
+                      Picture={deal.Picture}
+                      DevName={deal.DevName}
+                      SoftName={deal.SoftName}
+                      BeforeCost={deal.BeforeCost}
+                      AfterCost={deal.AfterCost}
+                      DisRate={deal.DisRate}
+                      Platform={deal.Platform}
+                    ></MediumCardItem></MediumCardMapDiv>
+                );
+              })}
+            </td></tr>
+        </MediumCardMapTable>
+      </div>
     </>
   );
 }
@@ -110,6 +158,27 @@ height: 100%;
 position: absolute;
 top: 25%;
 left: 58%;
+`;
+
+
+const MediumCardMapTable = styled.table`
+margin-left: auto;
+margin-right: auto;
+`;
+const MediumCardHeaderTd = styled.td`
+padding-top: 5%;
+font-family: "BusanBada";
+vertical-align: center;
+text-align: center;
+font-size: 140%;
+padding-bottom: 0.5%;
+`;
+const MediumCardMapDiv = styled.div`
+padding-bottom: 4%;
+`;
+const MediumCardMapMiddleTd = styled.td`
+width: 5%;
+text-align: center;
 `;
 
 export default MainPage;
