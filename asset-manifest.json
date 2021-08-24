@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/RollCakeProject/static/css/main.a0d0f6a7.chunk.css",
-    "main.js": "/RollCakeProject/static/js/main.e73c1165.chunk.js",
-    "main.js.map": "/RollCakeProject/static/js/main.e73c1165.chunk.js.map",
+    "main.css": "/RollCakeProject/static/css/main.dd7172d0.chunk.css",
+    "main.js": "/RollCakeProject/static/js/main.103b1e01.chunk.js",
+    "main.js.map": "/RollCakeProject/static/js/main.103b1e01.chunk.js.map",
     "runtime-main.js": "/RollCakeProject/static/js/runtime-main.a18f03ea.js",
     "runtime-main.js.map": "/RollCakeProject/static/js/runtime-main.a18f03ea.js.map",
     "static/js/2.cd5daab8.chunk.js": "/RollCakeProject/static/js/2.cd5daab8.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.d988dfcf.chunk.js": "/RollCakeProject/static/js/3.d988dfcf.chunk.js",
     "static/js/3.d988dfcf.chunk.js.map": "/RollCakeProject/static/js/3.d988dfcf.chunk.js.map",
     "index.html": "/RollCakeProject/index.html",
-    "static/css/main.a0d0f6a7.chunk.css.map": "/RollCakeProject/static/css/main.a0d0f6a7.chunk.css.map",
+    "static/css/main.dd7172d0.chunk.css.map": "/RollCakeProject/static/css/main.dd7172d0.chunk.css.map",
     "static/js/2.cd5daab8.chunk.js.LICENSE.txt": "/RollCakeProject/static/js/2.cd5daab8.chunk.js.LICENSE.txt",
     "static/media/logo.e0e3f08e.png": "/RollCakeProject/static/media/logo.e0e3f08e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a18f03ea.js",
     "static/js/2.cd5daab8.chunk.js",
-    "static/css/main.a0d0f6a7.chunk.css",
-    "static/js/main.e73c1165.chunk.js"
+    "static/css/main.dd7172d0.chunk.css",
+    "static/js/main.103b1e01.chunk.js"
   ]
 }
