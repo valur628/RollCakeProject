@@ -9,7 +9,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState(query || "");
 
   return (
-    <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <nav className="navbar fixed-top navbar-expand-md navbar-dark navbar-custom">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img
@@ -17,8 +17,8 @@ const Navbar = () => {
             height="32"
             alt="logo"
             class="d-inline-block align-text-top"
+            // 뭔가 사진 크기가 아쉬움.  navabar의 패딩을 줄여야겠음
           />
-          롤케이크 프로젝트
         </Link>
         <button
           className="navbar-toggler"

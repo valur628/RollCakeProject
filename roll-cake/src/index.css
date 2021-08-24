@@ -19,3 +19,10 @@ code {
   font-weight: normal;
   font-style: normal;
 }
+
+/* Modify the background color */
+
+.navbar-custom {
+  background-color: #e74333;
+}
+/* Modify brand and text color */
