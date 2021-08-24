@@ -117,7 +117,60 @@ function MainPage() {
                     ></MediumCardItem></MediumCardMapDiv>
                 );
               })}
-            </td></tr>
+            </td>
+          </tr>
+          <tr>
+            <MediumCardButtonTd>
+              <MediumCardButtonDiv>
+                <button class="MoreButton">인기 핫딜 더 보기 →</button>
+              </MediumCardButtonDiv>
+            </MediumCardButtonTd>
+            <td></td>
+            <MediumCardButtonTd>
+              <MediumCardButtonDiv>
+                <button class="MoreButton">가격 핫딜 더 보기 →</button>
+              </MediumCardButtonDiv>
+            </MediumCardButtonTd>
+          </tr>
+        </MediumCardMapTable>
+        <MediumCardMapTable>
+          <tr>
+            <MediumCardHeader2Td>최신 순 핫딜</MediumCardHeader2Td>
+          </tr>
+        </MediumCardMapTable>
+        <MediumCardMapTable>
+        <tr>
+            <td>
+              {data.slice(0, 10).map((deal) => {
+                return (
+                  <MediumCardMapDiv>
+                    <SmallCardItem key={deal.id}
+                      Picture={deal.Picture}
+                      DevName={deal.DevName}
+                      SoftName={deal.SoftName}
+                      BeforeCost={deal.BeforeCost}
+                      AfterCost={deal.AfterCost}
+                      DisRate={deal.DisRate}
+                      Platform={deal.Platform}
+                    ></SmallCardItem></MediumCardMapDiv>
+                );
+              })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
+              {data.slice(10, 20).map((deal) => {
+                return (
+                  <MediumCardMapDiv>
+                    <SmallCardItem key={deal.id}
+                      Picture={deal.Picture}
+                      DevName={deal.DevName}
+                      SoftName={deal.SoftName}
+                      BeforeCost={deal.BeforeCost}
+                      AfterCost={deal.AfterCost}
+                      DisRate={deal.DisRate}
+                      Platform={deal.Platform}
+                    ></SmallCardItem></MediumCardMapDiv>
+                );
+              })}
+            </td>
+          </tr>
         </MediumCardMapTable>
       </div>
     </>
@@ -160,7 +213,6 @@ top: 25%;
 left: 58%;
 `;
 
-
 const MediumCardMapTable = styled.table`
 margin-left: auto;
 margin-right: auto;
@@ -173,6 +225,14 @@ text-align: center;
 font-size: 140%;
 padding-bottom: 0.5%;
 `;
+const MediumCardHeader2Td = styled.td`
+padding-top: 50%;
+font-family: "BusanBada";
+vertical-align: center;
+text-align: center;
+font-size: 140%;
+padding-bottom: 2.5%;
+`;
 const MediumCardMapDiv = styled.div`
 padding-bottom: 4%;
 `;
@@ -180,5 +240,11 @@ const MediumCardMapMiddleTd = styled.td`
 width: 5%;
 text-align: center;
 `;
-
+const MediumCardButtonDiv = styled.div`
+`;
+const MediumCardButtonTd = styled.td`
+font-family: "NanumSquareRound";
+vertical-align: center;
+text-align: center;
+`;
 export default MainPage;
