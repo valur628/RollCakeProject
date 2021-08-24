@@ -4,7 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-  
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
   body {
     font-weight: normal;
     font-style: normal;
@@ -13,3 +18,25 @@
     -ms-user-select: none;
     user-select: none;
   }
+  .MoreButton{
+    width: 50%;
+    height: 50px;  
+    color:#fff;
+    background: #e74333;
+    font-weight: bold;
+    font-size: 140%;
+    border:none;
+    border-radius: 50px;
+    transition:0.3s;
+    /*position: absolute;
+    transform: translate(-50%,-50%);*/
+  }
+  .MoreButton:focus {
+    outline:0;
+  }
+  .MoreButton:hover{
+    background: rgba(231,67,51,0.8);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(231,67,51,0.4);
+  }
+  

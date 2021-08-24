@@ -324,12 +324,12 @@ const MedPlatImage = styled.div`
 const MedRateStringTd = styled.td`
   vertical-align: bottom;
   padding-bottom: 2.2%;
-  text-align: right;
+  text-align: center;
 `;
 
 const MedRateString = styled.text`
   border: 0px solid black;
-  padding-right: 15%;
+  padding-right: 5%;
   font-size: 30px;
   font-weight: bold;
   font-style: normal;
