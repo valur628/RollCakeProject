@@ -143,7 +143,7 @@
         "id": "00014",
         "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
         "DevName": "마이ㅇ",
-        "SoftName": "마인크래프트",
+        "SoftName": "마인크래프트ㅇㅇㅇㅇㅇㅇ",
         "BeforeCost": "300,000",
         "AfterCost": "90,000",
         "DisRate": "10%",
@@ -152,11 +152,61 @@
     {
         "id": "00015",
         "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
-        "DevName": "마이크로ㅇㅇ",
+        "DevName": "마이크로ㅇㅇㅇㅇㅇㅇ",
         "SoftName": "마인크래프트",
         "BeforeCost": "30,000",
         "AfterCost": "90,000",
         "DisRate": "300%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00016",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "레드데드",
+        "SoftName": "리뎀션2",
+        "BeforeCost": "310,000",
+        "AfterCost": "200,000",
+        "DisRate": "50%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00017",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "EA다이스",
+        "SoftName": "배틀필드2042",
+        "BeforeCost": "30,000",
+        "AfterCost": "20,000",
+        "DisRate": "50%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00018",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "락스타게임즈",
+        "SoftName": "레드데드리뎀션",
+        "BeforeCost": "10,000",
+        "AfterCost": "5,000",
+        "DisRate": "50%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00019",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "레드데드리뎀션",
+        "SoftName": "락스타",
+        "BeforeCost": "20,000",
+        "AfterCost": "17,000",
+        "DisRate": "50%",
+        "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
+    },
+    {
+        "id": "00020",
+        "Picture": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Minecraft-360.png?raw=true",
+        "DevName": "레드데드2",
+        "SoftName": "리뎀션2",
+        "BeforeCost": "3,122,000",
+        "AfterCost": "2,000,000",
+        "DisRate": "50%",
         "Platform": "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true"
     }
 ]
