@@ -3,10 +3,10 @@ import { useHistory } from "react-router-dom";
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
   const history = useHistory();
-  const onSubmit = (e) => {
-    history.push(`?s=${searchQuery}`);
-    e.preventDefault();
-  };
+  // const onSubmit = (e) => {
+  //   history.push(`?s=${searchQuery}`);
+  //   e.preventDefault();
+  // };
   return (
     <form className="d-flex">
       <input

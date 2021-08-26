@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Hotdeals from "../components/Hotdeals";
 import tempData from "../TempData.json";
 
 import { LargeCardItem } from "../components/Compo_cards";
-import { MediumCardItem } from "../components/Compo_cards";
 
 const filterDeals = (data, searchDeals) => {
   if (!searchDeals) {
@@ -21,13 +19,6 @@ const filterDeals = (data, searchDeals) => {
 
 const SearchPage = () => {
   const [fillterdDeal, setData] = useState([]);
-
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get("s");
-  const [searchQuery, setSearchQuery] = useState(query || "");
-  const filteredDeals = filterDeals(fillterdDeal, searchQuery);
-  console.log(filteredDeals);
-
   useEffect(() => {
     //   axios
     //     .get(
@@ -41,43 +32,68 @@ const SearchPage = () => {
     // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
-  const MediumCardMapTable = styled.table`
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
+  const filteredDeals = filterDeals(fillterdDeal, searchQuery);
+  console.log(filteredDeals);
+
+  const LargeCardMapTable = styled.table`
     margin-left: auto;
     margin-right: auto;
   `;
-  const MediumCardHeaderTd = styled.td`
-    padding-top: 5%;
-    font-family: "BusanBada";
-    vertical-align: center;
+  const LargeCardHeaderTd = styled.td`
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.5%;
+    vertical-align: middle;
     text-align: center;
-    font-size: 140%;
-    padding-bottom: 0.5%;
+    font-size: 100%;
+    padding-bottom: 2.5%;
   `;
-  const MediumCardMapDiv = styled.div`
+  const LargeCardMapDiv = styled.div`
     padding-bottom: 4%;
-  `;
-  const MediumCardMapMiddleTd = styled.td`
-    width: 5%;
-    text-align: center;
   `;
 
   return (
     <div>
-      <h1>SearchPage</h1>
-      <Hotdeals hotdeals={filteredDeals} />
+      {/* <h1>SearchPage</h1> */}
+      {/* <Hotdeals hotdeals={filteredDeals} /> */}
       <div>
-        <MediumCardMapTable>
+        <LargeCardMapTable>
+          <LargeCardMapDiv />
+          <h2>'{searchQuery}' 검색결과</h2>
           <tr>
-            <MediumCardHeaderTd>인기 순 핫딜</MediumCardHeaderTd>
-            <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
-            <MediumCardHeaderTd>가격 순 핫딜</MediumCardHeaderTd>
+            <LargeCardHeaderTd>
+              <div
+                className="btn-group btn-group-lg btn-group-custom"
+                role="group"
+                aria-label="toolbar"
+              >
+                <button type="button" className="btn btn-dark">
+                  전체 ({filteredDeals.length})
+                </button>
+                <button type="button" className="btn btn-dark">
+                  게임 ({filteredDeals.length})
+                </button>
+                <button type="button" className="btn btn-dark">
+                  소프트웨어 ({filteredDeals.length})
+                </button>
+                <button type="button" className="btn btn-dark">
+                  개발사 ({filteredDeals.length})
+                </button>
+                <button type="button" className="btn btn-dark">
+                  태그 ({filteredDeals.length})
+                </button>
+              </div>
+            </LargeCardHeaderTd>
           </tr>
           <tr>
             <td>
-              {fillterdDeal.slice(0, 10).map((deal) => {
+              {filteredDeals.map((deal) => {
                 return (
-                  <MediumCardMapDiv>
-                    <MediumCardItem
+                  <LargeCardMapDiv>
+                    <LargeCardItem
                       key={deal.id}
                       Picture={deal.Picture}
                       DevName={deal.DevName}
@@ -86,32 +102,13 @@ const SearchPage = () => {
                       AfterCost={deal.AfterCost}
                       DisRate={deal.DisRate}
                       Platform={deal.Platform}
-                    ></MediumCardItem>
-                  </MediumCardMapDiv>
-                );
-              })}
-            </td>
-            <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
-            <td>
-              {fillterdDeal.slice(0, 10).map((deal) => {
-                return (
-                  <MediumCardMapDiv>
-                    <MediumCardItem
-                      key={deal.id}
-                      Picture={deal.Picture}
-                      DevName={deal.DevName}
-                      SoftName={deal.SoftName}
-                      BeforeCost={deal.BeforeCost}
-                      AfterCost={deal.AfterCost}
-                      DisRate={deal.DisRate}
-                      Platform={deal.Platform}
-                    ></MediumCardItem>
-                  </MediumCardMapDiv>
+                    ></LargeCardItem>
+                  </LargeCardMapDiv>
                 );
               })}
             </td>
           </tr>
-        </MediumCardMapTable>
+        </LargeCardMapTable>
       </div>
     </div>
   );
