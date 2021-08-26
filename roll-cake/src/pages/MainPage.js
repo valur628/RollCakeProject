@@ -18,161 +18,171 @@ function MainPage() {
 
   return (
     <>
-      <Carousel>
-        <Carousel.Item>
-          <CarouselDiv>
-            <CarouselImage
-              className="d-block w-100"
-              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_1.png?raw=true"
-              alt="First slide"
-            />
-            <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
-              <CarouselLogoImage
-                src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true" alt="Logo">
-              </CarouselLogoImage>
-            </a>
-            <CarouselSlideCardItem><SlideCardItem
-              DevName="CD 프로젝트 레드"
-              SoftName="사이버펑크 2077"
-              AfterCost="50,000"
-              DisRate="25">
-            </SlideCardItem></CarouselSlideCardItem>
-          </CarouselDiv>
-        </Carousel.Item>
-        <Carousel.Item>
-          <CarouselDiv>
-            <CarouselImage
-              className="d-block w-100"
-              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
-              alt="Second slide"
-            />
-            <a href="https://store.steampowered.com/app/1517290/Battlefield_2042/">
-              <CarouselLogoImageInvert
-                src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
-              </CarouselLogoImageInvert>
-            </a>
-            <CarouselSlideCardItem><SlideCardItem
-              DevName="EA DICE"
-              SoftName="배틀필드 2042"
-              AfterCost="100,000"
-              DisRate="50">
-            </SlideCardItem></CarouselSlideCardItem>
-          </CarouselDiv>
-        </Carousel.Item>
-        <Carousel.Item>
-          <CarouselDiv>
-            <CarouselImage
-              className="d-block w-100"
-              src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
-              alt="Third slide"
-            />
-            <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
-              <CarouselLogoImage
-                src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
-              </CarouselLogoImage>
-            </a>
-            <CarouselSlideCardItem><SlideCardItem
-              DevName="락스타 게임즈"
-              SoftName="레드 데드 리뎀션"
-              AfterCost="150,000"
-              DisRate="100">
-            </SlideCardItem></CarouselSlideCardItem>
-          </CarouselDiv>
-        </Carousel.Item>
-      </Carousel>
-      <div>
-        <MediumCardMapTable>
-          <tr>
-            <MediumCardHeaderTd>인기 순 핫딜</MediumCardHeaderTd>
-            <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
-            <MediumCardHeaderTd>가격 순 핫딜</MediumCardHeaderTd>
-          </tr>
-          <tr>
-            <td>
-              {data.slice(0, 10).map((deal) => {
-                return (
-                  <MediumCardMapDiv>
-                    <MediumCardItem key={deal.id}
-                      Picture={deal.Picture}
-                      DevName={deal.DevName}
-                      SoftName={deal.SoftName}
-                      BeforeCost={deal.BeforeCost}
-                      AfterCost={deal.AfterCost}
-                      DisRate={deal.DisRate}
-                      Platform={deal.Platform}
-                    ></MediumCardItem></MediumCardMapDiv>
-                );
-              })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
-              {data.slice(0, 10).map((deal) => {
-                return (
-                  <MediumCardMapDiv>
-                    <MediumCardItem key={deal.id}
-                      Picture={deal.Picture}
-                      DevName={deal.DevName}
-                      SoftName={deal.SoftName}
-                      BeforeCost={deal.BeforeCost}
-                      AfterCost={deal.AfterCost}
-                      DisRate={deal.DisRate}
-                      Platform={deal.Platform}
-                    ></MediumCardItem></MediumCardMapDiv>
-                );
-              })}
-            </td>
-          </tr>
-          <tr>
-            <MediumCardButtonTd>
-              <MediumCardButtonDiv>
-                <button class="MoreButton">인기 핫딜 더 보기 →</button>
-              </MediumCardButtonDiv>
-            </MediumCardButtonTd>
-            <td></td>
-            <MediumCardButtonTd>
-              <MediumCardButtonDiv>
-                <button class="MoreButton">가격 핫딜 더 보기 →</button>
-              </MediumCardButtonDiv>
-            </MediumCardButtonTd>
-          </tr>
-        </MediumCardMapTable>
-        <MediumCardMapTable>
-          <tr>
-            <MediumCardHeader2Td>최신 순 핫딜</MediumCardHeader2Td>
-          </tr>
-        </MediumCardMapTable>
-        <MediumCardMapTable>
-        <tr>
-            <td>
-              {data.slice(0, 10).map((deal) => {
-                return (
-                  <MediumCardMapDiv>
-                    <SmallCardItem key={deal.id}
-                      Picture={deal.Picture}
-                      DevName={deal.DevName}
-                      SoftName={deal.SoftName}
-                      BeforeCost={deal.BeforeCost}
-                      AfterCost={deal.AfterCost}
-                      DisRate={deal.DisRate}
-                      Platform={deal.Platform}
-                    ></SmallCardItem></MediumCardMapDiv>
-                );
-              })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
-              {data.slice(10, 20).map((deal) => {
-                return (
-                  <MediumCardMapDiv>
-                    <SmallCardItem key={deal.id}
-                      Picture={deal.Picture}
-                      DevName={deal.DevName}
-                      SoftName={deal.SoftName}
-                      BeforeCost={deal.BeforeCost}
-                      AfterCost={deal.AfterCost}
-                      DisRate={deal.DisRate}
-                      Platform={deal.Platform}
-                    ></SmallCardItem></MediumCardMapDiv>
-                );
-              })}
-            </td>
-          </tr>
-        </MediumCardMapTable>
-      </div>
+      <main>
+        <section>
+          <Carousel>
+            <Carousel.Item>
+              <CarouselDiv>
+                <CarouselImage
+                  className="d-block w-100"
+                  src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_1.png?raw=true"
+                  alt="First slide"
+                />
+                <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
+                  <CarouselLogoImage
+                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true" alt="Logo">
+                  </CarouselLogoImage>
+                </a>
+                <CarouselSlideCardItem><SlideCardItem
+                  DevName="CD 프로젝트 레드"
+                  SoftName="사이버펑크 2077"
+                  AfterCost="50,000"
+                  DisRate="25">
+                </SlideCardItem></CarouselSlideCardItem>
+              </CarouselDiv>
+            </Carousel.Item>
+            <Carousel.Item>
+              <CarouselDiv>
+                <CarouselImage
+                  className="d-block w-100"
+                  src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
+                  alt="Second slide"
+                />
+                <a href="https://store.steampowered.com/app/1517290/Battlefield_2042/">
+                  <CarouselLogoImageInvert
+                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
+                  </CarouselLogoImageInvert>
+                </a>
+                <CarouselSlideCardItem><SlideCardItem
+                  DevName="EA DICE"
+                  SoftName="배틀필드 2042"
+                  AfterCost="100,000"
+                  DisRate="50">
+                </SlideCardItem></CarouselSlideCardItem>
+              </CarouselDiv>
+            </Carousel.Item>
+            <Carousel.Item>
+              <CarouselDiv>
+                <CarouselImage
+                  className="d-block w-100"
+                  src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
+                  alt="Third slide"
+                />
+                <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
+                  <CarouselLogoImage
+                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
+                  </CarouselLogoImage>
+                </a>
+                <CarouselSlideCardItem><SlideCardItem
+                  DevName="락스타 게임즈"
+                  SoftName="레드 데드 리뎀션"
+                  AfterCost="150,000"
+                  DisRate="100">
+                </SlideCardItem></CarouselSlideCardItem>
+              </CarouselDiv>
+            </Carousel.Item>
+          </Carousel>
+        </section>
+          <div>
+        <section>
+            <MediumCardMapTable>
+              <tr>
+                <MediumCardHeaderTd>인기 순 핫딜</MediumCardHeaderTd>
+                <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
+                <MediumCardHeaderTd>가격 순 핫딜</MediumCardHeaderTd>
+              </tr>
+              <tr>
+                <td>
+                  {data.slice(0, 10).map((deal) => {
+                    return (
+                      <MediumCardMapDiv>
+                        <MediumCardItem key={deal.id}
+                          Picture={deal.Picture}
+                          DevName={deal.DevName}
+                          SoftName={deal.SoftName}
+                          BeforeCost={deal.BeforeCost}
+                          AfterCost={deal.AfterCost}
+                          DisRate={deal.DisRate}
+                          Platform={deal.Platform}
+                        ></MediumCardItem></MediumCardMapDiv>
+                    );
+                  })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
+                  {data.slice(0, 10).map((deal) => {
+                    return (
+                      <MediumCardMapDiv>
+                        <MediumCardItem key={deal.id}
+                          Picture={deal.Picture}
+                          DevName={deal.DevName}
+                          SoftName={deal.SoftName}
+                          BeforeCost={deal.BeforeCost}
+                          AfterCost={deal.AfterCost}
+                          DisRate={deal.DisRate}
+                          Platform={deal.Platform}
+                        ></MediumCardItem></MediumCardMapDiv>
+                    );
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <MediumCardButtonTd>
+                  <MediumCardButtonDiv>
+                    <button class="MoreButton">인기 핫딜 더 보기 →</button>
+                  </MediumCardButtonDiv>
+                </MediumCardButtonTd>
+                <td></td>
+                <MediumCardButtonTd>
+                  <MediumCardButtonDiv>
+                    <button class="MoreButton">가격 핫딜 더 보기 →</button>
+                  </MediumCardButtonDiv>
+                </MediumCardButtonTd>
+              </tr>
+            </MediumCardMapTable>
+        </section>
+        <section>
+            <MediumCardMapTable>
+              <tr>
+                <MediumCardHeader2Td>최신 순 핫딜</MediumCardHeader2Td>
+              </tr>
+            </MediumCardMapTable>
+            <MediumCardMapTable>
+              <tr>
+                <td>
+                  {data.slice(0, 10).map((deal) => {
+                    return (
+                      <MediumCardMapDiv>
+                        <SmallCardItem key={deal.id}
+                          Picture={deal.Picture}
+                          DevName={deal.DevName}
+                          SoftName={deal.SoftName}
+                          BeforeCost={deal.BeforeCost}
+                          AfterCost={deal.AfterCost}
+                          DisRate={deal.DisRate}
+                          Platform={deal.Platform}
+                        ></SmallCardItem></MediumCardMapDiv>
+                    );
+                  })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
+                  {data.slice(10, 20).map((deal) => {
+                    return (
+                      <MediumCardMapDiv>
+                        <SmallCardItem key={deal.id}
+                          Picture={deal.Picture}
+                          DevName={deal.DevName}
+                          SoftName={deal.SoftName}
+                          BeforeCost={deal.BeforeCost}
+                          AfterCost={deal.AfterCost}
+                          DisRate={deal.DisRate}
+                          Platform={deal.Platform}
+                        ></SmallCardItem></MediumCardMapDiv>
+                    );
+                  })}
+                </td>
+              </tr>
+            </MediumCardMapTable>
+        </section>
+          </div>
+      </main>
+      <footer class="footer">...</footer>
+
     </>
   );
 }

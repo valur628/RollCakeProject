@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import "./Compo_cards.css";
+import "../styles/Compo/Compo_cards.css";
+
 
 function LargeCardItem({
   Picture,

@@ -4,6 +4,7 @@ import Navbar from "./components/Compo_navibar";
 import HotdealPage from "./pages/HotdealPage";
 import MainPage from "./pages/MainPage";
 import SearchPage from "./pages/SearchPage";
+import Footers from "./components/Compo_footer";
 
 function App() {
   // let text = "text 1";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" component={MainPage}></Route>
           {/* exact 삭제 */}
         </Switch>
+        <Footers />
       </div>
     </Router>
   );
