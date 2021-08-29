@@ -13,8 +13,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/search" component={SearchPage} exact></Route>
           <Route path="/hotdeal" component={HotdealPage} exact></Route>
+          <Route path="/search" component={SearchPage} exact></Route>
           <Route path="/" component={MainPage}></Route>
           {/* exact 삭제 */}
         </Switch>

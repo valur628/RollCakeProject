@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import tempData from "../TempData.json";
+import axios from "axios";
 
+import tempData from "../TempData.json";
+import NoSearchResult from "../image/NoSearchResult.mp4";
 import { LargeCardItem, MediumCardItem } from "../components/Compo_cards";
 
 const filterDeals = (data, searchDeals) => {
@@ -32,11 +34,24 @@ const SearchPage = () => {
     // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
+  const [jjal, setJJal] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        "https://w.namu.la/s/4705988d97ae7079f94d86fd9059d94310f5c09543b6a2134e9d0d9c842e81f690f5da24ff6c27ee547ef259c219fe4cef3f910329b6ecbdfd5f1ceb10b0cdee1786392fce9a23b31b902a8a1b0729f9bb2b51c778b14306a1be061730b990f7"
+      )
+      .then((response) => {
+        setJJal(response);
+      });
+  });
+
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
   const filteredDeals = filterDeals(data, searchQuery);
-  console.log(filteredDeals);
+
+  const lengthAll = filteredDeals.length;
+  const lengthSoftName = filteredDeals.length;
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;
@@ -60,9 +75,14 @@ const SearchPage = () => {
 
   return (
     <div>
-      {/* <h1>SearchPage</h1> */}
-      {/* <Hotdeals hotdeals={filteredDeals} /> */}
-      <div>
+      {lengthAll <= 0 ? (
+        <LargeCardMapTable>
+          <h2>'{searchQuery}' 검색결과가 없습니다.</h2>
+          <video loop={true} muted={true} playsInline={true} autoPlay={true}>
+            <source src={NoSearchResult} type="video/mp4" />
+          </video>
+        </LargeCardMapTable>
+      ) : (
         <LargeCardMapTable>
           <LargeCardMapDiv>
             <h2>'{searchQuery}' 검색결과</h2>
@@ -74,19 +94,19 @@ const SearchPage = () => {
               aria-label="toolbar"
             >
               <button type="button" className="btn btn-dark">
-                전체 ({filteredDeals.length})
+                전체 ({lengthAll})
               </button>
               <button type="button" className="btn btn-dark">
-                게임 ({filteredDeals.length})
+                게임 ({lengthSoftName})
               </button>
               <button type="button" className="btn btn-dark">
-                소프트웨어 ({filteredDeals.length})
+                소프트웨어 ({lengthAll - lengthSoftName})
               </button>
               <button type="button" className="btn btn-dark">
-                개발사 ({filteredDeals.length})
+                개발사 ({lengthAll - lengthSoftName})
               </button>
               <button type="button" className="btn btn-dark">
-                태그 ({filteredDeals.length})
+                태그 ({lengthAll - lengthSoftName})
               </button>
             </SearchToolbar>
           </tr>
@@ -109,7 +129,7 @@ const SearchPage = () => {
             })}
           </tr>
         </LargeCardMapTable>
-      </div>
+      )}
     </div>
   );
 };

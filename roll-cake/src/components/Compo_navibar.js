@@ -43,17 +43,7 @@ const Navbar = () => {
                 핫딜
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                activeClassName="active"
-                aria-current="page"
-                to="/Search"
-              >
-                Search
-              </Link>
-            </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 className="nav-link"
                 activeClassName="active"
@@ -62,7 +52,7 @@ const Navbar = () => {
               >
                 Disabled
               </Link>
-            </li>
+            </li> */}
           </ul>
           <SearchBar
             searchQuery={searchQuery}

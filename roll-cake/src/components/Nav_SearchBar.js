@@ -21,7 +21,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
       <button
         className="btn btn-outline-light"
         type="submit"
-        onClick={() => history.push("/Search")}
+        onClick={() => history.push("/search")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
