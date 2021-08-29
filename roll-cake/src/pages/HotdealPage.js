@@ -2,20 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tempData from "../TempData.json";
 
-import { LargeCardItem, MediumCardItem } from "../components/Compo_cards";
-
-const filterDeals = (data, searchDeals) => {
-  if (!searchDeals) {
-    return data;
-  }
-
-  console.log("filterDeals", data, searchDeals);
-
-  return data.filter((post) => {
-    const postName = post.SoftName.toLowerCase();
-    return postName.includes(searchDeals);
-  });
-};
+import { LargeCardItem } from "../components/Compo_cards";
 
 const HotdealPage = () => {
   const [data, setData] = useState([]);

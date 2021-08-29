@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
 import "../styles/Main/Main.css";
 import jsonData from "../TempData.json";
 
@@ -30,15 +30,18 @@ function MainPage() {
                 />
                 <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
                   <CarouselLogoImage
-                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true" alt="Logo">
-                  </CarouselLogoImage>
+                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true"
+                    alt="Logo"
+                  ></CarouselLogoImage>
                 </a>
-                <CarouselSlideCardItem><SlideCardItem
-                  DevName="CD 프로젝트 레드"
-                  SoftName="사이버펑크 2077"
-                  AfterCost="50,000"
-                  DisRate="25">
-                </SlideCardItem></CarouselSlideCardItem>
+                <CarouselSlideCardItem>
+                  <SlideCardItem
+                    DevName="CD 프로젝트 레드"
+                    SoftName="사이버펑크 2077"
+                    AfterCost="50,000"
+                    DisRate="25"
+                  ></SlideCardItem>
+                </CarouselSlideCardItem>
               </CarouselDiv>
             </Carousel.Item>
             <Carousel.Item>
@@ -50,15 +53,18 @@ function MainPage() {
                 />
                 <a href="https://store.steampowered.com/app/1517290/Battlefield_2042/">
                   <CarouselLogoImageInvert
-                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true" alt="Logo">
-                  </CarouselLogoImageInvert>
+                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true"
+                    alt="Logo"
+                  ></CarouselLogoImageInvert>
                 </a>
-                <CarouselSlideCardItem><SlideCardItem
-                  DevName="EA DICE"
-                  SoftName="배틀필드 2042"
-                  AfterCost="100,000"
-                  DisRate="50">
-                </SlideCardItem></CarouselSlideCardItem>
+                <CarouselSlideCardItem>
+                  <SlideCardItem
+                    DevName="EA DICE"
+                    SoftName="배틀필드 2042"
+                    AfterCost="100,000"
+                    DisRate="50"
+                  ></SlideCardItem>
+                </CarouselSlideCardItem>
               </CarouselDiv>
             </Carousel.Item>
             <Carousel.Item>
@@ -70,21 +76,24 @@ function MainPage() {
                 />
                 <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
                   <CarouselLogoImage
-                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true" alt="Logo">
-                  </CarouselLogoImage>
+                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true"
+                    alt="Logo"
+                  ></CarouselLogoImage>
                 </a>
-                <CarouselSlideCardItem><SlideCardItem
-                  DevName="락스타 게임즈"
-                  SoftName="레드 데드 리뎀션"
-                  AfterCost="150,000"
-                  DisRate="100">
-                </SlideCardItem></CarouselSlideCardItem>
+                <CarouselSlideCardItem>
+                  <SlideCardItem
+                    DevName="락스타 게임즈"
+                    SoftName="레드 데드 리뎀션"
+                    AfterCost="150,000"
+                    DisRate="100"
+                  ></SlideCardItem>
+                </CarouselSlideCardItem>
               </CarouselDiv>
             </Carousel.Item>
           </Carousel>
         </section>
-          <div>
-        <section>
+        <div>
+          <section>
             <MediumCardMapTable>
               <tr>
                 <MediumCardHeaderTd>인기 순 핫딜</MediumCardHeaderTd>
@@ -96,7 +105,8 @@ function MainPage() {
                   {data.slice(0, 10).map((deal) => {
                     return (
                       <MediumCardMapDiv>
-                        <MediumCardItem key={deal.id}
+                        <MediumCardItem
+                          key={deal.id}
                           Picture={deal.Picture}
                           DevName={deal.DevName}
                           SoftName={deal.SoftName}
@@ -104,13 +114,18 @@ function MainPage() {
                           AfterCost={deal.AfterCost}
                           DisRate={deal.DisRate}
                           Platform={deal.Platform}
-                        ></MediumCardItem></MediumCardMapDiv>
+                        ></MediumCardItem>
+                      </MediumCardMapDiv>
                     );
-                  })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
+                  })}
+                </td>
+                <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
+                <td>
                   {data.slice(0, 10).map((deal) => {
                     return (
                       <MediumCardMapDiv>
-                        <MediumCardItem key={deal.id}
+                        <MediumCardItem
+                          key={deal.id}
                           Picture={deal.Picture}
                           DevName={deal.DevName}
                           SoftName={deal.SoftName}
@@ -118,7 +133,8 @@ function MainPage() {
                           AfterCost={deal.AfterCost}
                           DisRate={deal.DisRate}
                           Platform={deal.Platform}
-                        ></MediumCardItem></MediumCardMapDiv>
+                        ></MediumCardItem>
+                      </MediumCardMapDiv>
                     );
                   })}
                 </td>
@@ -137,8 +153,8 @@ function MainPage() {
                 </MediumCardButtonTd>
               </tr>
             </MediumCardMapTable>
-        </section>
-        <section>
+          </section>
+          <section>
             <MediumCardMapTable>
               <tr>
                 <MediumCardHeader2Td>최신 순 핫딜</MediumCardHeader2Td>
@@ -150,7 +166,8 @@ function MainPage() {
                   {data.slice(0, 10).map((deal) => {
                     return (
                       <MediumCardMapDiv>
-                        <SmallCardItem key={deal.id}
+                        <SmallCardItem
+                          key={deal.id}
                           Picture={deal.Picture}
                           DevName={deal.DevName}
                           SoftName={deal.SoftName}
@@ -158,13 +175,18 @@ function MainPage() {
                           AfterCost={deal.AfterCost}
                           DisRate={deal.DisRate}
                           Platform={deal.Platform}
-                        ></SmallCardItem></MediumCardMapDiv>
+                        ></SmallCardItem>
+                      </MediumCardMapDiv>
                     );
-                  })}</td><MediumCardMapMiddleTd></MediumCardMapMiddleTd><td>
+                  })}
+                </td>
+                <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
+                <td>
                   {data.slice(10, 20).map((deal) => {
                     return (
                       <MediumCardMapDiv>
-                        <SmallCardItem key={deal.id}
+                        <SmallCardItem
+                          key={deal.id}
                           Picture={deal.Picture}
                           DevName={deal.DevName}
                           SoftName={deal.SoftName}
@@ -172,17 +194,17 @@ function MainPage() {
                           AfterCost={deal.AfterCost}
                           DisRate={deal.DisRate}
                           Platform={deal.Platform}
-                        ></SmallCardItem></MediumCardMapDiv>
+                        ></SmallCardItem>
+                      </MediumCardMapDiv>
                     );
                   })}
                 </td>
               </tr>
             </MediumCardMapTable>
-        </section>
-          </div>
+          </section>
+        </div>
       </main>
       <footer class="footer">...</footer>
-
     </>
   );
 }
@@ -196,65 +218,64 @@ overflow: hidden;
 style="cursor: default"
 `;
 const CarouselImage = styled.img`
-display: inline-block;
-overflow: hidden;
-width: auto;
-height: 100%;
-object-fit: cover;
+  display: inline-block;
+  overflow: hidden;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
 `;
 const CarouselLogoImage = styled.img`
-width: 25%;
-position: absolute;
-top: 35%;
-left: 18%;
+  width: 25%;
+  position: absolute;
+  top: 35%;
+  left: 18%;
 `;
 const CarouselLogoImageInvert = styled.img`
-width: 25%;
-position: absolute;
-top: 35%;
-left: 18%;
-filter: invert(100%);
+  width: 25%;
+  position: absolute;
+  top: 35%;
+  left: 18%;
+  filter: invert(100%);
 `;
 const CarouselSlideCardItem = styled.div`
-width: 100%;
-height: 100%;
-position: absolute;
-top: 25%;
-left: 58%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  left: 58%;
 `;
 
 const MediumCardMapTable = styled.table`
-margin-left: auto;
-margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const MediumCardHeaderTd = styled.td`
-padding-top: 5%;
-font-family: "BusanBada";
-vertical-align: center;
-text-align: center;
-font-size: 140%;
-padding-bottom: 0.5%;
+  padding-top: 5%;
+  font-family: "BusanBada";
+  vertical-align: center;
+  text-align: center;
+  font-size: 140%;
+  padding-bottom: 0.5%;
 `;
 const MediumCardHeader2Td = styled.td`
-padding-top: 50%;
-font-family: "BusanBada";
-vertical-align: center;
-text-align: center;
-font-size: 140%;
-padding-bottom: 2.5%;
+  padding-top: 50%;
+  font-family: "BusanBada";
+  vertical-align: center;
+  text-align: center;
+  font-size: 140%;
+  padding-bottom: 2.5%;
 `;
 const MediumCardMapDiv = styled.div`
-padding-bottom: 4%;
+  padding-bottom: 4%;
 `;
 const MediumCardMapMiddleTd = styled.td`
-width: 5%;
-text-align: center;
+  width: 5%;
+  text-align: center;
 `;
-const MediumCardButtonDiv = styled.div`
-`;
+const MediumCardButtonDiv = styled.div``;
 const MediumCardButtonTd = styled.td`
-font-family: "NanumSquareRound";
-vertical-align: center;
-text-align: center;
+  font-family: "NanumSquareRound";
+  vertical-align: center;
+  text-align: center;
 `;
 export default MainPage;

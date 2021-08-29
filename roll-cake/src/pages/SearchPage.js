@@ -4,7 +4,7 @@ import axios from "axios";
 
 import tempData from "../TempData.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
-import { LargeCardItem, MediumCardItem } from "../components/Compo_cards";
+import { LargeCardItem } from "../components/Compo_cards";
 
 const filterDeals = (data, searchDeals) => {
   if (!searchDeals) {
@@ -34,7 +34,7 @@ const SearchPage = () => {
     // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
-  const [jjal, setJJal] = useState([]);
+  const [jjal, setJJal] = useState();
   useEffect(() => {
     axios
       .get(
@@ -80,6 +80,7 @@ const SearchPage = () => {
           <h2>'{searchQuery}' 검색결과가 없습니다.</h2>
           <video loop={true} muted={true} playsInline={true} autoPlay={true}>
             <source src={NoSearchResult} type="video/mp4" />
+            {/* <source src={jjal} type="video/mp4" /> */}
           </video>
         </LargeCardMapTable>
       ) : (
