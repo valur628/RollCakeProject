@@ -4,7 +4,7 @@ import axios from "axios";
 
 import tempData from "../TempData.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
-import { LargeCardItem } from "../components/Compo_cards";
+import Hotdeals from "../components/Hotdeals";
 
 const filterDeals = (data, searchDeals) => {
   if (!searchDeals) {
@@ -38,7 +38,7 @@ const SearchPage = () => {
   useEffect(() => {
     axios
       .get(
-        "https://w.namu.la/s/4705988d97ae7079f94d86fd9059d94310f5c09543b6a2134e9d0d9c842e81f690f5da24ff6c27ee547ef259c219fe4cef3f910329b6ecbdfd5f1ceb10b0cdee1786392fce9a23b31b902a8a1b0729f9bb2b51c778b14306a1be061730b990f7"
+        "https://namu.wiki/w/%ED%8C%8C%EC%9D%BC%3A%EB%82%B4%EA%B0%80%20%EA%B3%A0%EC%9E%90%EB%9D%BC%EB%8B%88.gif"
       )
       .then((response) => {
         setJJal(response);
@@ -68,7 +68,7 @@ const SearchPage = () => {
     vertical-align: middle;
     text-align: center;
   `;
-  const LargeCardMapDiv = styled.div`
+  const SearcQueryH2 = styled.h2`
     padding-top: 2%;
     padding-bottom: 2%;
   `;
@@ -76,18 +76,23 @@ const SearchPage = () => {
   return (
     <div>
       {lengthAll <= 0 ? (
+        // 검색결과가 0과 같거나 적을때 실행
         <LargeCardMapTable>
-          <h2>'{searchQuery}' 검색결과가 없습니다.</h2>
-          <video loop={true} muted={true} playsInline={true} autoPlay={true}>
-            <source src={NoSearchResult} type="video/mp4" />
-            {/* <source src={jjal} type="video/mp4" /> */}
-          </video>
+          <tr>
+            <SearcQueryH2>'{searchQuery}' 검색결과가 없습니다.</SearcQueryH2>
+          </tr>
+          <tr>
+            <video loop={true} muted={true} playsInline={true} autoPlay={true}>
+              <source src={NoSearchResult} type="video/mp4" />
+            </video>
+          </tr>
         </LargeCardMapTable>
       ) : (
+        // 검색결과가 0보다 많을때 실행
         <LargeCardMapTable>
-          <LargeCardMapDiv>
-            <h2>'{searchQuery}' 검색결과</h2>
-          </LargeCardMapDiv>
+          <tr>
+            <SearcQueryH2>'{searchQuery}' 검색결과</SearcQueryH2>
+          </tr>
           <tr>
             <SearchToolbar
               className="btn-group btn-group-lg btn-group-custom"
@@ -112,22 +117,7 @@ const SearchPage = () => {
             </SearchToolbar>
           </tr>
           <tr>
-            {filteredDeals.map((deal) => {
-              return (
-                <LargeCardMapDiv>
-                  <LargeCardItem
-                    key={deal.id}
-                    Picture={deal.Picture}
-                    DevName={deal.DevName}
-                    SoftName={deal.SoftName}
-                    BeforeCost={deal.BeforeCost}
-                    AfterCost={deal.AfterCost}
-                    DisRate={deal.DisRate}
-                    Platform={deal.Platform}
-                  />
-                </LargeCardMapDiv>
-              );
-            })}
+            <Hotdeals hotdeals={filteredDeals} />
           </tr>
         </LargeCardMapTable>
       )}

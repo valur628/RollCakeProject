@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tempData from "../TempData.json";
 
-import { LargeCardItem } from "../components/Compo_cards";
+import Hotdeals from "../components/Hotdeals";
 
 const HotdealPage = () => {
   const [data, setData] = useState([]);
@@ -19,8 +19,10 @@ const HotdealPage = () => {
     // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
-  const lengthAll = data.length;
-  const lengthSoftName = data.length;
+  const [order, setOrder] = useState();
+  useEffect(() => {
+    console.log(order);
+  }, [order]);
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;
@@ -38,60 +40,57 @@ const HotdealPage = () => {
     vertical-align: middle;
     text-align: center;
   `;
-  const LargeCardMapDiv = styled.div`
-    padding-top: 2%;
-    padding-bottom: 2%;
-  `;
 
   return (
     <div>
-      {/* <h1>SearchPage</h1> */}
-      {/* <Hotdeals hotdeals={filteredDeals} /> */}
-      <div>
-        <LargeCardMapTable>
-          <tr>
-            <HotdealToolbar
-              className="btn-group btn-group-lg btn-group-custom"
-              role="group"
-              aria-label="toolbar"
+      <LargeCardMapTable>
+        <tr>
+          <HotdealToolbar
+            className="btn-group btn-group-lg btn-group-custom"
+            role="group"
+            aria-label="toolbar"
+          >
+            <button
+              type="button"
+              className="btn btn-dark"
+              // onClick={setOrder("latest")}
             >
-              <button type="button" className="btn btn-dark">
-                전체 ({lengthAll})
-              </button>
-              <button type="button" className="btn btn-dark">
-                게임 ({lengthSoftName})
-              </button>
-              <button type="button" className="btn btn-dark">
-                소프트웨어 ({lengthAll - lengthSoftName})
-              </button>
-              <button type="button" className="btn btn-dark">
-                개발사 ({lengthAll - lengthSoftName})
-              </button>
-              <button type="button" className="btn btn-dark">
-                태그 ({lengthAll - lengthSoftName})
-              </button>
-            </HotdealToolbar>
-          </tr>
-          <tr>
-            {data.map((deal) => {
-              return (
-                <LargeCardMapDiv>
-                  <LargeCardItem
-                    key={deal.id}
-                    Picture={deal.Picture}
-                    DevName={deal.DevName}
-                    SoftName={deal.SoftName}
-                    BeforeCost={deal.BeforeCost}
-                    AfterCost={deal.AfterCost}
-                    DisRate={deal.DisRate}
-                    Platform={deal.Platform}
-                  />
-                </LargeCardMapDiv>
-              );
-            })}
-          </tr>
-        </LargeCardMapTable>
-      </div>
+              최신순
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              // onClick={setOrder("popularity")}
+            >
+              인기순
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              // onClick={setOrder("name")}
+            >
+              이름순
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              // onClick={setOrder("price")}
+            >
+              가격순
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              // onClick={setOrder("disRate")}
+            >
+              할인율순
+            </button>
+          </HotdealToolbar>
+        </tr>
+        <tr>
+          <Hotdeals hotdeals={data} order={order} />
+        </tr>
+      </LargeCardMapTable>
     </div>
   );
 };
