@@ -6,19 +6,6 @@ import tempData from "../TempData.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
 import Hotdeals from "../components/Hotdeals";
 
-const filterDeals = (data, searchDeals) => {
-  if (!searchDeals) {
-    return data;
-  }
-
-  console.log("filterDeals", data, searchDeals);
-
-  return data.filter((post) => {
-    const postName = post.SoftName.toLowerCase();
-    return postName.includes(searchDeals);
-  });
-};
-
 const SearchPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -30,9 +17,30 @@ const SearchPage = () => {
     //       setData(response.data); // 코드의 핵심
     //       console.log(response.data);
     //     });
-    setData(tempData); // 코드의 핵심
-    // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
+    setData(tempData); // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
+
+  const filterDeals = (data, query) => {
+    if (!query) {
+      return data;
+    }
+
+    // query = query.toLowerCase();
+
+    try {
+      return data.filter((post) => {
+        const softName = post.SoftName.toLowerCase();
+        const devName = post.DevName.toLowerCase();
+        // return softName.includes(query);
+
+        const softdev = [softName, devName];
+
+        return softdev.includes(query);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const [jjal, setJJal] = useState();
   useEffect(() => {
@@ -48,10 +56,13 @@ const SearchPage = () => {
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
-  const filteredDeals = filterDeals(data, searchQuery);
 
-  const lengthAll = filteredDeals.length;
-  const lengthSoftName = filteredDeals.length;
+  const filteredDeals = filterDeals(data, searchQuery);
+  const fSoft = filteredDeals.soft;
+  const fDev = filteredDeals.dev;
+  console.log(filteredDeals);
+  // const lengthAll = fSoft.length + fDev.length;
+  const lengthAll = 1;
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;
@@ -103,16 +114,18 @@ const SearchPage = () => {
                 전체 ({lengthAll})
               </button>
               <button type="button" className="btn btn-dark">
-                게임 ({lengthSoftName})
+                {/* 게임 ({fSoft.length}) */}
               </button>
               <button type="button" className="btn btn-dark">
-                소프트웨어 ({lengthAll - lengthSoftName})
+                소프트웨어 (0)
+                {/* 소프트웨어 ({lengthSoftName}) */}
               </button>
               <button type="button" className="btn btn-dark">
-                개발사 ({lengthAll - lengthSoftName})
+                {/* 개발사 ({fDev.length}) */}
               </button>
               <button type="button" className="btn btn-dark">
-                태그 ({lengthAll - lengthSoftName})
+                태그 (0)
+                {/* 태그 ({lengthAll - lengthSoftName}) */}
               </button>
             </SearchToolbar>
           </tr>
