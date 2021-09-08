@@ -20,22 +20,31 @@ const SearchPage = () => {
     setData(tempData); // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
+  // 객체 프로토타입을 만들어서 상속 해야할듯..?
   const filterDeals = (data, query) => {
     if (!query) {
       return data;
     }
 
-    // query = query.toLowerCase();
-
     try {
       return data.filter((post) => {
         const softName = post.SoftName.toLowerCase();
         const devName = post.DevName.toLowerCase();
-        // return softName.includes(query);
 
-        const softdev = [softName, devName];
-
-        return softdev.includes(query);
+        return softName.includes(query);
+        // console.log(
+        //   "result:",
+        //   softName.includes(query) || devName.includes(query),
+        //   "softLength:",
+        //   [softName.includes(query)].length,
+        //   "devLength:",
+        //   [devName.includes(query)].length
+        // );
+        // return {
+        //   result: softName.includes(query) || devName.includes(query),
+        //   softLength: [softName.includes(query)].length,
+        //   devLength: [devName.includes(query)].length,
+        // };
       });
     } catch (e) {
       console.log(e);
@@ -58,11 +67,12 @@ const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState(query || "");
 
   const filteredDeals = filterDeals(data, searchQuery);
-  const fSoft = filteredDeals.soft;
-  const fDev = filteredDeals.dev;
-  console.log(filteredDeals);
-  // const lengthAll = fSoft.length + fDev.length;
-  const lengthAll = 1;
+  // const result = filteredDeals.result;
+  // const fSoft = filteredDeals.softLength;
+  // const fDev = filteredDeals.devLength;
+  // const lengthAll = fSoft + fDev;
+  // console.log("lengthAll", fSoft, fDev);
+  const lengthAll = filteredDeals.length;
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;
