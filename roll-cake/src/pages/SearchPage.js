@@ -5,6 +5,7 @@ import axios from "axios";
 import tempData from "../TempData.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
 import Hotdeals from "../components/Hotdeals";
+// import { searchSoft, searchDev } from "../components/Search_module";
 
 const SearchPage = () => {
   const [data, setData] = useState([]);
@@ -20,37 +21,6 @@ const SearchPage = () => {
     setData(tempData); // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
-  // 객체 프로토타입을 만들어서 상속 해야할듯..?
-  const filterDeals = (data, query) => {
-    if (!query) {
-      return data;
-    }
-
-    try {
-      return data.filter((post) => {
-        const softName = post.SoftName.toLowerCase();
-        const devName = post.DevName.toLowerCase();
-
-        return softName.includes(query);
-        // console.log(
-        //   "result:",
-        //   softName.includes(query) || devName.includes(query),
-        //   "softLength:",
-        //   [softName.includes(query)].length,
-        //   "devLength:",
-        //   [devName.includes(query)].length
-        // );
-        // return {
-        //   result: softName.includes(query) || devName.includes(query),
-        //   softLength: [softName.includes(query)].length,
-        //   devLength: [devName.includes(query)].length,
-        // };
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   const [jjal, setJJal] = useState();
   useEffect(() => {
     axios
@@ -62,16 +32,26 @@ const SearchPage = () => {
       });
   });
 
+  const searchSoft = (data, query) => {
+    if (!query) {
+      return data;
+    }
+
+    try {
+      return data.filter((post) => {
+        const softName = post.SoftName.toLowerCase();
+        return softName.includes(query);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
 
-  const filteredDeals = filterDeals(data, searchQuery);
-  // const result = filteredDeals.result;
-  // const fSoft = filteredDeals.softLength;
-  // const fDev = filteredDeals.devLength;
-  // const lengthAll = fSoft + fDev;
-  // console.log("lengthAll", fSoft, fDev);
+  const filteredDeals = searchSoft(data, searchQuery);
   const lengthAll = filteredDeals.length;
 
   const LargeCardMapTable = styled.table`
@@ -124,13 +104,14 @@ const SearchPage = () => {
                 전체 ({lengthAll})
               </button>
               <button type="button" className="btn btn-dark">
-                {/* 게임 ({fSoft.length}) */}
+                게임 ({lengthAll.length})
               </button>
               <button type="button" className="btn btn-dark">
                 소프트웨어 (0)
                 {/* 소프트웨어 ({lengthSoftName}) */}
               </button>
               <button type="button" className="btn btn-dark">
+                개발사 (0)
                 {/* 개발사 ({fDev.length}) */}
               </button>
               <button type="button" className="btn btn-dark">
