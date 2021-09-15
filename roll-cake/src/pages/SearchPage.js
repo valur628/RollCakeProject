@@ -32,14 +32,31 @@ const SearchPage = () => {
       });
   });
 
-  const searchSoft = (data, query) => {
+  const [searchType, onValueChange] = useState();
+
+  const searchGame = (data, query) => {
     if (!query) {
       return data;
     }
 
     try {
       return data.filter((post) => {
-        const softName = post.SoftName.toLowerCase();
+        const softName = post.SoftName.toLowerCase(); // 클래스로 만들 예정
+        return softName.includes(query);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const searchDev = (data, query) => {
+    if (!query) {
+      return data;
+    }
+
+    try {
+      return data.filter((post) => {
+        const softName = post.DevName.toLowerCase(); // 클래스로 만들 예정
         return softName.includes(query);
       });
     } catch (e) {
@@ -51,8 +68,11 @@ const SearchPage = () => {
   const query = new URLSearchParams(search).get("s");
   const [searchQuery, setSearchQuery] = useState(query || "");
 
-  const filteredDeals = searchSoft(data, searchQuery);
-  const lengthAll = filteredDeals.length;
+  const fillteredGame = searchGame(data, searchQuery);
+  const fillteredDev = searchDev(data, searchQuery);
+  // const fillteredSoft = searchSoft(data, searchQuery);
+
+  const lengthAll = fillteredGame.length + fillteredDev.length;
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;
@@ -100,28 +120,77 @@ const SearchPage = () => {
               role="group"
               aria-label="toolbar"
             >
-              <button type="button" className="btn btn-dark">
+              <label type="button" className="btn btn-dark">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option1"
+                  autocomplete="off"
+                  // checked={this.state.selectedOption === "all"}
+                  onChange={() => onValueChange((searchType = 1))}
+                />
                 전체 ({lengthAll})
-              </button>
-              <button type="button" className="btn btn-dark">
-                게임 ({lengthAll.length})
-              </button>
-              <button type="button" className="btn btn-dark">
+              </label>
+
+              <label type="button" className="btn btn-dark">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option2"
+                  autocomplete="off"
+                  // checked={this.state.selectedOption === "게임"}
+                  // onChange={this.onValueChange}
+                />
+                게임 ({fillteredGame.length})
+              </label>
+
+              <label type="button" className="btn btn-dark">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option3"
+                  autocomplete="off"
+                  // checked={this.state.selectedOption === "소프트웨어"}
+                  // onChange={this.onValueChange}
+                />
                 소프트웨어 (0)
                 {/* 소프트웨어 ({lengthSoftName}) */}
-              </button>
-              <button type="button" className="btn btn-dark">
-                개발사 (0)
-                {/* 개발사 ({fDev.length}) */}
-              </button>
-              <button type="button" className="btn btn-dark">
+              </label>
+
+              <label type="button" className="btn btn-dark">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option4"
+                  autocomplete="off"
+                  // checked={this.state.selectedOption === "개발사"}
+                  // onChange={this.onValueChange}
+                />
+                개발사 ({fillteredDev.length})
+              </label>
+
+              <label type="button" className="btn btn-dark">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option5"
+                  autocomplete="off"
+                  // checked={this.state.selectedOption === "태그"}
+                  // onChange={this.onValueChange}
+                />
                 태그 (0)
                 {/* 태그 ({lengthAll - lengthSoftName}) */}
-              </button>
+              </label>
             </SearchToolbar>
           </tr>
           <tr>
-            <Hotdeals hotdeals={filteredDeals} />
+            <Hotdeals hotdeals={fillteredGame} />
+            <Hotdeals hotdeals={fillteredDev} />
           </tr>
         </LargeCardMapTable>
       )}
