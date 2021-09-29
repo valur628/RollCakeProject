@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import tempData from "../TempData.json";
+import tempData from "../DBresult.json";
 
 import Hotdeals from "../components/Hotdeals";
 

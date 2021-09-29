@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import tempData from "../TempData.json";
+import tempData from "../DBresult.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
 import Hotdeals from "../components/Hotdeals";
 // import { searchSoft, searchDev } from "../components/Search_module";
