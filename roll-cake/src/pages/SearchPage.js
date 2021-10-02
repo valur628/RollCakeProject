@@ -10,6 +10,9 @@ import Hotdeals from "../components/Hotdeals";
 const SearchPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
+    setData(tempData.ScrapingDB); // json의 array의 이름 가져옴
+    // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
+
     //   axios
     //     .get(
     //       "https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/TempData.json"
@@ -18,7 +21,6 @@ const SearchPage = () => {
     //       setData(response.data); // 코드의 핵심
     //       console.log(response.data);
     //     });
-    setData(tempData); // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
   }, []);
 
   const [jjal, setJJal] = useState();
@@ -32,47 +34,8 @@ const SearchPage = () => {
       });
   });
 
-  const [searchType, onValueChange] = useState();
-
-  const searchGame = (data, query) => {
-    if (!query) {
-      return data;
-    }
-
-    try {
-      return data.filter((post) => {
-        const softName = post.SoftName.toLowerCase(); // 클래스로 만들 예정
-        return softName.includes(query);
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const searchDev = (data, query) => {
-    if (!query) {
-      return data;
-    }
-
-    try {
-      return data.filter((post) => {
-        const softName = post.DevName.toLowerCase(); // 클래스로 만들 예정
-        return softName.includes(query);
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get("s");
-  const [searchQuery, setSearchQuery] = useState(query || "");
-
-  const fillteredGame = searchGame(data, searchQuery);
-  const fillteredDev = searchDev(data, searchQuery);
-  // const fillteredSoft = searchSoft(data, searchQuery);
-
-  const lengthAll = fillteredGame.length + fillteredDev.length;
+  // 검색 페이지 내에서의 정렬에 사용
+  // const [searchType, setSearchType] = useState();
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;
@@ -94,22 +57,52 @@ const SearchPage = () => {
     padding-bottom: 2%;
   `;
 
+  const searchGame = (data, query) => {
+    if (!query) {
+      return data;
+    }
+
+    try {
+      return data.filter((post) => {
+        const softName = post.DB_SoftName.toLowerCase(); // 클래스로 만들 예정
+        return softName.includes(query);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const searchDev = (data, query) => {
+    if (!query) {
+      return data;
+    }
+
+    try {
+      return data.filter((post) => {
+        const softName = post.DB_DevName.toLowerCase(); // 클래스로 만들 예정
+        return softName.includes(query);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
+
+  const fillteredGame = searchGame(data, searchQuery);
+  const fillteredDev = searchDev(data, searchQuery);
+  // const fillteredSoft = searchSoft(data, searchQuery);
+  console.log("fillterdGame", fillteredGame);
+
+  const lengthAll = fillteredGame.length + fillteredDev.length;
+  console.log("legth", lengthAll);
+
   return (
     <div>
-      {lengthAll <= 0 ? (
-        // 검색결과가 0과 같거나 적을때 실행
-        <LargeCardMapTable>
-          <tr>
-            <SearcQueryH2>'{searchQuery}' 검색결과가 없습니다.</SearcQueryH2>
-          </tr>
-          <tr>
-            <video loop={true} muted={true} playsInline={true} autoPlay={true}>
-              <source src={NoSearchResult} type="video/mp4" />
-            </video>
-          </tr>
-        </LargeCardMapTable>
-      ) : (
-        // 검색결과가 0보다 많을때 실행
+      {lengthAll > 0 ? (
+        // 검색결과가 있으면 실행
         <LargeCardMapTable>
           <tr>
             <SearcQueryH2>'{searchQuery}' 검색결과</SearcQueryH2>
@@ -128,7 +121,7 @@ const SearchPage = () => {
                   id="option1"
                   autocomplete="off"
                   // checked={this.state.selectedOption === "all"}
-                  onChange={() => onValueChange((searchType = 1))}
+                  // onChange={() => setSearchType(1)}
                 />
                 전체 ({lengthAll})
               </label>
@@ -191,6 +184,18 @@ const SearchPage = () => {
           <tr>
             <Hotdeals hotdeals={fillteredGame} />
             <Hotdeals hotdeals={fillteredDev} />
+          </tr>
+        </LargeCardMapTable>
+      ) : (
+        // 검색결과가 없으면 실행
+        <LargeCardMapTable>
+          <tr>
+            <SearcQueryH2>'{searchQuery}' 검색결과가 없습니다.</SearcQueryH2>
+          </tr>
+          <tr>
+            <video loop={true} muted={true} playsInline={true} autoPlay={true}>
+              <source src={NoSearchResult} type="video/mp4" />
+            </video>
           </tr>
         </LargeCardMapTable>
       )}

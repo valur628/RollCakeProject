@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import "../styles/Compo/Compo_cards.css";
 
-
 function LargeCardItem({
   Picture,
   Platform,
@@ -9,7 +8,7 @@ function LargeCardItem({
   SoftName,
   BeforeCost,
   AfterCost,
-  DisRate
+  DisRate,
 }) {
   return (
     <LarWrapperDiv>
@@ -30,9 +29,9 @@ function LargeCardItem({
               <LarDevString>{DevName}</LarDevString>
             </LarDevStringTd>
             <LarCostStringTd>
-              <LarBeforeCostString>{BeforeCost}</LarBeforeCostString>
+              <LarBeforeCostString>{BeforeCost / 100}</LarBeforeCostString>
               &nbsp;→&nbsp;
-              <LarAfterCostString>{AfterCost}</LarAfterCostString>
+              <LarAfterCostString>{AfterCost / 100}</LarAfterCostString>
             </LarCostStringTd>
             <LarPlatImageTd rowSpan="2">
               <LarPlatImage>
@@ -50,7 +49,7 @@ function LargeCardItem({
               <LarSoftString>{SoftName}</LarSoftString>
             </LarSoftStringTd>
             <LarRateStringTd>
-              <LarRateString>{DisRate}</LarRateString>
+              <LarRateString>{(DisRate / 100).toFixed(0)}%</LarRateString>
             </LarRateStringTd>
           </tr>
         </thead>
@@ -177,7 +176,7 @@ function MediumCardItem({
   SoftName,
   BeforeCost,
   AfterCost,
-  DisRate
+  DisRate,
 }) {
   return (
     <MedWrapperDiv>
@@ -438,7 +437,6 @@ const SmaAfterCostString = styled.text`
 
 export { SmallCardItem };
 
-
 function SlideCardItem({ DevName, SoftName, AfterCost, DisRate }) {
   return (
     <SliWrapperDiv>
@@ -485,49 +483,49 @@ const SliWrapperTable = styled.table`
   height: 100%;
   max-width: 17.25vw; //300px
   max-height: 10.8vw; //230px
-  background-color: rgba( 0, 0, 0, 0.5 );
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   color: #ffffff;
   box-sizing: border-box;
 `;
 
 const SliDevStringTd = styled.td`
-text-align: center;
-padding-top: 8%; //8%
+  text-align: center;
+  padding-top: 8%; //8%
 `;
 
 const SliDevString = styled.text`
-border: 0px solid black;
-font-size: 1.05vw; //18px
+  border: 0px solid black;
+  font-size: 1.05vw; //18px
 `;
 
 const SliSoftStringTd = styled.td`
-text-align: center;
-padding-top: 1%; //1%
+  text-align: center;
+  padding-top: 1%; //1%
 `;
 
 const SliSoftString = styled.text`
-font-weight: 900;
-font-size: 1.35vw; //24px
+  font-weight: 900;
+  font-size: 1.35vw; //24px
 `;
 
 const SliCostStringTd = styled.td`
-text-align: center;
-padding-top: 8%; //8%
+  text-align: center;
+  padding-top: 8%; //8%
 `;
 
 const SliCostString = styled.text`
-font-weight: bold;
-font-size: 1.2vw; //21px
+  font-weight: bold;
+  font-size: 1.2vw; //21px
 `;
 
 const SliRateStringTd = styled.td`
-text-align: center;
-padding-bottom: 4%; //4%
+  text-align: center;
+  padding-bottom: 4%; //4%
 `;
 
 const SliRateString = styled.text`
-font-size: 1.05vw; //18px
+  font-size: 1.05vw; //18px
 `;
 
 export { SlideCardItem };
