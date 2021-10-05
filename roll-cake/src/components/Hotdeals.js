@@ -75,6 +75,7 @@ const Hotdeals = ({ hotdeals, order = "latest" }) => {
               AfterCost={deal.DB_DisCost}
               DisRate={deal.DB_DisRate}
               Platform={deal.DB_Platform}
+              Address={deal.DB_ProductAddress}
             />
           </LargeCardMapDiv>
         );

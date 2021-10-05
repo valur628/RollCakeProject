@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import "../styles/Compo/Compo_cards.css";
 
+const onHandleClick = (Address) => {
+  window.open(Address, "_blank");
+};
+
 function LargeCardItem({
   Picture,
   Platform,
@@ -9,9 +13,10 @@ function LargeCardItem({
   BeforeCost,
   AfterCost,
   DisRate,
+  Address,
 }) {
   return (
-    <LarWrapperDiv>
+    <LarWrapperDiv onClick={() => onHandleClick(Address)}>
       <LarWrapperTable>
         <thead>
           <tr>
@@ -177,9 +182,10 @@ function MediumCardItem({
   BeforeCost,
   AfterCost,
   DisRate,
+  Address,
 }) {
   return (
-    <MedWrapperDiv>
+    <MedWrapperDiv onClick={() => onHandleClick(Address)}>
       <MedWrapperTable>
         <thead>
           <tr>
@@ -337,9 +343,9 @@ const MedRateString = styled.text`
 
 export { MediumCardItem };
 
-function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost }) {
+function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
   return (
-    <SmaWrapperDiv>
+    <SmaWrapperDiv onClick={() => onHandleClick(Address)}>
       <SmaWrapperTable>
         <thead>
           <tr>
@@ -437,9 +443,9 @@ const SmaAfterCostString = styled.text`
 
 export { SmallCardItem };
 
-function SlideCardItem({ DevName, SoftName, AfterCost, DisRate }) {
+function SlideCardItem({ DevName, SoftName, AfterCost, DisRate, Address }) {
   return (
-    <SliWrapperDiv>
+    <SliWrapperDiv onClick={() => onHandleClick(Address)}>
       <SliWrapperTable>
         <thead>
           <tr>
