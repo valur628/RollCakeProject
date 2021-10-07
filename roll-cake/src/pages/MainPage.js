@@ -2,18 +2,22 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Carousel from "react-bootstrap/Carousel";
 import "../styles/Main/Main.css";
-import jsonData from "../TempData.json";
+// import jsonData from "../TempData.json";
+import jsonData from "../DBresult.json";
 
-import { LargeCardItem } from "../components/Compo_cards";
-import { MediumCardItem } from "../components/Compo_cards";
-import { SmallCardItem } from "../components/Compo_cards";
-import { SlideCardItem } from "../components/Compo_cards";
+import {
+  MediumCardItem,
+  SmallCardItem,
+  SlideCardItem,
+} from "../components/Compo_cards";
+
+import { HotdealsS, HotdealsM } from "../components/Hotdeals";
 
 function MainPage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(jsonData);
+    setData(jsonData.ScrapingDB);
   }, []);
 
   return (
@@ -102,41 +106,11 @@ function MainPage() {
               </tr>
               <tr>
                 <td>
-                  {data.slice(0, 10).map((deal) => {
-                    return (
-                      <MediumCardMapDiv>
-                        <MediumCardItem
-                          key={deal.id}
-                          Picture={deal.Picture}
-                          DevName={deal.DevName}
-                          SoftName={deal.SoftName}
-                          BeforeCost={deal.BeforeCost}
-                          AfterCost={deal.AfterCost}
-                          DisRate={deal.DisRate}
-                          Platform={deal.Platform}
-                        ></MediumCardItem>
-                      </MediumCardMapDiv>
-                    );
-                  })}
+                  <HotdealsM hotdeals={data} order="popularity" />
                 </td>
                 <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
                 <td>
-                  {data.slice(0, 10).map((deal) => {
-                    return (
-                      <MediumCardMapDiv>
-                        <MediumCardItem
-                          key={deal.id}
-                          Picture={deal.Picture}
-                          DevName={deal.DevName}
-                          SoftName={deal.SoftName}
-                          BeforeCost={deal.BeforeCost}
-                          AfterCost={deal.AfterCost}
-                          DisRate={deal.DisRate}
-                          Platform={deal.Platform}
-                        ></MediumCardItem>
-                      </MediumCardMapDiv>
-                    );
-                  })}
+                  <HotdealsM hotdeals={data} order="price" />
                 </td>
               </tr>
               <tr>
@@ -163,41 +137,11 @@ function MainPage() {
             <MediumCardMapTable>
               <tr>
                 <td>
-                  {data.slice(0, 10).map((deal) => {
-                    return (
-                      <MediumCardMapDiv>
-                        <SmallCardItem
-                          key={deal.id}
-                          Picture={deal.Picture}
-                          DevName={deal.DevName}
-                          SoftName={deal.SoftName}
-                          BeforeCost={deal.BeforeCost}
-                          AfterCost={deal.AfterCost}
-                          DisRate={deal.DisRate}
-                          Platform={deal.Platform}
-                        ></SmallCardItem>
-                      </MediumCardMapDiv>
-                    );
-                  })}
+                  <HotdealsS hotdeals={data} num={10} />
                 </td>
                 <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
                 <td>
-                  {data.slice(10, 20).map((deal) => {
-                    return (
-                      <MediumCardMapDiv>
-                        <SmallCardItem
-                          key={deal.id}
-                          Picture={deal.Picture}
-                          DevName={deal.DevName}
-                          SoftName={deal.SoftName}
-                          BeforeCost={deal.BeforeCost}
-                          AfterCost={deal.AfterCost}
-                          DisRate={deal.DisRate}
-                          Platform={deal.Platform}
-                        ></SmallCardItem>
-                      </MediumCardMapDiv>
-                    );
-                  })}
+                  <HotdealsS hotdeals={data} num={20} />
                 </td>
               </tr>
             </MediumCardMapTable>

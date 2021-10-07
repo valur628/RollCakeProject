@@ -15,6 +15,19 @@ function LargeCardItem({
   DisRate,
   Address,
 }) {
+  switch (Platform) {
+    case "steam":
+      console.log(Platform);
+      var logo =
+        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+    default:
+      // eslint-disable-next-line no-redeclare
+      var logo =
+        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+  }
+
   return (
     <LarWrapperDiv onClick={() => onHandleClick(Address)}>
       <LarWrapperTable>
@@ -41,7 +54,7 @@ function LargeCardItem({
             <LarPlatImageTd rowSpan="2">
               <LarPlatImage>
                 <img
-                  src={Platform}
+                  src={logo}
                   alt="MainPlatform"
                   width="100%"
                   height="100%"
@@ -184,6 +197,18 @@ function MediumCardItem({
   DisRate,
   Address,
 }) {
+  switch (Platform) {
+    case "steam":
+      console.log(Platform);
+      var logo =
+        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+    default:
+      // eslint-disable-next-line no-redeclare
+      var logo =
+        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+  }
   return (
     <MedWrapperDiv onClick={() => onHandleClick(Address)}>
       <MedWrapperTable>
@@ -205,7 +230,7 @@ function MediumCardItem({
             <MedPlatImageTd rowSpan="2">
               <MedPlatImage>
                 <img
-                  src={Platform}
+                  src={logo}
                   alt="MainPlatform"
                   width="100%"
                   height="100%"
@@ -344,6 +369,18 @@ const MedRateString = styled.text`
 export { MediumCardItem };
 
 function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
+  switch (Platform) {
+    case "steam":
+      console.log(Platform);
+      var logo =
+        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+    default:
+      // eslint-disable-next-line no-redeclare
+      var logo =
+        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+  }
   return (
     <SmaWrapperDiv onClick={() => onHandleClick(Address)}>
       <SmaWrapperTable>
@@ -352,7 +389,7 @@ function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
             <SmaPlatImageTd>
               <SmaPlatImage>
                 <img
-                  src={Platform}
+                  src={logo}
                   alt="MainPlatform"
                   width="100%"
                   height="100%"

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tempData from "../DBresult.json";
 // import tempData from "../TempData.json";
 
-import Hotdeals from "../components/Hotdeals";
+import HotdealsL from "../components/Hotdeals";
 
 const HotdealPage = () => {
   const [data, setData] = useState([]);
@@ -92,7 +92,7 @@ const HotdealPage = () => {
           </HotdealToolbar>
         </tr>
         <tr>
-          <Hotdeals hotdeals={data} order={order} />
+          <HotdealsL hotdeals={data} order={order} />
         </tr>
       </LargeCardMapTable>
     </>
