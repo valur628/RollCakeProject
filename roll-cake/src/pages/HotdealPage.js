@@ -5,7 +5,7 @@ import tempData from "../DBresult.json";
 
 import HotdealsL from "../components/Hotdeals";
 
-const HotdealPage = () => {
+const HotdealPage = (props) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     setData(tempData.ScrapingDB); // json의 array의 이름 가져옴
@@ -21,7 +21,7 @@ const HotdealPage = () => {
     //     });
   }, []);
 
-  const [order, setOrder] = useState();
+  const [order, setOrder] = useState(props);
   useEffect(() => {
     console.log(order);
   }, [order]);
@@ -99,4 +99,5 @@ const HotdealPage = () => {
   );
 };
 
+export { HotdealPage };
 export default HotdealPage;

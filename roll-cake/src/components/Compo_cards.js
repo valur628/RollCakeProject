@@ -138,7 +138,13 @@ const LarSoftString = styled.text`
   border: 0px solid black;
   font-weight: 900;
   font-size: 50px;
+  width: 550px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
+// 이름 길때 줄임.
 
 const LarCostStringTd = styled.td`
   vertical-align: top;
@@ -245,14 +251,14 @@ function MediumCardItem({
           </tr>
           <tr>
             <MedRateStringTd rowSpan="2">
-              <MedRateString>{DisRate}</MedRateString>
+              <MedRateString>{(DisRate / 100).toFixed(0)}%</MedRateString>
             </MedRateStringTd>
           </tr>
           <tr>
             <MedCostStringTd>
-              <MedBeforeCostString>{BeforeCost}</MedBeforeCostString>
+              <MedBeforeCostString>{BeforeCost / 100}</MedBeforeCostString>
               &nbsp;→&nbsp;
-              <MedAfterCostString>{AfterCost}</MedAfterCostString>
+              <MedAfterCostString>{AfterCost / 100}</MedAfterCostString>
             </MedCostStringTd>
           </tr>
         </thead>
@@ -318,7 +324,13 @@ const MedSoftString = styled.text`
   border: 0px solid black;
   font-weight: 900;
   font-size: 25px;
+  width: 270px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
+// 이름 길때 줄임.
 
 const MedCostStringTd = styled.td`
   width: 48%;
@@ -400,9 +412,9 @@ function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
               <SmaSoftString>{SoftName}</SmaSoftString>
             </SmaSoftStringTd>
             <SmaCostStringTd>
-              <SmaBeforeCostString>{BeforeCost}</SmaBeforeCostString>
+              <SmaBeforeCostString>{BeforeCost / 100}</SmaBeforeCostString>
               &nbsp;→&nbsp;
-              <SmaAfterCostString>{AfterCost}</SmaAfterCostString>
+              <SmaAfterCostString>{AfterCost / 100}</SmaAfterCostString>
             </SmaCostStringTd>
           </tr>
         </thead>
@@ -453,7 +465,13 @@ const SmaSoftString = styled.text`
   border: 0px solid black;
   font-weight: 900;
   font-size: 20px;
+  width: 320px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
+// 이름 길때 줄임.
 
 const SmaCostStringTd = styled.td`
   vertical-align: center;
@@ -497,12 +515,12 @@ function SlideCardItem({ DevName, SoftName, AfterCost, DisRate, Address }) {
           </tr>
           <tr>
             <SliCostStringTd>
-              <SliCostString>{AfterCost} KRW</SliCostString>
+              <SliCostString>{AfterCost / 100} KRW</SliCostString>
             </SliCostStringTd>
           </tr>
           <tr>
             <SliRateStringTd>
-              <SliRateString>{DisRate}% 할인</SliRateString>
+              <SliRateString>{(DisRate / 100).toFixed(0)}% 할인</SliRateString>
             </SliRateStringTd>
           </tr>
         </thead>

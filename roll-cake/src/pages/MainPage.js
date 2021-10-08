@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Carousel from "react-bootstrap/Carousel";
 import "../styles/Main/Main.css";
 // import jsonData from "../TempData.json";
 import jsonData from "../DBresult.json";
 
-import {
-  MediumCardItem,
-  SmallCardItem,
-  SlideCardItem,
-} from "../components/Compo_cards";
-
+import { SlideCardItem } from "../components/Compo_cards";
 import { HotdealsS, HotdealsM } from "../components/Hotdeals";
+import { HotdealPage } from "../pages/HotdealPage";
 
 function MainPage() {
   const [data, setData] = useState([]);
@@ -42,8 +39,8 @@ function MainPage() {
                   <SlideCardItem
                     DevName="CD 프로젝트 레드"
                     SoftName="사이버펑크 2077"
-                    AfterCost="50,000"
-                    DisRate="25"
+                    AfterCost="5000000"
+                    DisRate="2500"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -65,8 +62,8 @@ function MainPage() {
                   <SlideCardItem
                     DevName="EA DICE"
                     SoftName="배틀필드 2042"
-                    AfterCost="100,000"
-                    DisRate="50"
+                    AfterCost="1000000"
+                    DisRate="5000"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -88,8 +85,8 @@ function MainPage() {
                   <SlideCardItem
                     DevName="락스타 게임즈"
                     SoftName="레드 데드 리뎀션"
-                    AfterCost="150,000"
-                    DisRate="100"
+                    AfterCost="1500000"
+                    DisRate="1000"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -116,13 +113,38 @@ function MainPage() {
               <tr>
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
-                    <button class="MoreButton">인기 핫딜 더 보기 →</button>
+                    <Link
+                      className="nav-link"
+                      activeClassName="active"
+                      aria-current="page"
+                      to="/hotdeal"
+                    >
+                      <button
+                        class="MoreButton"
+                        onclick={() => HotdealPage("popularity")}
+                      >
+                        인기 핫딜 더 보기 →
+                      </button>
+                    </Link>
                   </MediumCardButtonDiv>
                 </MediumCardButtonTd>
                 <td></td>
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
-                    <button class="MoreButton">가격 핫딜 더 보기 →</button>
+                    <Link
+                      className="nav-link"
+                      activeClassName="active"
+                      aria-current="page"
+                      to="/hotdeal"
+                    >
+                      {/* /hotdeal로 이동하면서 usestate 실행하기..? */}
+                      <button
+                        class="MoreButton"
+                        onclick={() => HotdealPage("price")}
+                      >
+                        가격 핫딜 더 보기 →
+                      </button>
+                    </Link>
                   </MediumCardButtonDiv>
                 </MediumCardButtonTd>
               </tr>
@@ -209,9 +231,9 @@ const MediumCardHeader2Td = styled.td`
   font-size: 140%;
   padding-bottom: 2.5%;
 `;
-const MediumCardMapDiv = styled.div`
-  padding-bottom: 4%;
-`;
+// const MediumCardMapDiv = styled.div`
+//   padding-bottom: 4%;
+// `;
 const MediumCardMapMiddleTd = styled.td`
   width: 5%;
   text-align: center;
@@ -222,4 +244,5 @@ const MediumCardButtonTd = styled.td`
   vertical-align: center;
   text-align: center;
 `;
+
 export default MainPage;
