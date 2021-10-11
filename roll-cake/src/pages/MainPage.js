@@ -177,7 +177,7 @@ function MainPage() {
 const CarouselDiv = styled.div`
 display: inline-block;
 width: 100%;
-height: 40vh;
+height: 40vmin;
 max-width: 1919px;
 max-height: 500px;
 overflow: hidden;
@@ -186,7 +186,7 @@ style="cursor: default"
 const CarouselImage = styled.img`
   display: inline-block;
   overflow: hidden;
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 `;

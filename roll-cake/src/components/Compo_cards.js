@@ -12,11 +12,12 @@ function LargeCardItem({
   SoftName,
   BeforeCost,
   AfterCost,
+  Currency,
   DisRate,
   Address,
 }) {
   switch (Platform) {
-    case "steam":
+    case "Steam":
       console.log(Platform);
       var logo =
         "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
@@ -25,6 +26,21 @@ function LargeCardItem({
       // eslint-disable-next-line no-redeclare
       var logo =
         "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      break;
+  }
+
+  switch (Currency) {
+    case "KRW":
+      console.log("Currency", Currency);
+      Currency = "₩";
+      break;
+    case "USD":
+      console.log("Currency", Currency);
+      Currency = "$";
+      break;
+    default:
+      console.log("Error,", Currency);
+      Currency = "₩";
       break;
   }
 
@@ -47,9 +63,15 @@ function LargeCardItem({
               <LarDevString>{DevName}</LarDevString>
             </LarDevStringTd>
             <LarCostStringTd>
-              <LarBeforeCostString>{BeforeCost / 100}</LarBeforeCostString>
+              <LarBeforeCostString>
+                {Currency}
+                {BeforeCost / 100}
+              </LarBeforeCostString>
               &nbsp;→&nbsp;
-              <LarAfterCostString>{AfterCost / 100}</LarAfterCostString>
+              <LarAfterCostString>
+                {Currency}
+                {AfterCost / 100}
+              </LarAfterCostString>
             </LarCostStringTd>
             <LarPlatImageTd rowSpan="2">
               <LarPlatImage>
@@ -78,25 +100,29 @@ function LargeCardItem({
 
 const LarWrapperDiv = styled.article`
   border: 0px solid black;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 1200px;
-  max-height: 170px;
+  // max-height: 170px;
+  // max-width: 62.5vw;
+  max-height: 22vmin;
   object-fit: cover;
   border-collapse: collapse;
   background-color: #f0f5f9;
   border-radius: 12px;
+  vertical-align: center;
 `;
 
 const LarWrapperTable = styled.table`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 1200px;
-  max-height: 170px;
+  max-height: 22vmin; // 170px
+  vertical-align: center;
 `;
 
 const LarSoftImageTd = styled.td`
-  width: 20%;
+  width: 25%; // 20%
   vertical-align: center;
   text-align: center;
 `;
@@ -106,15 +132,15 @@ const LarSoftImage = styled.div`
   vertical-align: center;
   padding-top: 8.5%;
   padding-bottom: 7%;
-  padding-left: 10%;
-  padding-right: 10%;
-  width: 80%;
+  padding-left: 5%; // 10%
+  padding-right: 7.5%; // 10 %
+  // width: 80%;
 `;
 
 const LarDevStringTd = styled.td`
   height: 35%;
   width: 40%;
-  font-size: 33px;
+  font-size: 3vmin; // 33px
   color: #a9abad;
   text-align: left;
   vertical-align: top;
@@ -137,8 +163,8 @@ const LarSoftStringTd = styled.td`
 const LarSoftString = styled.text`
   border: 0px solid black;
   font-weight: 900;
-  font-size: 50px;
-  width: 550px;
+  font-size: 4.6vmin; // 50px
+  width: 50vmin; // 550px
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -150,7 +176,7 @@ const LarCostStringTd = styled.td`
   vertical-align: top;
   text-align: right;
   padding-top: 1%;
-  font-size: 33px;
+  font-size: 3vmin; // 33px
   font-weight: bold;
 `;
 
@@ -174,7 +200,7 @@ const LarRateStringTd = styled.td`
 const LarRateString = styled.text`
   border: 0px solid black;
   padding-right: 9%;
-  font-size: 70px;
+  font-size: 6.5vmin; // 70px
   font-weight: bold;
   font-style: normal;
 `;
@@ -200,6 +226,7 @@ function MediumCardItem({
   SoftName,
   BeforeCost,
   AfterCost,
+  Currency,
   DisRate,
   Address,
 }) {
@@ -215,6 +242,22 @@ function MediumCardItem({
         "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
       break;
   }
+
+  switch (Currency) {
+    case "KRW":
+      console.log("Currency", Currency);
+      Currency = "₩";
+      break;
+    case "USD":
+      console.log("Currency", Currency);
+      Currency = "$";
+      break;
+    default:
+      console.log("Error,", Currency);
+      Currency = "₩";
+      break;
+  }
+
   return (
     <MedWrapperDiv onClick={() => onHandleClick(Address)}>
       <MedWrapperTable>
@@ -256,9 +299,15 @@ function MediumCardItem({
           </tr>
           <tr>
             <MedCostStringTd>
-              <MedBeforeCostString>{BeforeCost / 100}</MedBeforeCostString>
+              <MedBeforeCostString>
+                {Currency}
+                {BeforeCost / 100}
+              </MedBeforeCostString>
               &nbsp;→&nbsp;
-              <MedAfterCostString>{AfterCost / 100}</MedAfterCostString>
+              <MedAfterCostString>
+                {Currency}
+                {AfterCost / 100}
+              </MedAfterCostString>
             </MedCostStringTd>
           </tr>
         </thead>
@@ -269,22 +318,25 @@ function MediumCardItem({
 
 const MedWrapperDiv = styled.article`
   border: 0px solid black;
-  width: 100%;
-  height: 100%;
-  max-width: 540px;
-  max-height: 120px;
+  width: 50vw;
+  height: 100vh;
+  max-width: 540px; //540px
+  max-height: 11vmin; //120px
   object-fit: cover;
   border-collapse: collapse;
   background-color: #f0f5f9;
   border-radius: 12px;
+  vertical-align: center;
 `;
+// 가로 세로를 vw, vh로 변경
 
 const MedWrapperTable = styled.table`
   width: 100%;
   height: 100%;
-  max-width: 540px;
-  max-height: 120px;
+  max-width: 540px
+  max-height: 11vmin; //120px
 `;
+// 가로 세로를 vw, vh로 변경
 
 const MedSoftImageTd = styled.td`
   width: 32%;
@@ -301,7 +353,8 @@ const MedSoftImage = styled.div`
 
 const MedDevStringTd = styled.td`
   height: 30%;
-  font-size: 15px;
+  // font-size: 15px;
+  font-size: 1.4vmin;
   color: #a9abad;
   text-align: left;
   vertical-align: bottom;
@@ -323,8 +376,9 @@ const MedSoftStringTd = styled.td`
 const MedSoftString = styled.text`
   border: 0px solid black;
   font-weight: 900;
-  font-size: 25px;
-  width: 270px;
+  // font-size: 25px;
+  font-size: 2.3vmin;
+  width: 23vmin; // 250px
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -337,7 +391,7 @@ const MedCostStringTd = styled.td`
   vertical-align: bottom;
   padding-bottom: 3%;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 1.4vmin; // 15px
 `;
 
 const MedBeforeCostString = styled.text`
@@ -373,14 +427,22 @@ const MedRateStringTd = styled.td`
 const MedRateString = styled.text`
   border: 0px solid black;
   padding-right: 5%;
-  font-size: 30px;
+  // font-size: 30px;
+  font-size: 2.8vmin; // 30px
   font-weight: bold;
   font-style: normal;
 `;
 
 export { MediumCardItem };
 
-function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
+function SmallCardItem({
+  Platform,
+  SoftName,
+  BeforeCost,
+  AfterCost,
+  Currency,
+  Address,
+}) {
   switch (Platform) {
     case "steam":
       console.log(Platform);
@@ -393,6 +455,22 @@ function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
         "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
       break;
   }
+
+  switch (Currency) {
+    case "KRW":
+      console.log("Currency", Currency);
+      Currency = "₩";
+      break;
+    case "USD":
+      console.log("Currency", Currency);
+      Currency = "$";
+      break;
+    default:
+      console.log("Error,", Currency);
+      Currency = "₩";
+      break;
+  }
+
   return (
     <SmaWrapperDiv onClick={() => onHandleClick(Address)}>
       <SmaWrapperTable>
@@ -412,9 +490,15 @@ function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
               <SmaSoftString>{SoftName}</SmaSoftString>
             </SmaSoftStringTd>
             <SmaCostStringTd>
-              <SmaBeforeCostString>{BeforeCost / 100}</SmaBeforeCostString>
+              <SmaBeforeCostString>
+                {Currency}
+                {BeforeCost / 100}
+              </SmaBeforeCostString>
               &nbsp;→&nbsp;
-              <SmaAfterCostString>{AfterCost / 100}</SmaAfterCostString>
+              <SmaAfterCostString>
+                {Currency}
+                {AfterCost / 100}
+              </SmaAfterCostString>
             </SmaCostStringTd>
           </tr>
         </thead>
@@ -425,21 +509,22 @@ function SmallCardItem({ Platform, SoftName, BeforeCost, AfterCost, Address }) {
 
 const SmaWrapperDiv = styled.article`
   border: 0px solid black;
-  width: 100%;
-  height: 100%;
-  max-width: 540px;
-  max-height: 48px;
+  width: 50vw;
+  height: 100vh;
+  max-width: 540px; // 540px
+  max-height: 4.6vmin; // 50px
   object-fit: cover;
   border-collapse: collapse;
   background-color: #f0f5f9;
   border-radius: 12px;
+  vertical-align: center;
 `;
 
 const SmaWrapperTable = styled.table`
   width: 100%;
   height: 100%;
-  max-width: 540px;
-  max-height: 48px;
+  max-width: 540px; // 540px
+  max-height: 4.6vmin; // 50px
 `;
 
 const SmaPlatImageTd = styled.td`
@@ -464,9 +549,9 @@ const SmaSoftStringTd = styled.td`
 const SmaSoftString = styled.text`
   border: 0px solid black;
   font-weight: 900;
-  font-size: 20px;
-  width: 320px;
-  display: block;
+  font-size: 1.852vmin; // 20px
+  width: 23vmin; // 248px
+  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -477,7 +562,7 @@ const SmaCostStringTd = styled.td`
   vertical-align: center;
   text-align: right;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.852vmin; // 20px
   padding-right: 5%;
 `;
 
@@ -486,14 +571,14 @@ const SmaBeforeCostString = styled.text`
   text-decoration: line-through;
   color: #f7c9c5;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.852vmin; // 20px
 `;
 
 const SmaAfterCostString = styled.text`
   border: 0px solid black;
   color: #e74333;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.852vmin; // 20px
 `;
 
 export { SmallCardItem };
@@ -532,18 +617,18 @@ function SlideCardItem({ DevName, SoftName, AfterCost, DisRate, Address }) {
 const SliWrapperDiv = styled.article`
   border: 0px solid black;
   width: 100%;
-  height: 100%;
-  max-width: 17.25vw; //300px
-  max-height: 10.8vw; //230px
+  height: 80%;
+  max-width: 25vmin; //300px
+  max-height: 20vmin; //230px
   object-fit: cover;
   border-collapse: collapse;
 `;
 
 const SliWrapperTable = styled.table`
   width: 100%;
-  height: 100%;
-  max-width: 17.25vw; //300px
-  max-height: 10.8vw; //230px
+  height: 80%;
+  max-width: 25vmin; //300px
+  max-height: 20vmin; //230px
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   color: #ffffff;

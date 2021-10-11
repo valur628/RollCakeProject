@@ -37,6 +37,7 @@ const HotdealsS = ({ hotdeals, num = 10 }) => {
               SoftName={deal.DB_SoftName}
               BeforeCost={deal.DB_RegCost}
               AfterCost={deal.DB_DisCost}
+              Currency={deal.DB_Currency}
               Platform={deal.DB_Platform}
               Address={deal.DB_ProductAddress}
             />
@@ -81,6 +82,7 @@ const HotdealsM = ({ hotdeals, order = "popularity" }) => {
               SoftName={deal.DB_SoftName}
               BeforeCost={deal.DB_RegCost}
               AfterCost={deal.DB_DisCost}
+              Currency={deal.DB_Currency}
               DisRate={deal.DB_DisRate}
               Platform={deal.DB_Platform}
               Address={deal.DB_ProductAddress}
@@ -158,6 +160,7 @@ const HotdealsL = ({ hotdeals, order = "latest" }) => {
               SoftName={deal.DB_SoftName}
               BeforeCost={deal.DB_RegCost}
               AfterCost={deal.DB_DisCost}
+              Currency={deal.DB_Currency}
               DisRate={deal.DB_DisRate}
               Platform={deal.DB_Platform}
               Address={deal.DB_ProductAddress}
