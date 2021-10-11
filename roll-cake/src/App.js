@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Compo_navibar";
+import Navigation from "./components/Compo_navibar";
 import HotdealPage from "./pages/HotdealPage";
 import MainPage from "./pages/MainPage";
 import SearchPage from "./pages/SearchPage";
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navigation />
         <Switch>
           <Route path="/hotdeal" component={HotdealPage} exact></Route>
           <Route path="/search" component={SearchPage} exact></Route>
