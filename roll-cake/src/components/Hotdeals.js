@@ -50,7 +50,7 @@ const HotdealsS = ({ hotdeals, num = 10 }) => {
 
 export { HotdealsS };
 
-const HotdealsM = ({ hotdeals, order = "popularity" }) => {
+const HotdealsM = ({ hotdeals, order = "price" }) => {
   // 메인페이지의 인기 순, 가격 순 핫딜 정보
   // 메인페이지에서 order 파라미터 받아옴
   // 인기 순: popularity, 가격 순: price

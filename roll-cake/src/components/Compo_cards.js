@@ -1,4 +1,11 @@
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+
+import logo_Steam from "../image/logo/Steam.png";
+import logo_Humble_Bundle from "../image/logo/Humble_Bundle.png";
+import logo_Epic_Games from "../image/logo/Epic_Games.png";
+import logo_GOG from "../image/logo/GOG.png";
+
 import "../styles/Compo/Compo_cards.css";
 
 const onHandleClick = (Address) => {
@@ -16,26 +23,36 @@ function LargeCardItem({
   DisRate,
   Address,
 }) {
+  // const [logo, setLogo] = useState([]);
+  var logo;
+
   switch (Platform) {
     case "Steam":
       console.log(Platform);
-      var logo =
-        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      logo = logo_Steam;
+      break;
+    case "HumbleBundle":
+      console.log(Platform);
+      logo = logo_Humble_Bundle;
+      break;
+    case "GOG":
+      console.log(Platform);
+      logo = logo_GOG;
       break;
     default:
       // eslint-disable-next-line no-redeclare
-      var logo =
-        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      console.log("Error Platform", Platform);
+      logo = logo_Epic_Games;
       break;
   }
 
   switch (Currency) {
     case "KRW":
-      console.log("Currency", Currency);
+      // console.log("Currency", Currency);
       Currency = "₩";
       break;
     case "USD":
-      console.log("Currency", Currency);
+      // console.log("Currency", Currency);
       Currency = "$";
       break;
     default:
@@ -230,26 +247,35 @@ function MediumCardItem({
   DisRate,
   Address,
 }) {
+  var logo;
+
   switch (Platform) {
-    case "steam":
+    case "Steam":
       console.log(Platform);
-      var logo =
-        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      logo = logo_Steam;
+      break;
+    case "HumbleBundle":
+      console.log(Platform);
+      logo = logo_Humble_Bundle;
+      break;
+    case "GOG":
+      console.log(Platform);
+      logo = logo_GOG;
       break;
     default:
       // eslint-disable-next-line no-redeclare
-      var logo =
-        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      console.log("Error Platform", Platform);
+      logo = logo_Epic_Games;
       break;
   }
 
   switch (Currency) {
     case "KRW":
-      console.log("Currency", Currency);
+      // console.log("Currency", Currency);
       Currency = "₩";
       break;
     case "USD":
-      console.log("Currency", Currency);
+      // console.log("Currency", Currency);
       Currency = "$";
       break;
     default:
@@ -443,26 +469,35 @@ function SmallCardItem({
   Currency,
   Address,
 }) {
+  var logo;
+
   switch (Platform) {
-    case "steam":
+    case "Steam":
       console.log(Platform);
-      var logo =
-        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      logo = logo_Steam;
+      break;
+    case "HumbleBundle":
+      console.log(Platform);
+      logo = logo_Humble_Bundle;
+      break;
+    case "GOG":
+      console.log(Platform);
+      logo = logo_GOG;
       break;
     default:
       // eslint-disable-next-line no-redeclare
-      var logo =
-        "https://github.com/wncjf2000/RollCakeComponents/blob/main/pic/Steam_icon_logo.png?raw=true";
+      console.log("Error Platform", Platform);
+      logo = logo_Epic_Games;
       break;
   }
 
   switch (Currency) {
     case "KRW":
-      console.log("Currency", Currency);
+      // console.log("Currency", Currency);
       Currency = "₩";
       break;
     case "USD":
-      console.log("Currency", Currency);
+      // console.log("Currency", Currency);
       Currency = "$";
       break;
     default:

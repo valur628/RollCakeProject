@@ -8,7 +8,6 @@ import jsonData from "../DBresult.json";
 
 import { SlideCardItem } from "../components/Compo_cards";
 import { HotdealsS, HotdealsM } from "../components/Hotdeals";
-import { HotdealPage } from "../pages/HotdealPage";
 
 function MainPage() {
   const [data, setData] = useState([]);
@@ -103,6 +102,7 @@ function MainPage() {
               </tr>
               <tr>
                 <td>
+                  {/* <HotdealsM hotdeals={data} order="popularity" /> */}
                   <HotdealsM hotdeals={data} order="popularity" />
                 </td>
                 <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
@@ -113,15 +113,10 @@ function MainPage() {
               <tr>
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
-                    <Link
-                      className="nav-link"
-                      activeClassName="active"
-                      aria-current="page"
-                      to="/hotdeal"
-                    >
+                    <Link to="/hotdeal">
                       <button
                         class="MoreButton"
-                        onclick={() => HotdealPage("popularity")}
+                        // onclick={() => HotdealPage("popularity")}
                       >
                         인기 핫딜 더 보기 →
                       </button>
@@ -131,16 +126,11 @@ function MainPage() {
                 <td></td>
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
-                    <Link
-                      className="nav-link"
-                      activeClassName="active"
-                      aria-current="page"
-                      to="/hotdeal"
-                    >
+                    <Link to="/hotdeal">
                       {/* /hotdeal로 이동하면서 usestate 실행하기..? */}
                       <button
                         class="MoreButton"
-                        onclick={() => HotdealPage("price")}
+                        // onclick={() => HotdealPage("price")}
                       >
                         가격 핫딜 더 보기 →
                       </button>

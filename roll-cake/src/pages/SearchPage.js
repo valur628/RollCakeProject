@@ -68,7 +68,7 @@ const SearchPage = () => {
         return softName.includes(query);
       });
     } catch (e) {
-      console.log(e);
+      console.log("Error:", e);
     }
   };
 
@@ -83,7 +83,7 @@ const SearchPage = () => {
         return softName.includes(query);
       });
     } catch (e) {
-      console.log(e);
+      console.log("Error:", e);
     }
   };
 
@@ -94,10 +94,7 @@ const SearchPage = () => {
   const fillteredGame = searchGame(data, searchQuery);
   const fillteredDev = searchDev(data, searchQuery);
   // const fillteredSoft = searchSoft(data, searchQuery);
-  console.log("fillterdGame", fillteredGame);
-
   const lengthAll = fillteredGame.length + fillteredDev.length;
-  console.log("legth", lengthAll);
 
   return (
     <div>
