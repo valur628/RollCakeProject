@@ -4,7 +4,8 @@ import axios from "axios";
 
 import tempData from "../DBresult.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
-import Hotdeals from "../components/Hotdeals";
+
+import HotdealsL from "../components/Hotdeals";
 // import { searchSoft, searchDev } from "../components/Search_module";
 
 const SearchPage = () => {
@@ -22,17 +23,6 @@ const SearchPage = () => {
     //       console.log(response.data);
     //     });
   }, []);
-
-  const [jjal, setJJal] = useState();
-  useEffect(() => {
-    axios
-      .get(
-        "https://namu.wiki/w/%ED%8C%8C%EC%9D%BC%3A%EB%82%B4%EA%B0%80%20%EA%B3%A0%EC%9E%90%EB%9D%BC%EB%8B%88.gif"
-      )
-      .then((response) => {
-        setJJal(response);
-      });
-  });
 
   // 검색 페이지 내에서의 정렬에 사용
   // const [searchType, setSearchType] = useState();
@@ -179,8 +169,8 @@ const SearchPage = () => {
             </SearchToolbar>
           </tr>
           <tr>
-            <Hotdeals hotdeals={fillteredGame} />
-            <Hotdeals hotdeals={fillteredDev} />
+            <HotdealsL hotdeals={fillteredGame} order />
+            <HotdealsL hotdeals={fillteredDev} order />
           </tr>
         </LargeCardMapTable>
       ) : (

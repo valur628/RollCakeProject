@@ -50,17 +50,20 @@ const HotdealsS = ({ hotdeals, num = 10 }) => {
 
 export { HotdealsS };
 
-const HotdealsM = ({ hotdeals, order = "price" }) => {
+const HotdealsM = ({ hotdeals, order = "LowPrice" }) => {
   // 메인페이지의 인기 순, 가격 순 핫딜 정보
   // 메인페이지에서 order 파라미터 받아옴
   // 인기 순: popularity, 가격 순: price
   switch (order) {
-    case "popularity":
-      console.log("order: ", order);
+    case "HighDisRate":
+      // console.log("order: ", order);
+      hotdeals.sort(function (a, b) {
+        return b.DB_DisRate - a.DB_DisRate; // 내림차순
+      });
       // 아직 개발안됨
       break;
-    case "price":
-      console.log("order: ", order);
+    case "LowPrice":
+      // console.log("order: ", order);
       hotdeals.sort(function (a, b) {
         return a.DB_DisCost - b.DB_DisCost; // 오름차순
       });
@@ -96,7 +99,7 @@ const HotdealsM = ({ hotdeals, order = "price" }) => {
 
 export { HotdealsM };
 
-const HotdealsL = ({ hotdeals, order = "latest" }) => {
+const HotdealsL = ({ hotdeals, order = "name" }) => {
   // HotdealPage, SearchPage에서 파라미터를 받아 카드 정렬 방법 변경
   // 최신순: latest, 인기순: popularity , 이름순: name , 가격순: price, 할인율 순: disRate
   // default: name
@@ -114,10 +117,6 @@ const HotdealsL = ({ hotdeals, order = "latest" }) => {
         return 0;
       });
       break;
-    case "popularity":
-      console.log("order: ", order);
-      // 아직 개발안됨
-      break;
     case "name":
       // software의 이름 순으로 정렬
       console.log("order: ", order);
@@ -131,16 +130,28 @@ const HotdealsL = ({ hotdeals, order = "latest" }) => {
         return 0;
       });
       break;
-    case "price":
+    case "HighPrice":
+      console.log("order: ", order);
+      hotdeals.sort(function (a, b) {
+        return b.DB_DisCost - a.DB_DisCost; // 오름차순
+      });
+      break;
+    case "LowPrice":
       console.log("order: ", order);
       hotdeals.sort(function (a, b) {
         return a.DB_DisCost - b.DB_DisCost; // 오름차순
       });
       break;
-    case "disRate":
+    case "HighDisRate":
       console.log("order: ", order);
       hotdeals.sort(function (a, b) {
         return b.DB_DisRate - a.DB_DisRate; // 내림차순
+      });
+      break;
+    case "LowDisRate":
+      console.log("order: ", order);
+      hotdeals.sort(function (a, b) {
+        return a.DB_DisRate - b.DB_DisRate; // 내림차순
       });
       break;
     default:

@@ -28,19 +28,15 @@ function LargeCardItem({
 
   switch (Platform) {
     case "Steam":
-      console.log(Platform);
       logo = logo_Steam;
       break;
     case "HumbleBundle":
-      console.log(Platform);
       logo = logo_Humble_Bundle;
       break;
     case "GOG":
-      console.log(Platform);
       logo = logo_GOG;
       break;
     default:
-      // eslint-disable-next-line no-redeclare
       console.log("Error Platform", Platform);
       logo = logo_Epic_Games;
       break;
@@ -48,11 +44,9 @@ function LargeCardItem({
 
   switch (Currency) {
     case "KRW":
-      // console.log("Currency", Currency);
       Currency = "₩";
       break;
     case "USD":
-      // console.log("Currency", Currency);
       Currency = "$";
       break;
     default:
@@ -251,19 +245,15 @@ function MediumCardItem({
 
   switch (Platform) {
     case "Steam":
-      console.log(Platform);
       logo = logo_Steam;
       break;
     case "HumbleBundle":
-      console.log(Platform);
       logo = logo_Humble_Bundle;
       break;
     case "GOG":
-      console.log(Platform);
       logo = logo_GOG;
       break;
     default:
-      // eslint-disable-next-line no-redeclare
       console.log("Error Platform", Platform);
       logo = logo_Epic_Games;
       break;
@@ -473,19 +463,15 @@ function SmallCardItem({
 
   switch (Platform) {
     case "Steam":
-      console.log(Platform);
       logo = logo_Steam;
       break;
     case "HumbleBundle":
-      console.log(Platform);
       logo = logo_Humble_Bundle;
       break;
     case "GOG":
-      console.log(Platform);
       logo = logo_GOG;
       break;
     default:
-      // eslint-disable-next-line no-redeclare
       console.log("Error Platform", Platform);
       logo = logo_Epic_Games;
       break;

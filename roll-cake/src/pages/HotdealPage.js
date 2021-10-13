@@ -23,7 +23,7 @@ const HotdealPage = (props) => {
 
   const [order, setOrder] = useState(props);
   useEffect(() => {
-    console.log(order);
+    // console.log(order);
   }, [order]);
 
   const LargeCardMapTable = styled.table`
@@ -61,13 +61,13 @@ const HotdealPage = (props) => {
             >
               최신순
             </button>
-            <button
+            {/* <button
               type="button"
               className="btn btn-dark"
               onClick={() => setOrder("popularity")}
             >
               인기순
-            </button>
+            </button> */}
             <button
               type="button"
               className="btn btn-dark"
@@ -78,16 +78,30 @@ const HotdealPage = (props) => {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={() => setOrder("price")}
+              onClick={() => setOrder("HighPrice")}
             >
-              가격순
+              높은가격순
             </button>
             <button
               type="button"
               className="btn btn-dark"
-              onClick={() => setOrder("disRate")}
+              onClick={() => setOrder("LowPrice")}
             >
-              할인율순
+              낮은가격순
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={() => setOrder("HighDisRate")}
+            >
+              높은할인율순
+            </button>
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={() => setOrder("LowDisRate")}
+            >
+              낮은할인율순
             </button>
           </HotdealToolbar>
         </tr>

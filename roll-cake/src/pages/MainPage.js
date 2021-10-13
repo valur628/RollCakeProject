@@ -96,30 +96,25 @@ function MainPage() {
           <section>
             <MediumCardMapTable>
               <tr>
-                <MediumCardHeaderTd>인기 순 핫딜</MediumCardHeaderTd>
+                <MediumCardHeaderTd>할인율 순 핫딜</MediumCardHeaderTd>
                 <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
                 <MediumCardHeaderTd>가격 순 핫딜</MediumCardHeaderTd>
               </tr>
               <tr>
                 <td>
                   {/* <HotdealsM hotdeals={data} order="popularity" /> */}
-                  <HotdealsM hotdeals={data} order="popularity" />
+                  <HotdealsM hotdeals={data} order="HighDisRate" />
                 </td>
                 <MediumCardMapMiddleTd></MediumCardMapMiddleTd>
                 <td>
-                  <HotdealsM hotdeals={data} order="price" />
+                  <HotdealsM hotdeals={data} order="LowPrice" />
                 </td>
               </tr>
               <tr>
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
                     <Link to="/hotdeal">
-                      <button
-                        class="MoreButton"
-                        // onclick={() => HotdealPage("popularity")}
-                      >
-                        인기 핫딜 더 보기 →
-                      </button>
+                      <button class="MoreButton">인기 핫딜 더 보기 →</button>
                     </Link>
                   </MediumCardButtonDiv>
                 </MediumCardButtonTd>
@@ -128,12 +123,7 @@ function MainPage() {
                   <MediumCardButtonDiv>
                     <Link to="/hotdeal">
                       {/* /hotdeal로 이동하면서 usestate 실행하기..? */}
-                      <button
-                        class="MoreButton"
-                        // onclick={() => HotdealPage("price")}
-                      >
-                        가격 핫딜 더 보기 →
-                      </button>
+                      <button class="MoreButton">가격 핫딜 더 보기 →</button>
                     </Link>
                   </MediumCardButtonDiv>
                 </MediumCardButtonTd>
