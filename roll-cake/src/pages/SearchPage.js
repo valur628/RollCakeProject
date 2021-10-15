@@ -1,88 +1,83 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import db from "../components/firebase.config";
 
+import db from "../components/firebase.config";
+import { onSnapshot, getData, collection } from "firebase/firestore";
+
+import tempData from "../DBresult.json";
 import NoSearchResult from "../image/NoSearchResult.mp4";
 
 import HotdealsL from "../components/Hotdeals";
 // import { searchSoft, searchDev } from "../components/Search_module";
 
+const searchGame = (data, query) => {
+  if (!query) return data;
+
+  try {
+    return data.filter((post) => {
+      const softName = post.DB_SoftName.toLowerCase(); // 클래스로 만들 예정
+      return softName.includes(query);
+    });
+  } catch (e) {
+    console.log("Error:", e);
+  }
+};
+
+const searchDev = (data, query) => {
+  if (!query) return data;
+
+  try {
+    return data.filter((post) => {
+      const softName = post.DB_DevName.toLowerCase(); // 클래스로 만들 예정
+      return softName.includes(query);
+    });
+  } catch (e) {
+    console.log("Error:", e);
+  }
+};
+
 const SearchPage = () => {
+  const [data, setData] = useState([]);
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
+        setData(snapshot.docs.map((doc) => doc.data()))
+      ),
+    []
+  );
+  // // 원래 코드
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   setData(tempData.ScrapingDB); // json의 array의 이름 가져옴
   // }, []);
-  const [data, setData] = useState([]);
-  const fetchData = async () => {
-    const response = db.collection("Blogs");
-    const item = await response.get();
-    item.docs.forEach((d) => {
-      setData([...data, d.data()]);
-    });
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+
+  // // 2;
+  // const [data, setData] = useState([]);
+  // const fetchData = async () => {
+
+  // };
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   setData(db.getHotdeals()); // json의 array의 이름 가져옴
+  // }, []);
 
   // 검색 페이지 내에서의 정렬에 사용
   // const [searchType, setSearchType] = useState();
 
-  const LargeCardMapTable = styled.table`
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
-  `;
-  const SearchToolbar = styled.div`
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
-    max-width: 1200px;
-    max-height: 170px;
-    vertical-align: middle;
-    text-align: center;
-  `;
-  const SearcQueryH2 = styled.h2`
-    padding-top: 2%;
-    padding-bottom: 2%;
-  `;
-
-  const searchGame = (data, query) => {
-    if (!query) return data;
-
-    try {
-      return data.filter((post) => {
-        const softName = post.DB_SoftName.toLowerCase(); // 클래스로 만들 예정
-        return softName.includes(query);
-      });
-    } catch (e) {
-      console.log("Error:", e);
-    }
-  };
-
-  const searchDev = (data, query) => {
-    if (!query) return data;
-
-    try {
-      return data.filter((post) => {
-        const softName = post.DB_DevName.toLowerCase(); // 클래스로 만들 예정
-        return softName.includes(query);
-      });
-    } catch (e) {
-      console.log("Error:", e);
-    }
-  };
-
   const { search } = window.location;
   const query = new URLSearchParams(search).get("s");
   // const [searchQuery, setSearchQuery] = useState("" || query);
-  const searchQuery = "" || query;
+  // const searchQuery = "" || query;
   // setSearchQuery(query);
 
-  // const [searchQuery, setSearchQuery] = useState([]);
-  // useEffect(() => {
-  //   setSearchQuery(query);
-  // }, [query]);
+  const [searchQuery, setSearchQuery] = useState([]);
+  useEffect(() => {
+    setSearchQuery(query);
+  }, [query]);
 
   const fillteredGame = searchGame(data, searchQuery);
   const fillteredDev = searchDev(data, searchQuery);
@@ -193,5 +188,25 @@ const SearchPage = () => {
     </div>
   );
 };
+
+const LargeCardMapTable = styled.table`
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+`;
+const SearchToolbar = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 170px;
+  vertical-align: middle;
+  text-align: center;
+`;
+const SearcQueryH2 = styled.h2`
+  padding-top: 2%;
+  padding-bottom: 2%;
+`;
 
 export default SearchPage;

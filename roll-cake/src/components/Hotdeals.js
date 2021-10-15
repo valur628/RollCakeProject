@@ -1,5 +1,3 @@
-// DBresult.json을 임시데이터로 사용함
-
 import React from "react";
 import styled from "styled-components";
 import {

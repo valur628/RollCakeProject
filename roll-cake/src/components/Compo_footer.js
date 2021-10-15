@@ -27,8 +27,7 @@ const Compo_footer = () => {
             <i class="fa fa-envelope"></i>
             <p>
               <a href="mailto:valurauta628@gmail.com">valurauta628@gmail.com</a>
-            </p>
-            <p>
+              <br />
               <a href="mailto:ghkd3531@gmail.com">ghkd3531@gmail.com</a>
             </p>
           </div>

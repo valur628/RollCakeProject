@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+
+import db from "../components/firebase.config";
+import { onSnapshot, getData, collection } from "firebase/firestore";
 import tempData from "../DBresult.json";
-// import tempData from "../TempData.json";
 
 import HotdealsL from "../components/Hotdeals";
 
 const HotdealPage = (props) => {
   const [data, setData] = useState([]);
-  useEffect(() => {
-    setData(tempData.ScrapingDB); // json의 array의 이름 가져옴
-    // axios의 문제로 임시데이터로 대체함. 깃허브의 접속권한 가져올 수 없음
-
-    //   axios
-    //     .get(
-    //       "https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/TempData.json"
-    //     )
-    //     .then((response) => {
-    //       setData(response.data); // 코드의 핵심
-    //       console.log(response.data);
-    //     });
-  }, []);
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
+        setData(snapshot.docs.map((doc) => doc.data()))
+      ),
+    []
+  );
 
   const [order, setOrder] = useState(props);
   useEffect(() => {

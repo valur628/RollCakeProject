@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Carousel from "react-bootstrap/Carousel";
+import db from "../components/firebase.config";
+import { onSnapshot, getData, collection } from "firebase/firestore";
+
 import "../styles/Main/Main.css";
 // import jsonData from "../TempData.json";
 import jsonData from "../DBresult.json";
@@ -11,10 +14,16 @@ import { HotdealsS, HotdealsM } from "../components/Hotdeals";
 
 function MainPage() {
   const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(jsonData.ScrapingDB);
-  }, []);
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
+        setData(snapshot.docs.map((doc) => doc.data()))
+      ),
+    []
+  );
+  // useEffect(() => {
+  //   setData(jsonData.ScrapingDB);
+  // }, []);
 
   return (
     <>

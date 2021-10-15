@@ -1,24 +1,25 @@
-import firebase from "firebase";
-var firebaseConfig = {
-  DB_SoftIndex: 0,
-  DB_SoftID: "steam/apps/1093910",
-  DB_SoftName: "Tales of the Black Forest",
-  DB_DevName: "Not Dev",
-  DB_UpdateTime: "2021-10-11T08:16:44.942Z",
-  DB_Currency: "KRW",
-  DB_RegCost: 440000,
-  DB_DisCost: 132000,
-  DB_DisRate: 7000,
-  DB_ProductAddress:
-    "https://store.steampowered.com/app/1093910/Tales_of_the_Black_Forest",
-  DB_Platform: "Steam",
-  DB_BigPicture:
-    "https://cdn.cloudflare.steamstatic.com/steam/apps/1093910/header.jpg",
-  DB_SmallPicture:
-    "https://cdn.cloudflare.steamstatic.com/steam/apps/1093910/capsule_231x87.jpg",
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCULhjNY-Jc7H3FucLkXZqN3kR7b3izdFg",
+  authDomain: "rollcakeserver.firebaseapp.com",
+  projectId: "rollcakeserver",
+  storageBucket: "rollcakeserver.appspot.com",
+  messagingSenderId: "1091059315554",
+  appId: "1:1091059315554:web:3cf9d1f0e74c96371af23b",
+  measurementId: "G-J881LLT18D",
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+console.log(analytics);
 
-export default db;
+export default getFirestore();
