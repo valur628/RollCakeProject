@@ -9,7 +9,7 @@ const Compo_footer = () => {
         <div class="footer-left">
           <img class="logo" src={logo} alt="logo" />
           <p class="footer-company-name">
-            Copyright © Game Hotdeal 2021. All Rights Reserved.
+            Copyright © ESD Hotdeal 2021. All Rights Reserved.
           </p>
         </div>
         <div class="footer-center">
