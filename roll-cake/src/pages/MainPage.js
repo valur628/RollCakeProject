@@ -37,18 +37,18 @@ function MainPage() {
                   src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_1.png?raw=true"
                   alt="First slide"
                 />
-                <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
-                  <CarouselLogoImage
+                <a href="https://www.adobe.com/kr/creativecloud.html">
+                  <CarouselLogoImage_1
                     src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true"
                     alt="Logo"
-                  ></CarouselLogoImage>
+                  ></CarouselLogoImage_1>
                 </a>
                 <CarouselSlideCardItem>
                   <SlideCardItem
-                    DevName="CD 프로젝트 레드"
-                    SoftName="사이버펑크 2077"
-                    AfterCost="5000000"
-                    DisRate="2500"
+                    DevName="Adobe"
+                    SoftName="Creative Cloud"
+                    AfterCost="23,100 KRW"
+                    DisRate="6000"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -60,18 +60,18 @@ function MainPage() {
                   src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
                   alt="Second slide"
                 />
-                <a href="https://store.steampowered.com/app/1517290/Battlefield_2042/">
-                  <CarouselLogoImageInvert
+                <a href="https://store.steampowered.com/app/973600/Movavi_Video_Suite_18__Video_Making_Software__Edit_Convert_Capture_Screen_and_more/">
+                  <CarouselLogoImage_2
                     src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true"
                     alt="Logo"
-                  ></CarouselLogoImageInvert>
+                  ></CarouselLogoImage_2>
                 </a>
                 <CarouselSlideCardItem>
                   <SlideCardItem
-                    DevName="EA DICE"
-                    SoftName="배틀필드 2042"
-                    AfterCost="1000000"
-                    DisRate="5000"
+                    DevName="Movavi"
+                    SoftName="Video Suite 18"
+                    AfterCost="9,000 KRW"
+                    DisRate="9000"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -83,18 +83,18 @@ function MainPage() {
                   src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
                   alt="Third slide"
                 />
-                <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
-                  <CarouselLogoImage
+                <a href="https://www.gog.com/game/firewatch">
+                  <CarouselLogoImage_3
                     src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true"
                     alt="Logo"
-                  ></CarouselLogoImage>
+                  ></CarouselLogoImage_3>
                 </a>
                 <CarouselSlideCardItem>
                   <SlideCardItem
-                    DevName="락스타 게임즈"
-                    SoftName="레드 데드 리뎀션"
-                    AfterCost="1500000"
-                    DisRate="1000"
+                    DevName="Campo Santo"
+                    SoftName="Firewatch"
+                    AfterCost="4.99 USD"
+                    DisRate="7500"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -183,6 +183,24 @@ const CarouselLogoImage = styled.img`
   width: 25%;
   position: absolute;
   top: 35%;
+  left: 18%;
+`;
+const CarouselLogoImage_1 = styled.img`
+  width: 10%;
+  position: absolute;
+  top: 30%;
+  left: 32%;
+`;
+const CarouselLogoImage_2 = styled.img`
+  width: 10%;
+  position: absolute;
+  top: 27%;
+  left: 31%;
+`;
+const CarouselLogoImage_3 = styled.img`
+  width: 25%;
+  position: absolute;
+  top: 15%;
   left: 18%;
 `;
 const CarouselLogoImageInvert = styled.img`

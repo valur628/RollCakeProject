@@ -621,7 +621,7 @@ function SlideCardItem({ DevName, SoftName, AfterCost, DisRate, Address }) {
           </tr>
           <tr>
             <SliCostStringTd>
-              <SliCostString>{AfterCost / 100} KRW</SliCostString>
+              <SliCostString>{AfterCost}</SliCostString>
             </SliCostStringTd>
           </tr>
           <tr>
