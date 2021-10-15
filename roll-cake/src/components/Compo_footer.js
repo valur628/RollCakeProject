@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import React from "react";
 import "../styles/Compo/Compo_footer.css";
 import logo from "../logo.png";
 

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/203.255.3.114:8001/static/css/main.44e5a9fd.chunk.css",
+    "main.js": "/203.255.3.114:8001/static/js/main.96689659.chunk.js",
+    "main.js.map": "/203.255.3.114:8001/static/js/main.96689659.chunk.js.map",
+    "runtime-main.js": "/203.255.3.114:8001/static/js/runtime-main.02757511.js",
+    "runtime-main.js.map": "/203.255.3.114:8001/static/js/runtime-main.02757511.js.map",
+    "static/js/2.8390b39b.chunk.js": "/203.255.3.114:8001/static/js/2.8390b39b.chunk.js",
+    "static/js/2.8390b39b.chunk.js.map": "/203.255.3.114:8001/static/js/2.8390b39b.chunk.js.map",
+    "static/js/3.5af6eee9.chunk.js": "/203.255.3.114:8001/static/js/3.5af6eee9.chunk.js",
+    "static/js/3.5af6eee9.chunk.js.map": "/203.255.3.114:8001/static/js/3.5af6eee9.chunk.js.map",
+    "index.html": "/203.255.3.114:8001/index.html",
+    "static/css/main.44e5a9fd.chunk.css.map": "/203.255.3.114:8001/static/css/main.44e5a9fd.chunk.css.map",
+    "static/js/2.8390b39b.chunk.js.LICENSE.txt": "/203.255.3.114:8001/static/js/2.8390b39b.chunk.js.LICENSE.txt",
+    "static/media/Epic_Games.83fa8751.png": "/203.255.3.114:8001/static/media/Epic_Games.83fa8751.png",
+    "static/media/NoSearchResult.ffda8937.mp4": "/203.255.3.114:8001/static/media/NoSearchResult.ffda8937.mp4",
+    "static/media/Steam.f51d0adb.png": "/203.255.3.114:8001/static/media/Steam.f51d0adb.png",
+    "static/media/logo.ff65a66e.png": "/203.255.3.114:8001/static/media/logo.ff65a66e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02757511.js",
+    "static/js/2.8390b39b.chunk.js",
+    "static/css/main.44e5a9fd.chunk.css",
+    "static/js/main.96689659.chunk.js"
+  ]
+}
