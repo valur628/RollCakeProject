@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/RollCakeProject/static/css/main.44e5a9fd.chunk.css",
-    "main.js": "/RollCakeProject/static/js/main.904a9882.chunk.js",
-    "main.js.map": "/RollCakeProject/static/js/main.904a9882.chunk.js.map",
-    "runtime-main.js": "/RollCakeProject/static/js/runtime-main.70f523e4.js",
-    "runtime-main.js.map": "/RollCakeProject/static/js/runtime-main.70f523e4.js.map",
-    "static/js/2.9155cf82.chunk.js": "/RollCakeProject/static/js/2.9155cf82.chunk.js",
-    "static/js/2.9155cf82.chunk.js.map": "/RollCakeProject/static/js/2.9155cf82.chunk.js.map",
-    "static/js/3.0a4ffac2.chunk.js": "/RollCakeProject/static/js/3.0a4ffac2.chunk.js",
-    "static/js/3.0a4ffac2.chunk.js.map": "/RollCakeProject/static/js/3.0a4ffac2.chunk.js.map",
-    "index.html": "/RollCakeProject/index.html",
-    "static/css/main.44e5a9fd.chunk.css.map": "/RollCakeProject/static/css/main.44e5a9fd.chunk.css.map",
-    "static/js/2.9155cf82.chunk.js.LICENSE.txt": "/RollCakeProject/static/js/2.9155cf82.chunk.js.LICENSE.txt",
-    "static/media/NoSearchResult.ffda8937.mp4": "/RollCakeProject/static/media/NoSearchResult.ffda8937.mp4",
-    "static/media/logo.ff65a66e.png": "/RollCakeProject/static/media/logo.ff65a66e.png"
+    "main.css": "./static/css/main.44e5a9fd.chunk.css",
+    "main.js": "./static/js/main.90cefdf4.chunk.js",
+    "main.js.map": "./static/js/main.90cefdf4.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.638fd715.js",
+    "runtime-main.js.map": "./static/js/runtime-main.638fd715.js.map",
+    "static/js/2.7accdf10.chunk.js": "./static/js/2.7accdf10.chunk.js",
+    "static/js/2.7accdf10.chunk.js.map": "./static/js/2.7accdf10.chunk.js.map",
+    "static/js/3.5af6eee9.chunk.js": "./static/js/3.5af6eee9.chunk.js",
+    "static/js/3.5af6eee9.chunk.js.map": "./static/js/3.5af6eee9.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.44e5a9fd.chunk.css.map": "./static/css/main.44e5a9fd.chunk.css.map",
+    "static/js/2.7accdf10.chunk.js.LICENSE.txt": "./static/js/2.7accdf10.chunk.js.LICENSE.txt",
+    "static/media/NoSearchResult.ffda8937.mp4": "./static/media/NoSearchResult.ffda8937.mp4",
+    "static/media/Steam.f51d0adb.png": "./static/media/Steam.f51d0adb.png",
+    "static/media/logo.ff65a66e.png": "./static/media/logo.ff65a66e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.70f523e4.js",
-    "static/js/2.9155cf82.chunk.js",
+    "static/js/runtime-main.638fd715.js",
+    "static/js/2.7accdf10.chunk.js",
     "static/css/main.44e5a9fd.chunk.css",
-    "static/js/main.904a9882.chunk.js"
+    "static/js/main.90cefdf4.chunk.js"
   ]
 }
