@@ -123,7 +123,7 @@ function MainPage() {
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
                     <Link to="/hotdeal">
-                      <button class="MoreButton">인기 핫딜 더 보기 →</button>
+                      <button class="MoreButton">할인율 핫딜 더 보기 →</button>
                     </Link>
                   </MediumCardButtonDiv>
                 </MediumCardButtonTd>

@@ -134,7 +134,7 @@ const SearchPage = () => {
                   // checked={this.state.selectedOption === "게임"}
                   // onChange={this.onValueChange}
                 />
-                게임 ({fillteredGame.length})
+                SW ({fillteredGame.length})
               </label>
 
               <label type="button" className="btn btn-dark">
@@ -147,7 +147,7 @@ const SearchPage = () => {
                   // checked={this.state.selectedOption === "소프트웨어"}
                   // onChange={this.onValueChange}
                 />
-                소프트웨어 (0)
+                {/*소프트웨어 (0)*/}
                 {/* 소프트웨어 ({lengthSoftName}) */}
               </label>
 
@@ -161,7 +161,7 @@ const SearchPage = () => {
                   // checked={this.state.selectedOption === "개발사"}
                   // onChange={this.onValueChange}
                 />
-                개발사 ({fillteredDev.length})
+                {/*개발사 ({fillteredDev.length})*/}
               </label>
 
               <label type="button" className="btn btn-dark">
@@ -174,7 +174,7 @@ const SearchPage = () => {
                   // checked={this.state.selectedOption === "태그"}
                   // onChange={this.onValueChange}
                 />
-                태그 (0)
+                {/*태그 (0)*/}
                 {/* 태그 ({lengthAll - lengthSoftName}) */}
               </label>
             </SearchToolbar>

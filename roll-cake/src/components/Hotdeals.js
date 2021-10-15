@@ -6,6 +6,8 @@ import {
   SmallCardItem,
 } from "../components/Compo_cards";
 
+let USDExchange = 1200;
+
 const CardMapDiv = styled.div`
   padding-top: 2%;
   padding-bottom: 2%;
@@ -63,7 +65,16 @@ const HotdealsM = ({ hotdeals, order = "LowPrice" }) => {
     case "LowPrice":
       // console.log("order: ", order);
       hotdeals.sort(function (a, b) {
-        return a.DB_DisCost - b.DB_DisCost; // 오름차순
+        let tempA, tempB = 0;
+        if(a.DB_Currency == "USD")
+          tempA = a.DB_DisCost * USDExchange;
+        else 
+          tempA = a.DB_DisCost;
+        if(b.DB_Currency == "USD")
+          tempB = b.DB_DisCost * USDExchange;
+        else
+          tempB = b.DB_DisCost;
+        return tempA - tempB; // 오름차순
       });
       break;
     default:
@@ -131,13 +142,31 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
     case "HighPrice":
       console.log("order: ", order);
       hotdeals.sort(function (a, b) {
-        return b.DB_DisCost - a.DB_DisCost; // 오름차순
+        let tempA, tempB = 0;
+        if(a.DB_Currency == "USD")
+          tempA = a.DB_DisCost * USDExchange;
+        else 
+          tempA = a.DB_DisCost;
+        if(b.DB_Currency == "USD")
+          tempB = b.DB_DisCost * USDExchange;
+        else
+          tempB = b.DB_DisCost;
+        return tempB - tempA; // 내림차순
       });
       break;
     case "LowPrice":
       console.log("order: ", order);
       hotdeals.sort(function (a, b) {
-        return a.DB_DisCost - b.DB_DisCost; // 오름차순
+        let tempA, tempB = 0;
+        if(a.DB_Currency == "USD")
+          tempA = a.DB_DisCost * USDExchange;
+        else 
+          tempA = a.DB_DisCost;
+        if(b.DB_Currency == "USD")
+          tempB = b.DB_DisCost * USDExchange;
+        else
+          tempB = b.DB_DisCost;
+        return tempA - tempB; // 오름차순
       });
       break;
     case "HighDisRate":
