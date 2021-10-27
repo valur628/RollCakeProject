@@ -60,7 +60,7 @@ function MainPage() {
                   src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
                   alt="Second slide"
                 />
-                <a href="https://store.steampowered.com/app/973600/Movavi_Video_Suite_18__Video_Making_Software__Edit_Convert_Capture_Screen_and_more/">
+                <a href="https://www.humblebundle.com/store/movavi-video-editor-plus-2020">
                   <CarouselLogoImage_2
                     src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true"
                     alt="Logo"
@@ -69,9 +69,9 @@ function MainPage() {
                 <CarouselSlideCardItem>
                   <SlideCardItem
                     DevName="Movavi"
-                    SoftName="Video Suite 18"
-                    AfterCost="9,000 KRW"
-                    DisRate="9000"
+                    SoftName="Video Editor Plus"
+                    AfterCost="23.99 USD"
+                    DisRate="6000"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
               </CarouselDiv>
@@ -83,7 +83,7 @@ function MainPage() {
                   src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
                   alt="Third slide"
                 />
-                <a href="https://www.gog.com/game/firewatch">
+                <a href="https://www.gog.com/game/limbo">
                   <CarouselLogoImage_3
                     src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true"
                     alt="Logo"
@@ -91,9 +91,9 @@ function MainPage() {
                 </a>
                 <CarouselSlideCardItem>
                   <SlideCardItem
-                    DevName="Campo Santo"
-                    SoftName="Firewatch"
-                    AfterCost="4.99 USD"
+                    DevName="Playdead"
+                    SoftName="LIMBO"
+                    AfterCost="2.49 USD"
                     DisRate="7500"
                   ></SlideCardItem>
                 </CarouselSlideCardItem>
