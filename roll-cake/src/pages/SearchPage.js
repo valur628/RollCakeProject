@@ -2,21 +2,20 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import db from "../components/firebase.config";
-import { onSnapshot, getData, collection } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
 
-import tempData from "../DBresult.json";
-import NoSearchResult from "../image/NoSearchResult.mp4";
+import { GetDB } from "../components/GetDB";
 
 import HotdealsL from "../components/Hotdeals";
 // import { searchSoft, searchDev } from "../components/Search_module";
 
 const searchGame = (data, query) => {
-  if (!query) return data;
+  if (!query) return [];
 
   try {
     return data.filter((post) => {
       const softName = post.DB_SoftName.toLowerCase(); // 클래스로 만들 예정
-      return softName.includes(query);
+      return softName.includes(query.toLowerCase());
     });
   } catch (e) {
     console.log("Error:", e);
@@ -24,12 +23,12 @@ const searchGame = (data, query) => {
 };
 
 const searchDev = (data, query) => {
-  if (!query) return data;
+  if (!query) return [];
 
   try {
     return data.filter((post) => {
       const softName = post.DB_DevName.toLowerCase(); // 클래스로 만들 예정
-      return softName.includes(query);
+      return softName.includes(query.toLowerCase());
     });
   } catch (e) {
     console.log("Error:", e);
@@ -37,6 +36,14 @@ const searchDev = (data, query) => {
 };
 
 const SearchPage = () => {
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+
+  const [searchQuery, setSearchQuery] = useState([]);
+  useEffect(() => {
+    setSearchQuery(query);
+  }, [query]);
+
   const [data, setData] = useState([]);
   useEffect(
     () =>
@@ -45,6 +52,7 @@ const SearchPage = () => {
       ),
     []
   );
+
   // // 원래 코드
   // const [data, setData] = useState([]);
   // useEffect(() => {
@@ -68,39 +76,17 @@ const SearchPage = () => {
   // 검색 페이지 내에서의 정렬에 사용
   // const [searchType, setSearchType] = useState();
 
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get("s");
-  // const [searchQuery, setSearchQuery] = useState("" || query);
-  // const searchQuery = "" || query;
-  // setSearchQuery(query);
-
-  const [searchQuery, setSearchQuery] = useState([]);
-  useEffect(() => {
-    setSearchQuery(query);
-  }, [query]);
-
   const fillteredGame = searchGame(data, searchQuery);
   const fillteredDev = searchDev(data, searchQuery);
   // const fillteredSoft = searchSoft(data, searchQuery);
-  const lengthAll = fillteredGame.length + fillteredDev.length;
-  console.log(lengthAll);
 
-  return (
-    <div>
-      {lengthAll <= 0 ? (
-        // 검색결과가 없으면 실행
-        <LargeCardMapTable>
-          <tr>
-            <SearcQueryH2>'{searchQuery}' 검색결과가 없습니다.</SearcQueryH2>
-          </tr>
-          <tr>
-            <video loop={true} muted={true} playsInline={true} autoPlay={true}>
-              <source src={NoSearchResult} type="video/mp4" />
-            </video>
-          </tr>
-        </LargeCardMapTable>
-      ) : (
-        // 검색결과가 있으면 실행
+  const lengthAll = fillteredGame.length + fillteredDev.length;
+  console.log("lengthAll: ", lengthAll);
+
+  if (lengthAll) {
+    return (
+      // 검색결과가 있으면 실행
+      <>
         <LargeCardMapTable>
           <tr>
             <SearcQueryH2>'{searchQuery}' 검색결과</SearcQueryH2>
@@ -181,12 +167,19 @@ const SearchPage = () => {
           </tr>
           <tr>
             <HotdealsL hotdeals={fillteredGame} order />
-            <HotdealsL hotdeals={fillteredDev} order />
+            <HotdealsL hotdeals={fillteredDev} order />/
           </tr>
         </LargeCardMapTable>
-      )}
-    </div>
-  );
+      </>
+    );
+  } else {
+    return (
+      // 검색결과가 없으면 실행
+      <NoSearchResult>
+        <SearcQueryH2>'{searchQuery}' 검색결과가 없습니다.</SearcQueryH2>
+      </NoSearchResult>
+    );
+  }
 };
 
 const LargeCardMapTable = styled.table`
@@ -207,6 +200,12 @@ const SearchToolbar = styled.div`
 const SearcQueryH2 = styled.h2`
   padding-top: 2%;
   padding-bottom: 2%;
+`;
+const NoSearchResult = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
 `;
 
 export default SearchPage;

@@ -78,7 +78,7 @@ export default Navbar;
 //         variant="dark"
 //       >
 //         <Container>
-//           <Navbar.Brand href="/">
+//           <Navbar.Brand to="/">
 //             <img
 //               src={logo}
 //               height="32"
@@ -89,7 +89,7 @@ export default Navbar;
 //           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 //           <Navbar.Collapse id="responsive-navbar-navbar-nav">
 //             <Nav className="me-auto">
-//               <Link href="/hotdeal">핫딜</Link>
+//               <Link to="/hotdeal">핫딜</Link>
 //             </Nav>
 //             <Nav>
 //               <SearchBar

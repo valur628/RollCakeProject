@@ -22,4 +22,4 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 console.log(analytics);
 
-export default getFirestore();
+export default getFirestore(app);
