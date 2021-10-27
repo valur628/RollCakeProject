@@ -194,14 +194,15 @@ const CarouselLogoImage_1 = styled.img`
 const CarouselLogoImage_2 = styled.img`
   width: 10%;
   position: absolute;
-  top: 27%;
-  left: 31%;
+  top: 25%;
+  left: 30%;
 `;
 const CarouselLogoImage_3 = styled.img`
-  width: 25%;
+  width: 18%;
   position: absolute;
-  top: 15%;
-  left: 18%;
+  top: 33%;
+  left: 25%;
+  filter: invert(100%);
 `;
 const CarouselLogoImageInvert = styled.img`
   width: 25%;
