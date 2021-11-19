@@ -11,15 +11,14 @@ import SearchPage from "./pages/SearchPage";
 import Footers from "./components/Compo_footer";
 
 function App() {
-  const [data, setData] = useState([]);
-  useEffect(
-    () =>
-      onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
-        setData(snapshot.docs.map((doc) => doc.data()))
-      ),
-    []
-  );
-
+  // const [data, setData] = useState([]);
+  // useEffect(
+  //   () =>
+  //     onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
+  //       setData(snapshot.docs.map((doc) => doc.data()))
+  //     ),
+  //   []
+  // );
   return (
     <Router>
       <div className="App">

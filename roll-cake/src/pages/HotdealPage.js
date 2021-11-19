@@ -6,6 +6,11 @@ import { onSnapshot, collection } from "firebase/firestore";
 // import tempData from "../DBresult.json";
 
 import HotdealsL from "../components/Hotdeals";
+const options = {
+  root: null, //기본 null, 관찰대상의 부모요소를 지정
+  rootMargin: "20px", // 관찰하는 뷰포트의 마진 지정
+  threshold: 1.0, // 관찰요소와 얼만큼 겹쳤을 때 콜백을 수행하도록 지정하는 요소
+};
 
 const HotdealPage = (props) => {
   const [data, setData] = useState([]);
@@ -21,6 +26,18 @@ const HotdealPage = (props) => {
   useEffect(() => {
     // console.log(order);
   }, [order]);
+
+  // const options = {
+  //   root: null, //기본 null, 관찰대상의 부모요소를 지정
+  //   rootMargin: "20px", // 관찰하는 뷰포트의 마진 지정
+  //   threshold: 1.0, // 관찰요소와 얼만큼 겹쳤을 때 콜백을 수행하도록 지정하는 요소
+  // };
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(handleObserver, options);
+  //   if (interSectRef.current) observer.observe(interSectRef.current);
+  //   return () => observer.disconnect();
+  // }, [handleObserver]);
 
   const LargeCardMapTable = styled.table`
     margin-left: auto;

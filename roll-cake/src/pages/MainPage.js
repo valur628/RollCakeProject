@@ -12,7 +12,7 @@ import "../styles/Main/Main.css";
 import { SlideCardItem } from "../components/Compo_cards";
 import { HotdealsS, HotdealsM } from "../components/Hotdeals";
 
-function MainPage() {
+const MainPage = () => {
   const [data, setData] = useState([]);
   useEffect(
     () =>
@@ -162,7 +162,7 @@ function MainPage() {
       <footer class="footer">...</footer>
     </>
   );
-}
+};
 const CarouselDiv = styled.div`
 display: inline-block;
 width: 100%;
