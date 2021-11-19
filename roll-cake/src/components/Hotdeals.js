@@ -65,15 +65,12 @@ const HotdealsM = ({ hotdeals, order = "LowPrice" }) => {
     case "LowPrice":
       // console.log("order: ", order);
       hotdeals.sort(function (a, b) {
-        let tempA, tempB = 0;
-        if(a.DB_Currency == "USD")
-          tempA = a.DB_DisCost * USDExchange;
-        else 
-          tempA = a.DB_DisCost;
-        if(b.DB_Currency == "USD")
-          tempB = b.DB_DisCost * USDExchange;
-        else
-          tempB = b.DB_DisCost;
+        let tempA,
+          tempB = 0;
+        if (a.DB_Currency === "USD") tempA = a.DB_DisCost * USDExchange;
+        else tempA = a.DB_DisCost;
+        if (b.DB_Currency === "USD") tempB = b.DB_DisCost * USDExchange;
+        else tempB = b.DB_DisCost;
         return tempA - tempB; // 오름차순
       });
       break;
@@ -142,30 +139,24 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
     case "HighPrice":
       console.log("order: ", order);
       hotdeals.sort(function (a, b) {
-        let tempA, tempB = 0;
-        if(a.DB_Currency == "USD")
-          tempA = a.DB_DisCost * USDExchange;
-        else 
-          tempA = a.DB_DisCost;
-        if(b.DB_Currency == "USD")
-          tempB = b.DB_DisCost * USDExchange;
-        else
-          tempB = b.DB_DisCost;
+        let tempA,
+          tempB = 0;
+        if (a.DB_Currency == "USD") tempA = a.DB_DisCost * USDExchange;
+        else tempA = a.DB_DisCost;
+        if (b.DB_Currency == "USD") tempB = b.DB_DisCost * USDExchange;
+        else tempB = b.DB_DisCost;
         return tempB - tempA; // 내림차순
       });
       break;
     case "LowPrice":
       console.log("order: ", order);
       hotdeals.sort(function (a, b) {
-        let tempA, tempB = 0;
-        if(a.DB_Currency == "USD")
-          tempA = a.DB_DisCost * USDExchange;
-        else 
-          tempA = a.DB_DisCost;
-        if(b.DB_Currency == "USD")
-          tempB = b.DB_DisCost * USDExchange;
-        else
-          tempB = b.DB_DisCost;
+        let tempA,
+          tempB = 0;
+        if (a.DB_Currency == "USD") tempA = a.DB_DisCost * USDExchange;
+        else tempA = a.DB_DisCost;
+        if (b.DB_Currency == "USD") tempB = b.DB_DisCost * USDExchange;
+        else tempB = b.DB_DisCost;
         return tempA - tempB; // 오름차순
       });
       break;

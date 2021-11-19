@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import db from "../components/firebase.config";
-import { onSnapshot, getData, collection } from "firebase/firestore";
-import tempData from "../DBresult.json";
+import { onSnapshot, collection } from "firebase/firestore";
+// import tempData from "../DBresult.json";
 
 import HotdealsL from "../components/Hotdeals";
 

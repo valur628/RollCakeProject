@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Carousel from "react-bootstrap/Carousel";
 import db from "../components/firebase.config";
-import { onSnapshot, getData, collection } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
 
 import "../styles/Main/Main.css";
 // import jsonData from "../TempData.json";
-import jsonData from "../DBresult.json";
+// import jsonData from "../DBresult.json";
 
 import { SlideCardItem } from "../components/Compo_cards";
 import { HotdealsS, HotdealsM } from "../components/Hotdeals";
