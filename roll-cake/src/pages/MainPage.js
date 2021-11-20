@@ -14,10 +14,18 @@ import { HotdealsS, HotdealsM } from "../components/Hotdeals";
 
 const MainPage = () => {
   const [data, setData] = useState([]);
+  const [carouselData, carouselSetData] = useState([]);
   useEffect(
     () =>
       onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
         setData(snapshot.docs.map((doc) => doc.data()))
+      ),
+    []
+  );
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "CarouselDB"), (snapshot) =>
+      carouselSetData(snapshot.docs.map((doc) => doc.data()))
       ),
     []
   );
@@ -32,71 +40,89 @@ const MainPage = () => {
           <Carousel>
             <Carousel.Item>
               <CarouselDiv>
-                <CarouselImage
-                  className="d-block w-100"
-                  src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_1.png?raw=true"
-                  alt="First slide"
-                />
-                <a href="https://www.adobe.com/kr/creativecloud.html">
-                  <CarouselLogoImage_1
-                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_1.png?raw=true"
-                    alt="Logo"
-                  ></CarouselLogoImage_1>
-                </a>
-                <CarouselSlideCardItem>
-                  <SlideCardItem
-                    DevName="Adobe"
-                    SoftName="Creative Cloud"
-                    AfterCost="23,100 KRW"
-                    DisRate="6000"
-                  ></SlideCardItem>
-                </CarouselSlideCardItem>
+                {carouselData.slice(0, 1).map((carouselDeal) => {
+                  return (
+                  <>
+                    <CarouselImage
+                      className="d-block w-100"
+                      src={carouselDeal.ImageSrc}
+                      alt="First slide"
+                    />
+                    <a href={carouselDeal.HotdealHref}>
+                      <CarouselLogoImage_1
+                        src={carouselDeal.LogoImageSrc}
+                        alt="Logo"
+                      ></CarouselLogoImage_1>
+                    </a>
+                    <CarouselSlideCardItem>
+                      <SlideCardItem
+                        DevName={carouselDeal.DevName}
+                        SoftName={carouselDeal.SoftName}
+                        AfterCost={carouselDeal.AfterCost}
+                        DisRate={carouselDeal.DisRate}
+                      ></SlideCardItem>
+                    </CarouselSlideCardItem>
+                  </>
+                  );
+                })};
               </CarouselDiv>
             </Carousel.Item>
             <Carousel.Item>
-              <CarouselDiv>
-                <CarouselImage
-                  className="d-block w-100"
-                  src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_2.png?raw=true"
-                  alt="Second slide"
-                />
-                <a href="https://www.humblebundle.com/store/movavi-video-editor-plus-2020">
-                  <CarouselLogoImage_2
-                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_2.png?raw=true"
-                    alt="Logo"
-                  ></CarouselLogoImage_2>
-                </a>
-                <CarouselSlideCardItem>
-                  <SlideCardItem
-                    DevName="Movavi"
-                    SoftName="Video Editor Plus"
-                    AfterCost="23.99 USD"
-                    DisRate="6000"
-                  ></SlideCardItem>
-                </CarouselSlideCardItem>
+            <CarouselDiv>
+                {carouselData.slice(1, 2).map((carouselDeal) => {
+                  return (
+                  <>
+                    <CarouselImage
+                      className="d-block w-100"
+                      src={carouselDeal.ImageSrc}
+                      alt="First slide"
+                    />
+                    <a href={carouselDeal.HotdealHref}>
+                      <CarouselLogoImage_2
+                        src={carouselDeal.LogoImageSrc}
+                        alt="Logo"
+                      ></CarouselLogoImage_2>
+                    </a>
+                    <CarouselSlideCardItem>
+                      <SlideCardItem
+                        DevName={carouselDeal.DevName}
+                        SoftName={carouselDeal.SoftName}
+                        AfterCost={carouselDeal.AfterCost}
+                        DisRate={carouselDeal.DisRate}
+                      ></SlideCardItem>
+                    </CarouselSlideCardItem>
+                  </>
+                  );
+                })};
               </CarouselDiv>
             </Carousel.Item>
             <Carousel.Item>
-              <CarouselDiv>
-                <CarouselImage
-                  className="d-block w-100"
-                  src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_3.png?raw=true"
-                  alt="Third slide"
-                />
-                <a href="https://www.gog.com/game/limbo">
-                  <CarouselLogoImage_3
-                    src="https://github.com/wncjf2000/RollCakeProject/blob/main/roll-cake/src/image/carousel_logo_3.png?raw=true"
-                    alt="Logo"
-                  ></CarouselLogoImage_3>
-                </a>
-                <CarouselSlideCardItem>
-                  <SlideCardItem
-                    DevName="Playdead"
-                    SoftName="LIMBO"
-                    AfterCost="2.49 USD"
-                    DisRate="7500"
-                  ></SlideCardItem>
-                </CarouselSlideCardItem>
+            <CarouselDiv>
+                {carouselData.slice(2, 3).map((carouselDeal) => {
+                  return (
+                  <>
+                    <CarouselImage
+                      className="d-block w-100"
+                      src={carouselDeal.ImageSrc}
+                      alt="First slide"
+                    />
+                    <a href={carouselDeal.HotdealHref}>
+                      <CarouselLogoImage_3
+                        src={carouselDeal.LogoImageSrc}
+                        alt="Logo"
+                      ></CarouselLogoImage_3>
+                    </a>
+                    <CarouselSlideCardItem>
+                      <SlideCardItem
+                        DevName={carouselDeal.DevName}
+                        SoftName={carouselDeal.SoftName}
+                        AfterCost={carouselDeal.AfterCost}
+                        DisRate={carouselDeal.DisRate}
+                      ></SlideCardItem>
+                    </CarouselSlideCardItem>
+                  </>
+                  );
+                })};
               </CarouselDiv>
             </Carousel.Item>
           </Carousel>
@@ -164,13 +190,13 @@ const MainPage = () => {
   );
 };
 const CarouselDiv = styled.div`
-display: inline-block;
-width: 100%;
-height: 40vmin;
-max-width: 1919px;
-max-height: 500px;
-overflow: hidden;
-style="cursor: default"
+  display: inline-block;
+  width: 100%;
+  height: 40vmin;
+  max-width: 1919px;
+  max-height: 500px;
+  overflow: hidden;
+  style="cursor: default"
 `;
 const CarouselImage = styled.img`
   display: inline-block;
@@ -186,10 +212,11 @@ const CarouselLogoImage = styled.img`
   left: 18%;
 `;
 const CarouselLogoImage_1 = styled.img`
-  width: 10%;
+  width: 18%;
   position: absolute;
-  top: 30%;
-  left: 32%;
+  top: 33%;
+  left: 25%;
+  filter: invert(100%);
 `;
 const CarouselLogoImage_2 = styled.img`
   width: 10%;
@@ -198,11 +225,10 @@ const CarouselLogoImage_2 = styled.img`
   left: 30%;
 `;
 const CarouselLogoImage_3 = styled.img`
-  width: 18%;
+  width: 10%;
   position: absolute;
-  top: 33%;
-  left: 25%;
-  filter: invert(100%);
+  top: 30%;
+  left: 32%;
 `;
 const CarouselLogoImageInvert = styled.img`
   width: 25%;
