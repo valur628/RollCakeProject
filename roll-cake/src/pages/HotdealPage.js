@@ -6,11 +6,6 @@ import { onSnapshot, collection } from "firebase/firestore";
 // import tempData from "../DBresult.json";
 
 import HotdealsL from "../components/Hotdeals";
-const options = {
-  root: null, //기본 null, 관찰대상의 부모요소를 지정
-  rootMargin: "20px", // 관찰하는 뷰포트의 마진 지정
-  threshold: 1.0, // 관찰요소와 얼만큼 겹쳤을 때 콜백을 수행하도록 지정하는 요소
-};
 
 const HotdealPage = (props) => {
   const [data, setData] = useState([]);
@@ -26,6 +21,14 @@ const HotdealPage = (props) => {
   useEffect(() => {
     // console.log(order);
   }, [order]);
+
+  const [num, setNum] = useState(props);
+  useEffect(
+    (n) => {
+      setNum(n);
+    },
+    [num]
+  );
 
   // const options = {
   //   root: null, //기본 null, 관찰대상의 부모요소를 지정
@@ -120,6 +123,15 @@ const HotdealPage = (props) => {
         </tr>
         <tr>
           <HotdealsL hotdeals={data} order={order} />
+        </tr>
+        <tr>
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={() => setOrder("LowDisRate")}
+          >
+            낮은할인율순
+          </button>
         </tr>
       </LargeCardMapTable>
     </>

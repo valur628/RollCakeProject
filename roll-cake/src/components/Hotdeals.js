@@ -105,7 +105,7 @@ const HotdealsM = ({ hotdeals, order = "LowPrice" }) => {
 
 export { HotdealsM };
 
-const HotdealsL = ({ hotdeals, order = "name" }) => {
+const HotdealsL = ({ hotdeals, order = "name", num = 0 }) => {
   // HotdealPage, SearchPage에서 파라미터를 받아 카드 정렬 방법 변경
   // 최신순: latest, 인기순: popularity , 이름순: name , 가격순: price, 할인율 순: disRate
   // default: name
@@ -141,9 +141,9 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
       hotdeals.sort(function (a, b) {
         let tempA,
           tempB = 0;
-        if (a.DB_Currency == "USD") tempA = a.DB_DisCost * USDExchange;
+        if (a.DB_Currency === "USD") tempA = a.DB_DisCost * USDExchange;
         else tempA = a.DB_DisCost;
-        if (b.DB_Currency == "USD") tempB = b.DB_DisCost * USDExchange;
+        if (b.DB_Currency === "USD") tempB = b.DB_DisCost * USDExchange;
         else tempB = b.DB_DisCost;
         return tempB - tempA; // 내림차순
       });
@@ -153,9 +153,9 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
       hotdeals.sort(function (a, b) {
         let tempA,
           tempB = 0;
-        if (a.DB_Currency == "USD") tempA = a.DB_DisCost * USDExchange;
+        if (a.DB_Currency === "USD") tempA = a.DB_DisCost * USDExchange;
         else tempA = a.DB_DisCost;
-        if (b.DB_Currency == "USD") tempB = b.DB_DisCost * USDExchange;
+        if (b.DB_Currency === "USD") tempB = b.DB_DisCost * USDExchange;
         else tempB = b.DB_DisCost;
         return tempA - tempB; // 오름차순
       });
@@ -177,9 +177,32 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
       break;
   }
 
+  // return (
+  //   <>
+  //     {hotdeals.map((deal) => {
+  //       return (
+  //         <CardMapDiv>
+  //           <LargeCardItem
+  //             key={deal.DB_SoftIndex}
+  //             Picture={deal.DB_SmallPicture}
+  //             DevName={deal.DB_DevName}
+  //             SoftName={deal.DB_SoftName}
+  //             BeforeCost={deal.DB_RegCost}
+  //             AfterCost={deal.DB_DisCost}
+  //             Currency={deal.DB_Currency}
+  //             DisRate={deal.DB_DisRate}
+  //             Platform={deal.DB_Platform}
+  //             Address={deal.DB_ProductAddress}
+  //           />
+  //         </CardMapDiv>
+  //       );
+  //     })}
+  //   </>
+  // );
+
   return (
     <>
-      {hotdeals.map((deal) => {
+      {hotdeals.slice(num, num + 30).map((deal) => {
         return (
           <CardMapDiv>
             <LargeCardItem
