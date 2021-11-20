@@ -105,7 +105,7 @@ const HotdealsM = ({ hotdeals, order = "LowPrice" }) => {
 
 export { HotdealsM };
 
-const HotdealsL = ({ hotdeals, order = "name", num = 0 }) => {
+const HotdealsL = ({ hotdeals, order = "name", num = 20 }) => {
   // HotdealPage, SearchPage에서 파라미터를 받아 카드 정렬 방법 변경
   // 최신순: latest, 인기순: popularity , 이름순: name , 가격순: price, 할인율 순: disRate
   // default: name
@@ -202,7 +202,7 @@ const HotdealsL = ({ hotdeals, order = "name", num = 0 }) => {
 
   return (
     <>
-      {hotdeals.slice(num, num + 30).map((deal) => {
+      {hotdeals.slice(0, num).map((deal) => {
         return (
           <CardMapDiv>
             <LargeCardItem
