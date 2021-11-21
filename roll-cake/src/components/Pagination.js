@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const PageUl = styled.ul`
+const PageUl = styled.div`
   float: left;
   list-style: none;
   text-align: center;
@@ -13,7 +13,7 @@ const PageUl = styled.ul`
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
-const PageLi = styled.li`
+const PageLi = styled.div`
   display: inline-block;
   font-size: 17px;
   font-weight: 600;
@@ -31,7 +31,7 @@ const PageLi = styled.li`
   }
 `;
 
-const PageSpan = styled.span`
+const PageSpan = styled.div`
   &:hover::after,
   &:focus::after {
     border-radius: 100%;
@@ -46,8 +46,8 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     pageNumbers.push(i);
   }
   return (
-    <div style>
-      <nav style>
+    <div>
+      <nav>
         <PageUl className="pagination">
           {pageNumbers.map((number) => (
             <PageLi key={number} className="page-item">

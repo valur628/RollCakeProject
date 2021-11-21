@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 import useIntersectionObserver from "../components/useIntersectionObserver";
 import Infinite from "../components/infinite";
+import Pagination from "../components/Pagination";
+import ScrollToTop from "../components/ScrollToTop";
+
+import axios from "axios";
 
 import db from "../components/firebase.config";
 import { onSnapshot, collection } from "firebase/firestore";
@@ -11,41 +15,69 @@ import { onSnapshot, collection } from "firebase/firestore";
 import HotdealsL from "../components/Hotdeals";
 
 const HotdealPage = (props) => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    console.log("loading", loading);
+  });
+
+  // const [currentPage, setCurrentPage] = useState(1);
+  // useEffect(() => {
+  //   console.log("currentPage", currentPage);
+  // });
+
+  const [postsPerPage, setPostsPerPage] = useState(5);
+  useEffect(() => {
+    console.log("postPerPage", postsPerPage);
+  });
+
   const [data, setData] = useState([]);
-  useEffect(
-    () =>
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true);
       onSnapshot(collection(db, "ScrapingDB"), (snapshot) =>
         setData(snapshot.docs.map((doc) => doc.data()))
-      ),
-    []
-  );
+      );
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
 
   const [order, setOrder] = useState(props);
   useEffect(() => {
     // console.log(order);
   }, [order]);
 
-  const [num, setNum] = useState(20);
-  useEffect(() => {
-    console.log("num", num);
-  });
+  // const indexOfLast = currentPage * postsPerPage;
+  // const indexOfFirst = indexOfLast - postsPerPage;
 
-  // // request state
-  // const [loading, setLoading] = useState(false);
+  // function currentPosts(tmp) {
+  //   let currentPosts = 0;
+  //   currentPosts = tmp.slice(indexOfFirst, indexOfLast);
+  //   return currentPosts;
+  // }
 
-  // window.onscroll = function () {
-  //   const scrollHeight = document.documentElement.scrollHeight;
-  //   const scrollTop = document.documentElement.scrollTop;
-  //   const clientHeight = document.documentElement.clientHeight;
+  window.onscroll = function () {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
 
-  //   if (scrollTop + clientHeight >= scrollHeight && !loading) {
-  //     scrollToEnd();
-  //   }
-  // };
-  // const scrollToEnd = () => {
-  //   setLoading(true);
-  //   setNum(num + 20); // 이렇게 하면 뒤에만 보임
-  // };
+    setLoading(false);
+    if (scrollTop + clientHeight === scrollHeight && !loading) {
+      window.scrollTo(0, 0);
+      scrollToEnd();
+      setLoading(false);
+    }
+    setLoading(false);
+  };
+  const scrollToEnd = () => {
+    // fetch more data
+    setLoading(true);
+    setPostsPerPage(postsPerPage + 5);
+    setLoading(false);
+  };
+  // 문제가 있는 코드
+  // 해결방법, 컴포넌트에서 미리 정렬을 하고, 카드 출력을 나중에 한다.
+  // 현재: 카드 출력 호출 -> data 정렬 -> map
 
   // useIntersectionObserver({
   //   onIntersect: ([{ isIntersecting }]) => {
@@ -149,14 +181,15 @@ const HotdealPage = (props) => {
           </HotdealToolbar>
         </tr>
         <tr>
-          <HotdealsL hotdeals={data} order={order} num={num} />
-          {/* <Infinite data={data} order={order} num={num} fetching={loading}  /> */}
+          <HotdealsL hotdeals={data} order={order} num={postsPerPage} />
         </tr>
-        ;
       </LargeCardMapTable>
     </>
   );
 };
+
+export { HotdealPage };
+export default HotdealPage;
 
 // const HotdealPage = (props) => {
 //   const [data, setData] = useState([]);
@@ -322,5 +355,5 @@ const HotdealPage = (props) => {
 //   );
 // };
 
-export { HotdealPage };
-export default HotdealPage;
+// export { HotdealPage };
+// export default HotdealPage;

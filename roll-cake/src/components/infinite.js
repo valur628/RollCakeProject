@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HotdealsL from "../components/Hotdeals";
 
-const Infinite = ({ data, order, num, fetching, fetchMoreData }) => {
+const Infinite = ({ data, order, fetching, fetchMoreData }) => {
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
@@ -20,7 +20,7 @@ const Infinite = ({ data, order, num, fetching, fetchMoreData }) => {
   });
   return (
     <tr>
-      <HotdealsL hotdeals={data} order={order} num={num} />
+      <HotdealsL hotdeals={data} order={order} />
     </tr>
   );
 };

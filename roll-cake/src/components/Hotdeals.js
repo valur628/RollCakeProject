@@ -177,32 +177,9 @@ const HotdealsL = ({ hotdeals, order = "name", num = 20 }) => {
       break;
   }
 
-  // return (
-  //   <>
-  //     {hotdeals.map((deal) => {
-  //       return (
-  //         <CardMapDiv>
-  //           <LargeCardItem
-  //             key={deal.DB_SoftIndex}
-  //             Picture={deal.DB_SmallPicture}
-  //             DevName={deal.DB_DevName}
-  //             SoftName={deal.DB_SoftName}
-  //             BeforeCost={deal.DB_RegCost}
-  //             AfterCost={deal.DB_DisCost}
-  //             Currency={deal.DB_Currency}
-  //             DisRate={deal.DB_DisRate}
-  //             Platform={deal.DB_Platform}
-  //             Address={deal.DB_ProductAddress}
-  //           />
-  //         </CardMapDiv>
-  //       );
-  //     })}
-  //   </>
-  // );
-
   return (
     <>
-      {hotdeals.slice(0, num).map((deal) => {
+      {hotdeals.slice(num - 5, num).map((deal) => {
         return (
           <CardMapDiv>
             <LargeCardItem
@@ -225,6 +202,29 @@ const HotdealsL = ({ hotdeals, order = "name", num = 20 }) => {
 };
 
 export default HotdealsL;
+
+// return (
+//   <>
+//     {hotdeals.map((deal) => {
+//       return (
+//         <CardMapDiv>
+//           <LargeCardItem
+//             key={deal.DB_SoftIndex}
+//             Picture={deal.DB_SmallPicture}
+//             DevName={deal.DB_DevName}
+//             SoftName={deal.DB_SoftName}
+//             BeforeCost={deal.DB_RegCost}
+//             AfterCost={deal.DB_DisCost}
+//             Currency={deal.DB_Currency}
+//             DisRate={deal.DB_DisRate}
+//             Platform={deal.DB_Platform}
+//             Address={deal.DB_ProductAddress}
+//           />
+//         </CardMapDiv>
+//       );
+//     })}
+//   </>
+// );
 
 // // DBresult.json을 임시데이터로 사용함
 
