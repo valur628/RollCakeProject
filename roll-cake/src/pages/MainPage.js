@@ -52,6 +52,10 @@ const MainPage = () => {
                       <CarouselLogoImage_1
                         src={carouselDeal.LogoImageSrc}
                         alt="Logo"
+                        clWidth={carouselDeal.clWidth}
+                        clTop={carouselDeal.clTop}
+                        clLeft={carouselDeal.clLeft}
+                        clFilter={carouselDeal.clFilter}
                       ></CarouselLogoImage_1>
                     </a>
                     <CarouselSlideCardItem>
@@ -78,10 +82,14 @@ const MainPage = () => {
                       alt="First slide"
                     />
                     <a href={carouselDeal.HotdealHref}>
-                      <CarouselLogoImage_2
+                      <CarouselLogoImage_1
                         src={carouselDeal.LogoImageSrc}
                         alt="Logo"
-                      ></CarouselLogoImage_2>
+                        clWidth={carouselDeal.clWidth}
+                        clTop={carouselDeal.clTop}
+                        clLeft={carouselDeal.clLeft}
+                        clFilter={carouselDeal.clFilter}
+                      ></CarouselLogoImage_1>
                     </a>
                     <CarouselSlideCardItem>
                       <SlideCardItem
@@ -107,10 +115,14 @@ const MainPage = () => {
                       alt="First slide"
                     />
                     <a href={carouselDeal.HotdealHref}>
-                      <CarouselLogoImage_3
+                      <CarouselLogoImage_1
                         src={carouselDeal.LogoImageSrc}
                         alt="Logo"
-                      ></CarouselLogoImage_3>
+                        clWidth={carouselDeal.clWidth}
+                        clTop={carouselDeal.clTop}
+                        clLeft={carouselDeal.clLeft}
+                        clFilter={carouselDeal.clFilter}
+                      ></CarouselLogoImage_1>
                     </a>
                     <CarouselSlideCardItem>
                       <SlideCardItem
@@ -212,11 +224,11 @@ const CarouselLogoImage = styled.img`
   left: 18%;
 `;
 const CarouselLogoImage_1 = styled.img`
-  width: 18%;
+  width: ${props => props.clWidth};
   position: absolute;
-  top: 33%;
-  left: 25%;
-  filter: invert(100%);
+  top: ${props => props.clTop};
+  left: ${props => props.clLeft};
+  filter: ${props => props.clFilter};
 `;
 const CarouselLogoImage_2 = styled.img`
   width: 10%;
