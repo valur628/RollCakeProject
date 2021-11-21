@@ -4,8 +4,6 @@ import styled from "styled-components";
 import db from "../components/firebase.config";
 import { onSnapshot, collection } from "firebase/firestore";
 
-import { GetDB } from "../components/GetDB";
-
 import HotdealsL from "../components/Hotdeals";
 // import { searchSoft, searchDev } from "../components/Search_module";
 
@@ -166,8 +164,8 @@ const SearchPage = () => {
             </SearchToolbar>
           </tr>
           <tr>
-            <HotdealsL hotdeals={fillteredGame} order />
-            <HotdealsL hotdeals={fillteredDev} order />/
+            <HotdealsL hotdeals={fillteredGame} order="name" />
+            {/* <HotdealsL hotdeals={fillteredDev} order="name" /> */}
           </tr>
         </LargeCardMapTable>
       </>

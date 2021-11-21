@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
   LargeCardItem,
@@ -105,7 +105,7 @@ const HotdealsM = ({ hotdeals, order = "LowPrice" }) => {
 
 export { HotdealsM };
 
-const HotdealsL = ({ hotdeals, order = "name", num = 20 }) => {
+const HotdealsL = ({ hotdeals, order = "name" }) => {
   // HotdealPage, SearchPage에서 파라미터를 받아 카드 정렬 방법 변경
   // 최신순: latest, 인기순: popularity , 이름순: name , 가격순: price, 할인율 순: disRate
   // default: name
@@ -177,9 +177,41 @@ const HotdealsL = ({ hotdeals, order = "name", num = 20 }) => {
       break;
   }
 
+  const VIEW = 5;
+
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    console.log("loading", loading);
+  });
+
+  const [cardsPerPage, setCardsPerPage] = useState(VIEW);
+  useEffect(() => {
+    console.log("postPerPage", cardsPerPage);
+  });
+
+  window.onscroll = function () {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollTop + clientHeight === scrollHeight && !loading) {
+      scrollToEnd();
+      setLoading(true);
+    }
+    setLoading(false);
+  };
+
+  const scrollToEnd = () => {
+    // fetch more data
+    setLoading(true);
+    setCardsPerPage(cardsPerPage + VIEW);
+    setLoading(false);
+  };
+  // 해결방법, 컴포넌트에서 미리 정렬을 하고, 카드 출력을 나중에 한다.
+
   return (
     <>
-      {hotdeals.slice(num - 5, num).map((deal) => {
+      {hotdeals.slice(0, cardsPerPage).map((deal) => {
         return (
           <CardMapDiv>
             <LargeCardItem
