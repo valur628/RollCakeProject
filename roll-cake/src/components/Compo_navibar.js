@@ -38,6 +38,7 @@ const Navigation = () => {
                 activeClassName="active"
                 aria-current="page"
                 to="/hotdeal"
+                style={{ color: "white" }}
               >
                 핫딜
               </Link>
