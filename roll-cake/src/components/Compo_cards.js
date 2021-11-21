@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 import logo_Steam from "../image/logo/Steam.png";
 import logo_Humble_Bundle from "../image/logo/Humble_Bundle.png";
-import logo_Epic_Games from "../image/logo/Epic_Games.png";
 import logo_GOG from "../image/logo/GOG.png";
+import logo_ghd from "../image/logo/GameHotDeal.png";
 
 import "../styles/Compo/Compo_cards.css";
 
@@ -37,7 +37,7 @@ function LargeCardItem({
       break;
     default:
       console.log("Error Platform", Platform);
-      logo = logo_Epic_Games;
+      logo = logo_ghd;
       break;
   }
 
@@ -254,7 +254,7 @@ function MediumCardItem({
       break;
     default:
       console.log("Error Platform", Platform);
-      logo = logo_Epic_Games;
+      logo = logo_ghd;
       break;
   }
 
@@ -472,7 +472,7 @@ function SmallCardItem({
       break;
     default:
       console.log("Error Platform", Platform);
-      logo = logo_Epic_Games;
+      logo = logo_ghd;
       break;
   }
 

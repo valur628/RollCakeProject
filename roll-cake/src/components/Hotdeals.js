@@ -177,7 +177,7 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
       break;
   }
 
-  const VIEW = 5;
+  const VIEW = 10;
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -207,7 +207,7 @@ const HotdealsL = ({ hotdeals, order = "name" }) => {
     setCardsPerPage(cardsPerPage + VIEW);
     setLoading(false);
   };
-  // 해결방법, 컴포넌트에서 미리 정렬을 하고, 카드 출력을 나중에 한다.
+  // infinite scroll
 
   return (
     <>
