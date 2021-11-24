@@ -25,7 +25,7 @@ const MainPage = () => {
   useEffect(
     () =>
       onSnapshot(collection(db, "CarouselDB"), (snapshot) =>
-      carouselSetData(snapshot.docs.map((doc) => doc.data()))
+        carouselSetData(snapshot.docs.map((doc) => doc.data()))
       ),
     []
   );
@@ -42,99 +42,102 @@ const MainPage = () => {
               <CarouselDiv>
                 {carouselData.slice(0, 1).map((carouselDeal) => {
                   return (
-                  <>
-                    <CarouselImage
-                      className="d-block w-100"
-                      src={carouselDeal.ImageSrc}
-                      alt="First slide"
-                    />
-                    <a href={carouselDeal.HotdealHref}>
-                      <CarouselLogoImage_1
-                        src={carouselDeal.LogoImageSrc}
-                        alt="Logo"
-                        clWidth={carouselDeal.clWidth}
-                        clTop={carouselDeal.clTop}
-                        clLeft={carouselDeal.clLeft}
-                        clFilter={carouselDeal.clFilter}
-                      ></CarouselLogoImage_1>
-                    </a>
-                    <CarouselSlideCardItem>
-                      <SlideCardItem
-                        DevName={carouselDeal.DevName}
-                        SoftName={carouselDeal.SoftName}
-                        AfterCost={carouselDeal.AfterCost}
-                        DisRate={carouselDeal.DisRate}
-                      ></SlideCardItem>
-                    </CarouselSlideCardItem>
-                  </>
+                    <>
+                      <CarouselImage
+                        className="d-block w-100"
+                        src={carouselDeal.ImageSrc}
+                        alt="First slide"
+                      />
+                      <a href={carouselDeal.HotdealHref}>
+                        <CarouselLogoImage_1
+                          src={carouselDeal.LogoImageSrc}
+                          alt="Logo"
+                          clWidth={carouselDeal.clWidth}
+                          clTop={carouselDeal.clTop}
+                          clLeft={carouselDeal.clLeft}
+                          clFilter={carouselDeal.clFilter}
+                        ></CarouselLogoImage_1>
+                      </a>
+                      <CarouselSlideCardItem>
+                        <SlideCardItem
+                          DevName={carouselDeal.DevName}
+                          SoftName={carouselDeal.SoftName}
+                          AfterCost={carouselDeal.AfterCost}
+                          DisRate={carouselDeal.DisRate}
+                        ></SlideCardItem>
+                      </CarouselSlideCardItem>
+                    </>
                   );
-                })};
+                })}
+                ;
               </CarouselDiv>
             </Carousel.Item>
             <Carousel.Item>
-            <CarouselDiv>
+              <CarouselDiv>
                 {carouselData.slice(1, 2).map((carouselDeal) => {
                   return (
-                  <>
-                    <CarouselImage
-                      className="d-block w-100"
-                      src={carouselDeal.ImageSrc}
-                      alt="First slide"
-                    />
-                    <a href={carouselDeal.HotdealHref}>
-                      <CarouselLogoImage_1
-                        src={carouselDeal.LogoImageSrc}
-                        alt="Logo"
-                        clWidth={carouselDeal.clWidth}
-                        clTop={carouselDeal.clTop}
-                        clLeft={carouselDeal.clLeft}
-                        clFilter={carouselDeal.clFilter}
-                      ></CarouselLogoImage_1>
-                    </a>
-                    <CarouselSlideCardItem>
-                      <SlideCardItem
-                        DevName={carouselDeal.DevName}
-                        SoftName={carouselDeal.SoftName}
-                        AfterCost={carouselDeal.AfterCost}
-                        DisRate={carouselDeal.DisRate}
-                      ></SlideCardItem>
-                    </CarouselSlideCardItem>
-                  </>
+                    <>
+                      <CarouselImage
+                        className="d-block w-100"
+                        src={carouselDeal.ImageSrc}
+                        alt="First slide"
+                      />
+                      <a href={carouselDeal.HotdealHref}>
+                        <CarouselLogoImage_1
+                          src={carouselDeal.LogoImageSrc}
+                          alt="Logo"
+                          clWidth={carouselDeal.clWidth}
+                          clTop={carouselDeal.clTop}
+                          clLeft={carouselDeal.clLeft}
+                          clFilter={carouselDeal.clFilter}
+                        ></CarouselLogoImage_1>
+                      </a>
+                      <CarouselSlideCardItem>
+                        <SlideCardItem
+                          DevName={carouselDeal.DevName}
+                          SoftName={carouselDeal.SoftName}
+                          AfterCost={carouselDeal.AfterCost}
+                          DisRate={carouselDeal.DisRate}
+                        ></SlideCardItem>
+                      </CarouselSlideCardItem>
+                    </>
                   );
-                })};
+                })}
+                ;
               </CarouselDiv>
             </Carousel.Item>
             <Carousel.Item>
-            <CarouselDiv>
+              <CarouselDiv>
                 {carouselData.slice(2, 3).map((carouselDeal) => {
                   return (
-                  <>
-                    <CarouselImage
-                      className="d-block w-100"
-                      src={carouselDeal.ImageSrc}
-                      alt="First slide"
-                    />
-                    <a href={carouselDeal.HotdealHref}>
-                      <CarouselLogoImage_1
-                        src={carouselDeal.LogoImageSrc}
-                        alt="Logo"
-                        clWidth={carouselDeal.clWidth}
-                        clTop={carouselDeal.clTop}
-                        clLeft={carouselDeal.clLeft}
-                        clFilter={carouselDeal.clFilter}
-                      ></CarouselLogoImage_1>
-                    </a>
-                    <CarouselSlideCardItem>
-                      <SlideCardItem
-                        DevName={carouselDeal.DevName}
-                        SoftName={carouselDeal.SoftName}
-                        AfterCost={carouselDeal.AfterCost}
-                        DisRate={carouselDeal.DisRate}
-                      ></SlideCardItem>
-                    </CarouselSlideCardItem>
-                  </>
+                    <>
+                      <CarouselImage
+                        className="d-block w-100"
+                        src={carouselDeal.ImageSrc}
+                        alt="First slide"
+                      />
+                      <a href={carouselDeal.HotdealHref}>
+                        <CarouselLogoImage_1
+                          src={carouselDeal.LogoImageSrc}
+                          alt="Logo"
+                          clWidth={carouselDeal.clWidth}
+                          clTop={carouselDeal.clTop}
+                          clLeft={carouselDeal.clLeft}
+                          clFilter={carouselDeal.clFilter}
+                        ></CarouselLogoImage_1>
+                      </a>
+                      <CarouselSlideCardItem>
+                        <SlideCardItem
+                          DevName={carouselDeal.DevName}
+                          SoftName={carouselDeal.SoftName}
+                          AfterCost={carouselDeal.AfterCost}
+                          DisRate={carouselDeal.DisRate}
+                        ></SlideCardItem>
+                      </CarouselSlideCardItem>
+                    </>
                   );
-                })};
+                })}
+                ;
               </CarouselDiv>
             </Carousel.Item>
           </Carousel>
@@ -224,11 +227,11 @@ const CarouselLogoImage = styled.img`
   left: 18%;
 `;
 const CarouselLogoImage_1 = styled.img`
-  width: ${props => props.clWidth};
+  width: ${(props) => props.clWidth};
   position: absolute;
-  top: ${props => props.clTop};
-  left: ${props => props.clLeft};
-  filter: ${props => props.clFilter};
+  top: ${(props) => props.clTop};
+  left: ${(props) => props.clLeft};
+  filter: ${(props) => props.clFilter};
 `;
 const CarouselLogoImage_2 = styled.img`
   width: 10%;

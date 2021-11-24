@@ -603,9 +603,9 @@ const SmaAfterCostString = styled.text`
 
 export { SmallCardItem };
 
-function SlideCardItem({ DevName, SoftName, AfterCost, DisRate, Address }) {
+function SlideCardItem({ DevName, SoftName, AfterCost, DisRate }) {
   return (
-    <SliWrapperDiv onClick={() => onHandleClick(Address)}>
+    <SliWrapperDiv>
       <SliWrapperTable>
         <thead>
           <tr>
