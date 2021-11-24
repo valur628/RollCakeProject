@@ -161,22 +161,21 @@ const MainPage = () => {
                 </td>
               </tr>
               <tr>
-                <MediumCardButtonTd>
+                <MediumCardButtonTd colSpan="3">
                   <MediumCardButtonDiv>
                     <Link to="/hotdeal">
                       <button class="MoreButton">할인율 핫딜 더 보기 →</button>
                     </Link>
                   </MediumCardButtonDiv>
                 </MediumCardButtonTd>
-                <td></td>
+                {/* <td></td>
                 <MediumCardButtonTd>
                   <MediumCardButtonDiv>
                     <Link to="/hotdeal">
-                      {/* /hotdeal로 이동하면서 usestate 실행하기..? */}
                       <button class="MoreButton">가격 핫딜 더 보기 →</button>
                     </Link>
                   </MediumCardButtonDiv>
-                </MediumCardButtonTd>
+                </MediumCardButtonTd> */}
               </tr>
             </MediumCardMapTable>
           </section>
@@ -287,7 +286,11 @@ const MediumCardMapMiddleTd = styled.td`
   width: 5%;
   text-align: center;
 `;
-const MediumCardButtonDiv = styled.div``;
+const MediumCardButtonDiv = styled.div`
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+`;
 const MediumCardButtonTd = styled.td`
   font-family: "NanumSquareRound";
   vertical-align: center;
